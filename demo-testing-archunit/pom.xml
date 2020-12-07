@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.acme.testing.archunit</groupId>
+	<artifactId>demo-testing-archunit</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>demo-testing-archunit</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+
+		<!-- Compiler & Resources -->
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Dependency Versions -->
+		<junit.jupiter.version>5.6.0</junit.jupiter.version>
+		<archunit.version>0.14.1</archunit.version>
+		
+		<!-- Plugins -->
+		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- *** Architecture Libraries *** -->
+
+
+		<!-- *** Third Party Libraries *** -->
+
+		<!-- commons-lang3 : class utilities -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.9</version>
+		</dependency>
+
+		<!-- commons-collections4 : collection utilities -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.4</version>
+		</dependency>
+
+		<!-- commons-io : class utilities for : file, streams, file comparator, file filters, ... -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+		<!-- * JUnit Jupiter * -->
+
+		<!-- junit-jupiter-engine : unit test framework v5 (Add JUnit Platform + API) Use write test (include : annotations, etc.) -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+		</dependency>
+
+		<!-- archunit :assert architecture rules framework -->
+		<dependency>
+			<groupId>com.tngtech.archunit</groupId>
+   	 		<artifactId>archunit-junit5</artifactId>
+			<version>${archunit.version}</version>
+		</dependency>
+		
+		<!-- Logger -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>demo-testing-archunit</finalName>
+		<plugins>
+
+			<!-- maven-compiler-plugin : Plugin used to compile the project source -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- maven-resources-plugin : Plugin used to handle the project resources -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>${maven-resources-plugin.version}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+	
+</project>

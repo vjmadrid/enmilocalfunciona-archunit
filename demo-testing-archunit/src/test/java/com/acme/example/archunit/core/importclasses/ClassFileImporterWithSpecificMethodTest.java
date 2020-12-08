@@ -17,10 +17,10 @@ public class ClassFileImporterWithSpecificMethodTest {
 	
 	private static final String GENERIC_PACKAGE_TEST_VALUE = "com.acme.example";
 	
-	private static final int NUM_IMPORTED_CLASSES_DEFAULT = 13;
+	private static final int NUM_IMPORTED_CLASSES_DEFAULT_GENERIC_WITH_OPTIONS = 18;
 
 	@Test
-    public void whenCallImportPackagesDefault_thenReturnJavaClassComponents() {
+    public void whenCallImportPackagesMethodWithOptions_thenReturnJavaClassComponents() {
 		System.out.println("\n*** ClassFileImporter Default ***");
 		
         JavaClasses importedClasses = new ClassFileImporter()
@@ -37,7 +37,7 @@ public class ClassFileImporterWithSpecificMethodTest {
         List<?> importedClassesList = ArchUnitComponentUtil.generarJavaClassList(importedClasses);
    
         assertNotNull(importedClassesList);
-        assertEquals(NUM_IMPORTED_CLASSES_DEFAULT,importedClassesList.size());
+        assertEquals(NUM_IMPORTED_CLASSES_DEFAULT_GENERIC_WITH_OPTIONS,importedClassesList.size());
     }
 
 }

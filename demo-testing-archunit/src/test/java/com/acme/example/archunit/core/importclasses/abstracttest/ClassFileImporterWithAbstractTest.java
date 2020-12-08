@@ -1,4 +1,4 @@
-package com.acme.example.archunit.core.importclasses;
+package com.acme.example.archunit.core.importclasses.abstracttest;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,12 +8,11 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.acme.example.archunit.core.importclasses.abstracttest.AbstractArchTest;
 import com.acme.example.archunit.core.importclasses.component.util.ArchUnitComponentUtil;
 
 public class ClassFileImporterWithAbstractTest extends AbstractArchTest {
 	
-	private static final int NUM_IMPORTED_CLASSES_DEFAULT_GENERIC_WITH_OPTIONS = 13;
+	private static final int NUM_IMPORTED_CLASSES_DEFAULT_GENERIC_WITH_OPTIONS = 18;
 	
 	@Test
     public void whenCallImportPackagesDefaultGenericWithOptions_thenReturnJavaClassComponents() {

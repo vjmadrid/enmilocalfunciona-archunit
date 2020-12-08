@@ -19,6 +19,7 @@ import com.tngtech.archunit.lang.ArchRule;
 )
 public class ClassFileImporterWithAnnotationTest {
 	
+	// ArchRule Required to work
 	@ArchTest
 	public static ArchRule shouldBeValid = classes().that().resideInAPackage("..archunit.entity").should().implement(Serializable.class);
 	

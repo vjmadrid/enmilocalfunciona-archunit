@@ -19,8 +19,8 @@ public class ComponentClassFileImporterWithOptionsTest {
 	private static final String GENERIC_PACKAGE_TEST_VALUE = "com.acme.example";
 	private static final String USER_PACKAGE_TEST_VALUE = "com.acme.example.archunit.user";
 	
-	private static final int NUM_IMPORTED_CLASSES_DEFAULT_GENERIC_WITH_OPTIONS = 13;
-	private static final int NUM_IMPORTED_CLASSES_DEFAULT_USER_PACKAGE_WITH_OPTIONS = 7;
+	private static final int NUM_IMPORTED_CLASSES_DEFAULT_GENERIC_WITH_OPTIONS = 18;
+	private static final int NUM_IMPORTED_CLASSES_DEFAULT_USER_PACKAGE_WITH_OPTIONS = 12;
 	
 	@Test
     public void whenCallImportPackagesDefaultGenericWithOptions_thenReturnJavaClassComponents() {

@@ -16,7 +16,7 @@ public class ClassFileImporterWithGeneralMethodTest {
 	
 	private static final String GENERIC_PACKAGE_TEST_VALUE = "com.acme.example";
 	
-	private static final int NUM_IMPORTED_CLASSES_DEFAULT_GENERIC_WITH_OPTIONS = 13;
+	private static final int NUM_IMPORTED_CLASSES_DEFAULT_GENERIC_WITH_OPTIONS = 18;
 
 	private JavaClasses IMPORTED_CLASSES = new ClassFileImporter()
     		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
@@ -26,7 +26,7 @@ public class ClassFileImporterWithGeneralMethodTest {
 	
 	
 	@Test
-    public void whenCallImportPackagesDefaultGenericWithOptions_thenReturnJavaClassComponents() {
+    public void whenCallImportPackagesFieldWithOptions_thenReturnJavaClassComponents() {
 		System.out.println("\n*** ClassFileImporter Default Generic with Options ***");
 		
         //Show : Project Classes (NO test, NO Archives and NO JARs)

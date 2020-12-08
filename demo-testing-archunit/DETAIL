@@ -53,18 +53,22 @@
 
 			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
 
+			
+		3.	ClassFileImporterWithAnnotationTest : Test para enseñar a utilizar la clase ClassFileImporter() como una anotación
+			
 
-		3. 	ClassFileImporterWithAbstractTest : Test para enseñar a utilizar la clase ClassFileImporter() como un atributo común para todos test 
+
+	package com.acme.example.archunit.core.importclasses.abstracttest;
+	
+	
+		1. 	ClassFileImporterWithAbstractTest : Test para enseñar a utilizar la clase ClassFileImporter() como un atributo común para todos test 
 			pero accedido por herencia desde otra clase y que será utilizado en cada método
 			
 			Este enfoque permitiría tener dentro de un clase (de test) un escaneo de clases común para todos los métodos de test
 			* La opción de hacerlo dentro de cada método seguiría siendo posible
 
 			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
-			
-			
-		4.	ClassFileImporterWithAnnotationTest : Test para enseñar a utilizar la clase ClassFileImporter() como una anotación
-			
+
 
 
 *******************************************

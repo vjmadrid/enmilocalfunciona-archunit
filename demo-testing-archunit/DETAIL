@@ -255,3 +255,39 @@
 		1.	CheckClassesTransformerClassesWithMethodTest : Test que enseña a utilizar la clase ClassesTransformer que permite aplicar comprobaciones específicas y particulares
 			de los componentes a medir (JavaConstructor, utilityMethods, etc.)
 		
+		
+		
+*******************************************
+ Detalle de ejemplos para la capa "Library"
+ 
+ src/test/java
+ 	com.acme.example.archunit.library
+*******************************************
+
+
+	package com.acme.example.archunit.library.architecture.layered;
+	
+	
+		1.	CheckLayeredArchitectureWithMethodTest: Test para arquitecturas en capas dentro del enfoque de utilizar métodos
+		
+			Define una estructura custom de capas : Entity, Repository, Service, Controller, Factory y Utils
+			Define los accesos desde las capas
+			
+			Importante : Esto es un ejemplo no una propuesta final de lo que seria una arquitectura cumpliendo todas las best practices
+
+
+		2.	CheckLayeredArchitectureWithAnnotationTest: Test para arquitecturas en capas dentro del enfoque de utilizar anotaciones
+		
+			Define una estructura custom de capas : Entity, Repository, Service, Controller, Factory y Utils
+			Define los accesos desde las capas
+			
+			Importante : Esto es un ejemplo no una propuesta final de lo que seria una arquitectura cumpliendo todas las best practices
+			
+	
+	package com.acme.example.archunit.library.generalcodingrules;
+	
+	
+		1.	CheckGeneralCodingRulesWithMethodTest : Test para enseñar a utilizar las reglas estáticas predefinidas dentro del enfoque de utilizar métodos
+
+
+		2.	CheckGeneralCodingRulesWithMethodTest : Test para enseñar a utilizar las reglas estáticas predefinidas dentro del enfoque de utilizar anotaciones

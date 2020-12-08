@@ -4,7 +4,6 @@ import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 
 import org.junit.jupiter.api.Test;
 
-import com.acme.example.archunit.constant.ArchUnitArchitectureConstant;
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.core.importer.ImportOption;
@@ -19,25 +18,21 @@ public class CheckLayeredArchitectureWithMethodTest {
 			.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_JARS).importPackages(GENERIC_PACKAGE_TEST_VALUE);
 
 	@Test
-	public void layer_dependencies_are_respected() {
+	public void whenCallLayeredArchitectureWithLayers_thenReturnLayerDependenciesRespected() {
 		layeredArchitecture()
-
-			.layer(ArchUnitArchitectureConstant.ENTITY_LAYER).definedBy("..entity..")
-			.layer(ArchUnitArchitectureConstant.REPOSITORY_LAYER).definedBy("..repository..")
-			.layer(ArchUnitArchitectureConstant.SERVICE_LAYER).definedBy("..service..")
-			.layer("Factory").definedBy("..factory..")
-			.layer("Util").definedBy("..util..")
-			.layer(ArchUnitArchitectureConstant.CONTROLLER_LAYER).definedBy("..controller..")
-			//.layer(ArchUnitArchitectureConstant.DTO_LAYER).definedBy("..dto..")
-				
-				
-	
-				//.whereLayer(ArchUnitArchitectureConstant.DTO_LAYER).mayOnlyBeAccessedByLayers("Web")
-				.whereLayer(ArchUnitArchitectureConstant.ENTITY_LAYER).mayOnlyBeAccessedByLayers(ArchUnitArchitectureConstant.REPOSITORY_LAYER, ArchUnitArchitectureConstant.SERVICE_LAYER, "Factory", ArchUnitArchitectureConstant.CONTROLLER_LAYER)
-				.whereLayer(ArchUnitArchitectureConstant.REPOSITORY_LAYER).mayOnlyBeAccessedByLayers(ArchUnitArchitectureConstant.SERVICE_LAYER)
-				.whereLayer(ArchUnitArchitectureConstant.SERVICE_LAYER).mayOnlyBeAccessedByLayers(ArchUnitArchitectureConstant.CONTROLLER_LAYER)
-				
-                .check(IMPORTED_CLASSES);
+			//Layers
+			.layer("Entity layer").definedBy("..entity..")
+			.layer("Repository layer").definedBy("..repository..")
+			.layer("Service layer").definedBy("..service..")
+			.layer("Controller layer").definedBy("..controller..")
+			.layer("Factory layer").definedBy("..factory..")
+			.layer("Util layer").definedBy("..util..")
+			//Conditions
+			.whereLayer("Entity layer").mayOnlyBeAccessedByLayers("Repository layer", "Service layer", "Factory layer", "Controller layer")
+			.whereLayer("Repository layer").mayOnlyBeAccessedByLayers("Service layer")
+			.whereLayer("Service layer").mayOnlyBeAccessedByLayers("Controller layer")
+			//Check
+            .check(IMPORTED_CLASSES);
 	}
 	
 

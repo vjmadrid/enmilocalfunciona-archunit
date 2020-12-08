@@ -5,12 +5,14 @@ public final class ArchUnitArchitectureConstant {
 	private ArchUnitArchitectureConstant() {
 	}
 
-	// Basic
+	// Custom Layers
 	public static final String DTO_LAYER = "DTO layer";
 	public static final String ENTITY_LAYER = "Entity layer";
 	public static final String REPOSITORY_LAYER = "Repository layer";
 	public static final String SERVICE_LAYER = "Service layer";
 	public static final String CONTROLLER_LAYER = "Controller layer";
+	public static final String FACTORY_LAYER = "Factory layer";
+	public static final String UTIL_LAYER = "Util layer";
 	
 	public static final String DTO_LAYER_PACKAGES = "com.company.projectx.dto..";
 	public static final String ENTITY_LAYER_PACKAGES = "com.company.projectx.entity..";

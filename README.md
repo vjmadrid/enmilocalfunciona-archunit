@@ -42,6 +42,7 @@ Define que elementos son necesarios para instalar el software
 Se encuentra organizado en áreas :
 
 * **demo-testing-archunit** : Proyecto donde se explica el funcionamiento de ArchUnit
+* **acme-architecture-testing** : Librería de arquitectura para testing de proyectos enfocada principalmente en el soporte de Archunit 
 
 
 

@@ -248,14 +248,46 @@
 			Se ha definido la clase ExternalArchCondition que contiene un ArchRule para su uso externo
 
 
+
+	package com.acme.example.archunit.lang.archcondition.adhoc;
 	
+	
+		1.	CheckAdhocDefinitionArchConditionWithMethodTest : Test que enseña a utilizar como condición una clase que extiende de ArchCondition dentro 
+			del enfoque de utilizar métodos
+		
+			Se ha definido la clase ClassesNoPublicSetterArchCondition
+			
+
+		2.	CheckAdhocDefinitionArchConditionWithAnnotationTest : Test que enseña a utilizar como condición una clase que extiende de ArchCondition dentro 
+			del enfoque de utilizar anotaciones
+		
+			Se ha definido la clase ClassesNoPublicSetterArchCondition
+
+
+
+	package com.acme.example.archunit.lang.archcondition.external;
+	
+	
+		1.	CheckFullExternalDefinitionArchConditionWithMethodTest : Test que enseña a utilizar como condición una clase que extiende de ArchCondition dentro 
+			del enfoque de utilizar métodos
+		
+			Se ha definido la clase ExternalArchCondition
+			
+
+		2.	CheckFullExternalDefinitionArchConditionWithAnnotationTest : Test que enseña a utilizar como condición una clase que extiende de ArchCondition dentro 
+			del enfoque de utilizar anotaciones
+		
+			Se ha definido la clase ExternalArchCondition
+
+
+
 	package com.acme.example.archunit.lang.archcondition.classestransformer
 	
 	
 		1.	CheckClassesTransformerClassesWithMethodTest : Test que enseña a utilizar la clase ClassesTransformer que permite aplicar comprobaciones específicas y particulares
 			de los componentes a medir (JavaConstructor, utilityMethods, etc.)
-		
-		
+			
+
 		
 *******************************************
  Detalle de ejemplos para la capa "Library"

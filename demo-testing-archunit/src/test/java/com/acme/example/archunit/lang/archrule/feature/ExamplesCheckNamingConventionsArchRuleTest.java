@@ -18,7 +18,7 @@ public class ExamplesCheckNamingConventionsArchRuleTest {
 		    classes()
 		    .that().haveSimpleNameEndingWith(FACTORY_SUFFIX)
 		    .should().resideInAnyPackage("..factory");
-
+	
 	@ArchTest
 	public static final ArchRule factory_classes_should_have_names_ending_with_the_word_factory = 
 		    classes()

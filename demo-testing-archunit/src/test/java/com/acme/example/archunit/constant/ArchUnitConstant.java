@@ -39,6 +39,5 @@ public final class ArchUnitConstant {
 	public static final String RESIDE_PACKAGE_SPRING_APPLICATION_CLASS = "..app..";
 	public static final String RESIDE_PACKAGE_SPRING_CONFIG_CLASS = "..config..";
 
-
 }
 

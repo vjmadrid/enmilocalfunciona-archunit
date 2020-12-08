@@ -1,6 +1,6 @@
 # enmilocalfunciona-archunit
 
-Este repositorio se encarga de servir como estructura de recursos utilizados para los artículos publicados en la plataforma **enmilocalfunciona.io** relacionados con el uso de **ArchUnit**
+Este repositorio se encarga de servir como una estructura de recursos utilizados para los artículos publicados en la plataforma **enmilocalfunciona.io** relacionados con el uso de **ArchUnit**
 
 
 
@@ -9,6 +9,7 @@ Este repositorio se encarga de servir como estructura de recursos utilizados par
 ## Stack Tecnológico
 
 * Java 8
+* [Maven 3](https://maven.apache.org/) - Gestor de dependencias
 * [ArchUnit](https://www.archunit.org/) - Framework de Testing de Arquitectura
 
 Dependencias con Proyectos de Arquitectura
@@ -40,17 +41,11 @@ Define que elementos son necesarios para instalar el software
 
 Se encuentra organizado en áreas :
 
-* docker
-
-
-### docker
-
-Directorio encargado de almacenar todos aquellos recursos utilizados
+* **demo-testing-archunit** : Proyecto donde se explica el funcionamiento de ArchUnit
 
 
 
 
-
-## Autor
+ ## Autor
 
 * **Víctor Madrid**

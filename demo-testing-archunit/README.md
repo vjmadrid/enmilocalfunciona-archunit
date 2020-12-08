@@ -2,10 +2,18 @@
 
 Este proyecto representa una colección de ejemplos para explicar el uso y configuración de **ArchUnit**
 
+* Uso de diferentes importaciones de clases
+* Uso de métodos y anotaciones
+* Uso y configuración de ArchRule
+* Uso y configuración de ArchCondition
 * Verificar la arquitectura Java
 * Formalizar la arquitectura-> "convenciones"
-* Comprobar dependencias entre paquetes, clases, layers , etc.
+* Comprobar dependencias entre paquetes, clases, layers, etc.
 * ...
+
+Se ha definido un fichero "DETAIL" donde se describe el objetivo de cada test
+
+* Cada test se ha diseñado para enseñar uno o varios conceptos relacionados
 
 
 
@@ -22,7 +30,7 @@ Dependencias con Terceros
 
 * **commons-lang3** [3.11] : Utilidades para clases
 * **commons-collections4** [4.4] : Utilidades para Colecciones
-* **commons-io** [2.6] : Utilidades para : file, streams, file comparator, file filters, ...
+* **commons-io** [2.6] : Utilidades para file, streams, file comparator, file filters, ...
 
 * **junit-jupiter-engine** [5.6.0] : Framework para Testing JUnit v5 (Add JUnit Platform + API) 
 
@@ -35,7 +43,6 @@ Dependencias con Terceros
 ## Pre Requisitos
 
 Define que elementos son necesarios para instalar la aplicación
-Define what elements are needed to install the software
 
 * Java 8 instalado (1.5+ version requerida)
 * Maven instaldo  (3+)

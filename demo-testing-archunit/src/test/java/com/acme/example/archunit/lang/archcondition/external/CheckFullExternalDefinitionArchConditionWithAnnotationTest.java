@@ -1,6 +1,6 @@
-package com.acme.example.archunit.lang.archrule.area;
+package com.acme.example.archunit.lang.archcondition.external;
 
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
@@ -14,12 +14,12 @@ importOptions = {
 		ImportOption.DoNotIncludeJars.class, 
 		ImportOption.DoNotIncludeArchives.class 
 })
-public class CheckNoClassesArchRuleAreaTest {
+public class CheckFullExternalDefinitionArchConditionWithAnnotationTest {
 
 	@ArchTest
-	static ArchRule classes_must_not_be_suffixed_with_impl = 
-    noClasses()
-    .should().haveSimpleNameEndingWith("Impl")
-    .because("seriously, you can do better than that");
+    public static final ArchRule util_classes_no_have_setters = classes()
+	    .that().resideInAPackage("..util..")
+	    .should(ExternalArchCondition.classes_no_public_setter_condition);
+	
 
 }

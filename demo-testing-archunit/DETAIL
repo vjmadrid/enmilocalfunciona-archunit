@@ -1,0 +1,248 @@
+
+
+*******************************************
+ Detalle de ejemplos para la capa "Core"
+ 
+ src/test/java
+ 	com.acme.example.archunit.core
+*******************************************
+
+
+
+	package com.acme.example.archunit.core.importclasses.component;
+
+
+		1.	ComponentClassFileImporterTest : Test para enseñar a utilizar la clase ClassFileImporter() junto con sus diferentes
+			formas de uso: importPackages y importClasspath
+			
+			Trabaja con sus componentes : JavaClasses y JavaClass
+			
+			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
+
+
+		2.	ComponentClassFileImporterWithOptionsTest : Test para enseñar a utilizar la clase ClassFileImporter() junto con sus diferentes
+			formas de configuración "ImportOptions"
+			
+			Trabaja con sus componentes : JavaClasses y JavaClass
+			
+			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
+
+
+		3.	ComponentClassFileImporterGetJavaClassTest : Test para enseñar a trabajar con una clase recuperada a partir de 
+			ClassFileImporter() y algunos de sus métodos para atributos y métodos
+			
+			Trabaja con sus componentes : JavaClasses, JavaClass, JavaMethod y JavaField
+
+
+
+	package com.acme.example.archunit.core.importclasses
+
+
+		1.	ClassFileImporterWithSpecificMethodTest : Test para enseñar a utilizar la clase ClassFileImporter() dentro de un método específico
+		
+			Este enfoque permitiría tener dentro de una clase (de test) métodos de tests donde se escanearían de clases diferentes 
+
+			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
+
+
+		2. 	ClassFileImporterWithGeneralMethodTest : Test para enseñar a utilizar la clase ClassFileImporter() como un atributo común para todos test
+			que será utilizado en cada método
+		
+			Este enfoque permitiría tener dentro de un clase (de test) un escaneo de clases común para todos los métodos de test
+			* La opción de hacerlo dentro de cada método seguiría siendo posible
+
+			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
+
+
+		3. 	ClassFileImporterWithAbstractTest : Test para enseñar a utilizar la clase ClassFileImporter() como un atributo común para todos test 
+			pero accedido por herencia desde otra clase y que será utilizado en cada método
+			
+			Este enfoque permitiría tener dentro de un clase (de test) un escaneo de clases común para todos los métodos de test
+			* La opción de hacerlo dentro de cada método seguiría siendo posible
+
+			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
+			
+			
+		4.	ClassFileImporterWithAnnotationTest : Test para enseñar a utilizar la clase ClassFileImporter() como una anotación
+			
+
+
+*******************************************
+ Detalle de ejemplos para la capa "Lang"
+ 
+ src/test/java
+ 	com.acme.example.archunit.lang
+*******************************************
+
+
+
+	package com.acme.example.archunit.lang.archrule.adhoc
+
+
+		1.	CheckAdhocArchRuleWithMethodTest : Test para enseñar a utilizar diferentes formas definir una ArchRule y su check de aplicación dentro 
+			del enfoque de utilizar métodos
+
+
+		2.	CheckAdhocArchRuleWithAnnotationTest: Test para enseñar a utilizar diferentes formas definir una ArchRule y su check de aplicación dentro 
+			del enfoque de utilizar anotaciones
+
+
+
+	package com.acme.example.archunit.lang.archrule.area
+	
+
+		1.	CheckClassesArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.classes dentro de un ArchRule en un enfoque de anotaciones
+			* Para el uso en métodos sería similar
+
+	
+		2.	CheckFieldsArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.fields dentro de un ArchRule en un enfoque de anotaciones
+			* Para el uso en métodos sería similar
+
+	
+		3.	CheckMethodsArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.methods dentro de un ArchRule en un enfoque de anotaciones
+			* Para el uso en métodos sería similar
+
+
+		4.	CheckTheClassArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.theClass dentro de un ArchRule en un enfoque de anotaciones
+			* Para el uso en métodos sería similar
+
+	
+		5.	CheckNoClassesArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.noClasses dentro de un ArchRule en un enfoque de anotaciones
+			* Para el uso en métodos sería similar
+
+
+
+	package com.acme.example.archunit.lang.archrule.exception
+
+
+		1.	CheckInvalidArchRuleWithMethodTest : Test para enseñar a utilizar diferentes formas de controler un error en una validación de una ArchRule dentro 
+			del enfoque de utilizar métodos
+
+
+		2.	CheckInvalidArchRuleWithAnnotationTest : Test para enseñar a utilizar diferentes formas de controler un error en una validación de una ArchRule dentro 
+			del enfoque de utilizar anotaciones
+
+
+
+	package com.acme.example.archunit.lang.archrule.feature
+
+
+		1.	ExamplesCheckNamingConventionsArchRuleTest : Test para enseñar a utilizar diferentes ejemplos de ArchRule para tener un enfoque de verificar
+			convenciones de nombre 
+			
+		
+		2.	ExamplesCheckConventionsArchRuleTest : Test para enseñar a utilizar diferentes ejemplos de ArchRule para tener un enfoque de verificar
+			convenciones de código
+			
+		
+		3.	ExamplesCheck3rdPartyArchRuleTest : Test para enseñar a utilizar diferentes ejemplos de ArchRule para tener un enfoque de verificar
+			dependencias con terceros
+			
+		
+		4.	ExcamplesCheckSpecificClassValidationsArchRuleTest : Test para enseñar a utilizar diferentes ejemplos de ArchRule para tener un enfoque de verificar
+			XXXXXXXXXXXXXX
+
+
+
+	package com.acme.example.archunit.lang.archrule.external	
+		
+
+		1.	CheckExternalArchRuleWithMethodTest : Test para enseñar a utilizar diferentes formas definir una ArchRule Externa y su check de aplicación dentro 
+			del enfoque de utilizar métodos
+			
+			Se ha definido la clase ExternalEntityArchitectureRule que contiene un ArchRule para su uso externo
+		
+
+		2.	CheckExternalArchRuleWithAnnotationTest : Test para enseñar a utilizar diferentes formas definir una ArchRule Externa y su check de aplicación dentro 
+			del enfoque de utilizar anotaciones
+			
+			Se ha definido la clase ExternalEntityArchitectureRule que contiene un ArchRule para su uso externo
+
+
+
+	package com.acme.example.archunit.lang.archrule.external.rule.definition.base;
+		
+
+		1.	CheckFullExternalBaseDefinitionArchRuleWithAnnotationTest: Test para enseñar a utilizar como cargar grupos con TODAS las ArchRule definidas en clases específicas de ArchRules
+			consideradas "Base"
+		
+			En este caso se han definido 3 clases con las reglas que se consideran comunes para cierta tipología de clases
+			
+				BaseConstantArchitectureRule
+				BaseEntityArchitectureRule
+				BaseUtilArchitectureRule
+			
+			Se trata de clases de "control" de los tipos : Constante, Entity y Util
+			
+			Llevan el indicativo Base en el nombre para indicar ese aspecto de características comunes
+			
+			Cada clase lleva reglas que se quieren utilizar con diferente "features" : nombre, convenciones, dependencias, etc.
+		
+	
+	
+	package com.acme.example.archunit.lang.archrule.external.rule.definition;
+		
+
+		1.	CheckFullExternalDefinitionArchRuleWithAnnotationTest: Test para enseñar a utilizar como cargar grupos con TODAS las ArchRule definidas en clases específicas de ArchRules
+			consideradas "Default"
+			
+			Una clase de ArchRule "Default" se considera una clase que contiene un conjunto de reglas a medir y que puede tener definidas adhoc o bien ampliarlas mediante el uso de la herencia
+			* Estas clases pueden ayudar a particularizar algunos casos o comportamientos que podría tener ese proyecto de forma concreta
+			
+			En este caso se han definido 2 clases con las reglas a medir para cierta tipología de clases
+			
+				EntityArchitectureRule
+				UtilArchitectureRule
+			
+			Se trata de clases de "control" de los tipos :Entity y Util
+			
+			Cada clase lleva reglas que se quieren utilizar con diferente "features" : nombre, convenciones, dependencias, etc.
+
+
+
+	package com.acme.example.archunit.lang.archrule.external.custom
+	
+	
+		1.	CheckFullExternalEntityArchRuleWithAnnotationTest : Test para enseñar a utilizar de forma específica las reglas seleccionadas para un tipo concreto de clases
+			para su ejecución de forma conjunta dentro de una misma clase de test
+		
+			En este claso se aplicará sobre la tipología considerada : Entity
+			
+		
+		2.	CheckFullExternalUtilArchRuleWithAnnotationTest : Test para enseñar a utilizar de forma específica las reglas seleccionadas para un tipo concreto de clases
+			para su ejecución de forma conjunta dentro de una misma clase de test
+		
+			En este claso se aplicará sobre la tipología considerada : Util
+			
+		
+		3.	CheckSelectedExternalCustomArchRuleWithAnnotationTest :  Test para enseñar a utilizar de forma específica las reglas seleccionadas desde diferentes tipos de clases
+			para su ejecución de forma conjunta dentro de una misma clase de test
+		
+
+		4.	CheckGroupExternalCustomArchRuleWithAnnotationTest : Test para enseñar a utilizar de forma específica agrupaciones de reglas desde diferentes tipos de clases
+			para su ejecución de forma conjunta dentro de una misma clase de test
+
+
+
+	package com.acme.example.archunit.lang.archrule.external	
+		
+
+		1.	CheckFullExternalDefinitionArchConditionWithMethodTest : Test para enseñar a utilizar diferentes formas definir un ArchCondition Externo y su check de aplicación dentro 
+			del enfoque de utilizar métodos
+			
+			Se ha definido la clase ExternalArchCondition que contiene un ArchRule para su uso externo
+		
+
+		2.	CheckFullExternalDefinitionArchConditionWithAnnotationTest : Test para enseñar a utilizar diferentes formas definir un ArchCondition Externo y su check de aplicación dentro 
+			del enfoque de utilizar anotaciones
+			
+			Se ha definido la clase ExternalArchCondition que contiene un ArchRule para su uso externo
+
+
+	
+	package com.acme.example.archunit.lang.archcondition.classestransformer
+	
+	
+		1.	CheckClassesTransformerClassesWithMethodTest : Test que enseña a utilizar la clase ClassesTransformer que permite aplicar comprobaciones específicas y particulares
+			de los componentes a medir (JavaConstructor, utilityMethods, etc.)
+		

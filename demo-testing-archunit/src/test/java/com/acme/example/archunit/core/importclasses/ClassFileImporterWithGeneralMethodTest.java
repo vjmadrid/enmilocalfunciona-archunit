@@ -29,7 +29,6 @@ public class ClassFileImporterWithGeneralMethodTest {
     public void whenCallImportPackagesDefaultGenericWithOptions_thenReturnJavaClassComponents() {
 		System.out.println("\n*** ClassFileImporter Default Generic with Options ***");
 		
-
         //Show : Project Classes (NO test, NO Archives and NO JARs)
         System.out.println("* Show : Project Classes (NO test, NO Archives and NO JARs)");
         ArchUnitComponentUtil.showInfo(IMPORTED_CLASSES);

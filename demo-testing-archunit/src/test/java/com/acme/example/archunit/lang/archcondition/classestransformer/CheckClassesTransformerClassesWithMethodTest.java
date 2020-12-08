@@ -1,4 +1,4 @@
-package com.acme.example.archunit.lang.archcondition.adhoc;
+package com.acme.example.archunit.lang.archcondition.classestransformer;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.all;
 
@@ -19,7 +19,7 @@ import com.tngtech.archunit.lang.ClassesTransformer;
 import com.tngtech.archunit.lang.ConditionEvents;
 import com.tngtech.archunit.lang.SimpleConditionEvent;
 
-public class CheckAdhocClassesWithMethodTest extends AbstractArchTest {
+public class CheckClassesTransformerClassesWithMethodTest extends AbstractArchTest {
 
 	@Test
 	public void shouldBeUtilClassesWithPrivateConstructor() {

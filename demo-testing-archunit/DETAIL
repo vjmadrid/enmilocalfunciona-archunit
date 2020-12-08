@@ -121,10 +121,15 @@
 
 		1.	CheckInvalidArchRuleWithMethodTest : Test para enseñar a utilizar diferentes formas de controler un error en una validación de una ArchRule dentro 
 			del enfoque de utilizar métodos
+			
+			
+			Uno de los casos mostrados NO esta controlado tiene por objetivo mostrar el error 
 
 
 		2.	CheckInvalidArchRuleWithAnnotationTest : Test para enseñar a utilizar diferentes formas de controler un error en una validación de una ArchRule dentro 
 			del enfoque de utilizar anotaciones
+			
+			El caso mostrado NO esta controlado tiene por objetivo mostrar el error 
 
 
 

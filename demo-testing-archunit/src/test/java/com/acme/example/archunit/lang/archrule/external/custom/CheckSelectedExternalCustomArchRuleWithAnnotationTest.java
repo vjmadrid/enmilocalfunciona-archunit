@@ -20,7 +20,7 @@ public class CheckSelectedExternalCustomArchRuleWithAnnotationTest {
 	public static ArchRule entity_classes_should_be_in_entity_package = BaseEntityArchitectureRule.entity_classes_should_be_in_entity_package;
 	
 	@ArchTest
-	public static ArchRule entity_classes_should_be_annotated_with_entity = EntityArchitectureRule.entity_classes_should_be_annotated_with_entity;
+	public static ArchRule entity_classes_should_implements_serializable = EntityArchitectureRule.entity_classes_should_implements_serializable;
 	
 	// ....
 }

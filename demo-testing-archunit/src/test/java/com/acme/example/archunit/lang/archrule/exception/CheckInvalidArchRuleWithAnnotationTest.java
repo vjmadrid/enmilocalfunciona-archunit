@@ -19,6 +19,6 @@ importOptions = {
 public class CheckInvalidArchRuleWithAnnotationTest {
 	
 	@ArchTest
-	public static ArchRule entity_classes_should_be_serializable = classes().that().resideInAPackage("..user.util").should().implement(Serializable.class);
+	public static ArchRule generate_error_util_classes_no_should_be_serializable = classes().that().resideInAPackage("..user.util").should().implement(Serializable.class);
 	
 }

@@ -21,16 +21,15 @@ importOptions = {
 public class CheckTheClassArchRuleAreaTest {
 
 	@ArchTest
-	public static final ArchRule entity_class_access_package = theClass(User.class).should().accessClassesThat().resideOutsideOfPackages("..archunit..", "com..");
+	public static final ArchRule entity_classes_should_be_in_entity_package = theClass(User.class).should().resideInAPackage("..entity");
 	
 	@ArchTest
-	public static final ArchRule entity_class_package_validation = theClass(User.class).should().resideInAPackage("..entity");
+	public static final ArchRule entity_classes_should_be_serializable = theClass(User.class).should().implement(Serializable.class);
 	
 	@ArchTest
-	public static final ArchRule entity_class_impl_serializable = theClass(User.class).should().onlyBeAccessed().byClassesThat()
-			.implement(Serializable.class);
-	
-	@ArchTest
-	public static final ArchRule entity_class_use_annotation_UserDescription = theClass(User.class).should().beAnnotatedWith(UserDescription.class);
+	public static final ArchRule entity_classes_should_use_annotation_UserDescription = theClass(User.class).should().beAnnotatedWith(UserDescription.class);
 
+	@ArchTest
+	public static final ArchRule entity_classes_should_access_others_packages = theClass(User.class).should().accessClassesThat().resideOutsideOfPackages("..archunit..", "com..");
+	
 }

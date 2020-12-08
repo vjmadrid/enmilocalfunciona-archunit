@@ -17,9 +17,9 @@ importOptions = {
 public class CheckNoClassesArchRuleAreaTest {
 
 	@ArchTest
-	static ArchRule classes_must_not_be_suffixed_with_impl = 
+	static ArchRule classes_must_not_be_suffixed_with_Implements = 
     noClasses()
-    .should().haveSimpleNameEndingWith("Impl")
+    .should().haveSimpleNameEndingWith("Implements")
     .because("seriously, you can do better than that");
 
 }

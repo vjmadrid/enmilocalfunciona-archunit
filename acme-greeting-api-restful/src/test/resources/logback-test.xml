@@ -8,9 +8,11 @@
     	</encoder>
   	</appender>
   	
-	<logger name="com.acme.greeting.api.restful" level="DEBUG" />
+  	<!-- 
+	<logger name="com.acme.greeting.api." level="DEBUG" />
+	 -->
 
-	<root level="INFO">
+	<root level="ERROR">
 		<appender-ref ref="STDOUT" />
 	</root>
   

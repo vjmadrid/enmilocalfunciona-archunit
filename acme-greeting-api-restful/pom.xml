@@ -29,6 +29,9 @@
 
 		<!-- Spring Boot Properties -->
 		<start-class>com.acme.greeting.api.restful.Application</start-class>
+		
+		<!-- *** Architecture libraries *** -->
+		<acme-architecture-testing.version>0.0.1-SNAPSHOT</acme-architecture-testing.version>
 
 		<!-- Dependency Versions -->
 		<swagger.version>2.9.2</swagger.version>
@@ -75,15 +78,28 @@
 	<dependencies>
 
 		<!-- *** Architecture Libraries *** -->
-
+		
+		
+		<!-- Include : spring-boot-starter-test -->
+		
+		<dependency>
+			<groupId>com.acme.architecture.testing</groupId>
+			<artifactId>acme-architecture-testing</artifactId>
+			<version>${acme-architecture-testing.version}</version>
+			<scope>test</scope>
+			
+			<!-- Exclude Support Spring JPA -->
+	
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-data-jpa</artifactId>
+				</exclusion>
+			</exclusions>
+			
+		</dependency>
 
 		<!-- *** Third Party Libraries *** -->
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -160,39 +176,40 @@
 			</plugin>
 
 			<!-- maven-surefire-plugin : Plugin used to run unit tests - Generate reports in the directory target/surefire-reports -->
+			
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<skipTests>${skip.unit.tests}</skipTests>
-					<testFailureIgnore>true</testFailureIgnore>
+					<testFailureIgnore>false</testFailureIgnore>
+					<properties>
+						<configurationParameters>
+							junit.jupiter.execution.parallel.enabled=true
+							junit.jupiter.execution.parallel.config.dynamic.factor=2
+							junit.platform.output.capture.stdout=true
+							junit.platform.output.capture.stderr=true
+						</configurationParameters>
+					</properties>
+				</configuration>
+			</plugin>
+			
+			<!-- maven-failsafe-plugin : Plugin used to run integration tests -->
+			
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<configuration>
+					<skipITs>${skip.integration.tests}</skipITs>
+					<includes>
+						<include>**/*TestIT</include>
+						<include>**/*TestITCase</include>
+					</includes>
 				</configuration>
 				<executions>
 					<execution>
-						<id>unit-tests</id>
-						<phase>test</phase>
 						<goals>
-							<goal>test</goal>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
 						</goals>
-						<configuration>
-							<skipTests>${skip.unit.tests}</skipTests>
-							<includes>
-								<include>**/*Test.java</include>
-							</includes>
-						</configuration>
-					</execution>
-					<execution>
-						<id>integration-tests</id>
-						<phase>integration-test</phase>
-						<goals>
-							<goal>test</goal>
-						</goals>
-						<configuration>
-							<skipTests>${skip.integration.tests}</skipTests>
-							<includes>
-								<include>**/*TestIT.java</include>
-							</includes>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>

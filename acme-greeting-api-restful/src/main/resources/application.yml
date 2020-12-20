@@ -6,6 +6,8 @@ server:
    
 # *** Configuration SPRING ***
 spring:
+   main:
+      banner-mode: "off"
    profiles:
       active: "@spring.profiles.active@"
    banner:

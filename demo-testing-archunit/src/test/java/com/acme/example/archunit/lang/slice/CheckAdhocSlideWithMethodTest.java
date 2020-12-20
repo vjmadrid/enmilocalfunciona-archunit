@@ -18,6 +18,7 @@ public class CheckAdhocSlideWithMethodTest {
     		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_JARS)
     		.importPackages(PACKAGE_TEST_VALUE);
 	
+	@Test
 	public void whenCallCheckSlicesForBeFreeOfCycles_thenReturnSuccess() {
 		SliceRule rule = SlicesRuleDefinition.slices().matching("com.acme.example.(*)..").should().beFreeOfCycles();
 		rule.check(IMPORTED_CLASSES);

@@ -12,6 +12,7 @@ import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
+import com.tngtech.archunit.lang.syntax.ArchRuleDefinition;
 
 
 //@RunWith(ArchUnitRunner.class) // Important: Only for JUnit 4 and not needed JUnit5
@@ -35,6 +36,15 @@ public class ExamplesCheckConventionsArchRuleTest {
 		    classes()
 		    .that().haveSimpleNameEndingWith("Entity")
 		    .should().resideInAPackage("..entity..");
+	
+	@ArchTest
+	public static final ArchRule entity_should_reside_inside_entity_package =
+			ArchRuleDefinition.classes()
+	        .that()
+	        .haveSimpleNameEndingWith("Entity")
+	        .should()
+	        .resideInAPackage("..entity..")
+	        .because("Entity Classes should stay inside entity package");
 	
 	/*
 	 * Regla que verifica que dentro de un paquete "..entity.." todas las clases utilizan

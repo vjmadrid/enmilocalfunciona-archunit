@@ -65,6 +65,13 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>${spring-boot-starter-parent.version}</version>
 		</dependency>
+		
+		<!-- spring-boot-starter-web : Data JPA Spring Famework -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>${spring-boot-starter-parent.version}</version>
+		</dependency>
 
 		<!-- *** Third Party Libraries *** -->
 

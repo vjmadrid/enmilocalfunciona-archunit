@@ -26,9 +26,12 @@ public class CheckLayeredArchitectureWithAnnotationTest {
 		.layer("Controller layer").definedBy("..controller..")
 		.layer("Factory layer").definedBy("..factory..")
 		.layer("Util layer").definedBy("..util..")
+		//.layer("Config layer").definedBy("..config..")
 		//Conditions
 		.whereLayer("Entity layer").mayOnlyBeAccessedByLayers("Repository layer", "Service layer", "Factory layer", "Controller layer")
 		.whereLayer("Repository layer").mayOnlyBeAccessedByLayers("Service layer")
-		.whereLayer("Service layer").mayOnlyBeAccessedByLayers("Controller layer");
+		.whereLayer("Service layer").mayOnlyBeAccessedByLayers("Controller layer")
+		.whereLayer("Controller layer").mayNotBeAccessedByAnyLayer();
+		//.whereLayer("Config layer").mayNotBeAccessedByAnyLayer();
 
 }

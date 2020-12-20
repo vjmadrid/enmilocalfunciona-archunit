@@ -23,6 +23,8 @@
 		
 		<archunit.version>0.14.1</archunit.version>
 		
+		<lombok.version>1.18.12</lombok.version>
+		
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
@@ -89,6 +91,14 @@
 			<groupId>com.tngtech.archunit</groupId>
 			<artifactId>archunit-junit5-engine</artifactId>
 			<version>${archunit.version}</version>
+		</dependency>
+		
+		<!-- lombok : Java Tool for automatic generation of getters, setters, equals, 
+			hashCode , toString, more -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
 		</dependency>
 		
 	</dependencies>

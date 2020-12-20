@@ -4,30 +4,30 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-import com.acme.architecture.testing.archunit.rule.CatalogAnnotationArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogArchunitRuleArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogConstantArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogDataFactoryArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogDummyArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogDummyDataFactoryArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogEntityArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogEnumerationArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogExceptionArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogGenericArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogSupportArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.CatalogUtilArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogArchunitRuleArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogConstantArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogCustomAnnotationArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogDataFactoryArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogDummyArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogDummyDataFactoryArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogEntityArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogEnumerationArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogExceptionArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogSupportArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogUtilArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringConfigurationArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringGlobalArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringRepositoryArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringRestControllerArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringServiceArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringServiceImplArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.spring.group.CatalogSpringGlobalArchitectureRule;
 
 public class CoverageArchitectureRuleTest {
 	
 	@Test
     public void shouldBeValidArchitectureRule() {
-		assertNotNull(new CatalogGenericArchitectureRule());
+		assertNotNull(new CatalogCoreGlobalArchitectureRule());
 		assertNotNull(new CatalogEntityArchitectureRule());
 		assertNotNull(new CatalogConstantArchitectureRule());
 		assertNotNull(new CatalogEnumerationArchitectureRule());
@@ -35,7 +35,7 @@ public class CoverageArchitectureRuleTest {
 		assertNotNull(new CatalogUtilArchitectureRule());
 		assertNotNull(new CatalogSupportArchitectureRule());
 		assertNotNull(new CatalogArchunitRuleArchitectureRule());
-		assertNotNull(new CatalogAnnotationArchitectureRule());
+		assertNotNull(new CatalogCustomAnnotationArchitectureRule());
 		assertNotNull(new CatalogDummyArchitectureRule());
 		assertNotNull(new CatalogDataFactoryArchitectureRule());
 		assertNotNull(new CatalogDummyDataFactoryArchitectureRule());

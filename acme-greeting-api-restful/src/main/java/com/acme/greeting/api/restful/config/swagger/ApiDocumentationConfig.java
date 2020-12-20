@@ -1,11 +1,14 @@
 package com.acme.greeting.api.restful.config.swagger;
 
+import org.springframework.context.annotation.Configuration;
+
 import io.swagger.annotations.Contact;
 import io.swagger.annotations.ExternalDocs;
 import io.swagger.annotations.Info;
 import io.swagger.annotations.SwaggerDefinition;
 import io.swagger.annotations.License;
 
+@Configuration
 @SwaggerDefinition(
         info = @Info(
                 description = "Acme Resources",

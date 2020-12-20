@@ -31,6 +31,12 @@ public class CatalogSpringRestControllerArchitectureRule {
 		    .should().beAnnotatedWith(RestController.class);
 	
 	@ArchTest
+	public static final ArchRule spring_rest_controller_classes_should_be_public = 
+		    classes()
+		    .that().resideInAPackage(SpringArchUnitConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS)
+		    .should().bePublic();
+	
+	@ArchTest
 	public static final ArchRule no_spring_rest_controller_classes_should_be_reside_other_packages = 
 			noClasses()
 			.that().areAnnotatedWith(RestController.class)

@@ -1,0 +1,45 @@
+#DEFAULT/DEV ENVIRONEMNT SETTING#
+
+# *** Configuration SERVER ***
+server:
+   port: 8091
+   
+# *** Configuration SPRING ***
+spring:
+   profiles:
+      active: "@spring.profiles.active@"
+   banner:
+      location: classpath:custom-banner.txt
+
+# *** Configuration SECURITY ***
+security:
+   basic:
+      enabled: false
+
+# *** Configuration ACTUATORS ***
+management:
+   server:
+      port: 8091
+   endpoint:
+      shutdown:
+         enabled: true
+      info:
+         enabled: true
+   endpoints:
+      web:
+         base-path: /manage
+         exposure:
+            include: health, info, beans, shutdown
+   security:
+      enabled: false
+
+# *** Configuration INFO ACTUATOR ***
+info:
+   app:
+      artifact: "@project.artifactId@"
+      name: "@project.name@"
+      description: "@project.description@"
+      version: "@project.version@"
+      java: "@java.version@"
+      encoding: "@project.build.sourceEncoding@"
+      environment: "DEFAULT/DEV"

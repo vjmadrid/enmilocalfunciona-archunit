@@ -1,0 +1,13 @@
+${AnsiBackground.BLACK}${AnsiColor.RED}
+ ______     ______     __    __     ______    
+/\  __ \   /\  ___\   /\ "-./  \   /\  ___\   
+\ \  __ \  \ \ \____  \ \ \-./\ \  \ \  __\   
+ \ \_\ \_\  \ \_____\  \ \_\ \ \_\  \ \_____\ 
+  \/_/\/_/   \/_____/   \/_/  \/_/   \/_____/ 
+
+ - Application : ${info.app.artifact}
+ - Version     : ${info.app.version}
+ - Spring Boot : ${spring-boot.version}
+ - Environment : ${info.app.environment}
+
+${AnsiBackground.BLACK}${AnsiColor.WHITE}

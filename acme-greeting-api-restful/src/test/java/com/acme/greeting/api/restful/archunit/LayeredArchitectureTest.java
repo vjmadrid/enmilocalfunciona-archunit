@@ -20,12 +20,15 @@ public class LayeredArchitectureTest {
 	public static final ArchRule layered_architecture_dependencies_are_respected = 
 	    layeredArchitecture()
 	    //Layers
-		.layer("Entity layer").definedBy("..entity..")
-		.layer("Controller layer").definedBy("..controller..")
-		.layer("Config layer").definedBy("..config..")
+		.layer("Entity layer").definedBy("..entity")
+		.layer("Controller layer").definedBy("..controller")
+		.layer("Config layer").definedBy("..config")
+		.layer("Factory layer").definedBy("..factory")
+		.layer("Dummy layer").definedBy("..dummy")
 		//Conditions
-		.whereLayer("Entity layer").mayOnlyBeAccessedByLayers("Controller layer")
-		.whereLayer("Controller layer").mayNotBeAccessedByAnyLayer()
+		.whereLayer("Entity layer").mayOnlyBeAccessedByLayers("Controller layer", "Factory layer", "Dummy layer")
+		.whereLayer("Controller layer").mayOnlyBeAccessedByLayers("Factory layer")
+		//.whereLayer("Controller layer").mayNotBeAccessedByAnyLayer()
 		.whereLayer("Config layer").mayNotBeAccessedByAnyLayer();
 
 }

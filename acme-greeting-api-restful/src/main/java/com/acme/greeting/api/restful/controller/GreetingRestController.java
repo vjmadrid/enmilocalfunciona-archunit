@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.acme.greeting.api.restful.constant.GreetingRestApiConstant;
 import com.acme.greeting.api.restful.entity.Greeting;
+import com.acme.greeting.api.restful.factory.GreetingDataFactory;
 
 @RestController
 @RequestMapping(GreetingRestApiConstant.MAPPING)
@@ -29,6 +30,6 @@ public class GreetingRestController {
     	LOG.info("Greeting ...");
     	LOG.info("[*] Name {}",name);
     	
-    	return new Greeting(counter.incrementAndGet(),String.format(GreetingRestApiConstant.TEMPLATE_MESSAGE, name));
+    	return GreetingDataFactory.create(counter.incrementAndGet(),String.format(GreetingRestApiConstant.TEMPLATE_MESSAGE, name));
     }
 }

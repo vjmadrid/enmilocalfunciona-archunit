@@ -3,16 +3,18 @@
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-    		<charset>UTF-8</charset>
 			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-    	</encoder>
-  	</appender>
-  	
-  	<!-- 
-	<logger name="com.acme.greeting.api." level="DEBUG" />
-	 -->
+		</encoder>
+	</appender>
 
-	<root level="ERROR">
+	<logger name="com.acme.greeting.api.restful" level="INFO"/>
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.hibernate.stat" level="INFO" />
+    <logger name="org.hibernate.type" level="INFO" /> 
+	<logger name="org.springframework.security" level="INFO" />
+	<logger name="liquibase" level="INFO" />
+
+	<root level="INFO">
 		<appender-ref ref="STDOUT" />
 	</root>
   

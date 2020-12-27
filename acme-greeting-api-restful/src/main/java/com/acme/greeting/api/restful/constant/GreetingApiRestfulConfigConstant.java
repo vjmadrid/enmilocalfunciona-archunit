@@ -3,6 +3,7 @@ package com.acme.greeting.api.restful.constant;
 public final class GreetingApiRestfulConfigConstant {
 
 	private GreetingApiRestfulConfigConstant() {
+		
 	}
 	
 	public static final String GENERIC_PACKAGE = "com.acme.greeting";

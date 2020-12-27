@@ -12,6 +12,32 @@ spring:
       active: "@spring.profiles.active@"
    banner:
       location: classpath:custom-banner.txt
+   h2:
+      console:
+         enabled : true
+   liquibase:
+      enabled: true
+      change-log: classpath:db/changelog/liquibase-changeLog.xml
+   jpa:
+      database: DEFAULT
+      hibernate:
+         dialect: org.hibernate.dialect.H2Dialect
+         show-sql: true
+         hbm2ddl:
+            auto: create-drop
+         naming:
+            physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      properties:
+         hibernate:
+            dialect: org.hibernate.dialect.H2Dialect
+            format_sql: false
+            generate_statistics: false
+   datasource:
+      driver-class-name: org.h2.Driver
+      url: jdbc:h2:mem:GREETING-DB;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=true
+      username: sa
+      password: sa
+      drop-first: true
 
 # *** Configuration SECURITY ***
 security:

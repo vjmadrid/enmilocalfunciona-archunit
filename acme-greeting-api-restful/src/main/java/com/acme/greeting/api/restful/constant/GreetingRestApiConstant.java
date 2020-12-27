@@ -3,6 +3,7 @@ package com.acme.greeting.api.restful.constant;
 public final class GreetingRestApiConstant {
 
 	private GreetingRestApiConstant() {
+		
 	}
 	
 	public static final String MAPPING = "/greeting";	

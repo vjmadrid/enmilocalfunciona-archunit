@@ -10,11 +10,17 @@ public final class GreetingDataFactory {
 		throw new IllegalStateException("DummyGreeting");
 	}
 	
-	public static Greeting create(long id, String content) {
+	public static Greeting create(String content) {
 		Greeting response = new Greeting();
-		response.setId(id);
+		//response.setId(null);
 		response.setContent(content);
 		response.setResponseTime(new Date());
+		return response;
+	}
+	
+	public static Greeting create(long id, String content) {
+		Greeting response = create(content);
+		response.setId(id);
 		return response;
 	}
 

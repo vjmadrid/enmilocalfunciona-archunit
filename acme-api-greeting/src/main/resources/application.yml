@@ -1,0 +1,72 @@
+#DEFAULT/DEV ENVIRONEMNT SETTING#
+
+# *** Configuration SERVER ***
+server:
+   port: 8091
+   
+# *** Configuration SPRING ***
+spring:
+   main:
+      banner-mode: "off"
+   profiles:
+      active: "@spring.profiles.active@"
+   banner:
+      location: classpath:custom-banner.txt
+   h2:
+      console:
+         enabled : true
+   liquibase:
+      enabled: true
+      change-log: classpath:db/changelog/liquibase-changeLog.xml
+   jpa:
+      database: DEFAULT
+      show-sql: false
+      hibernate:
+         # dialect: org.hibernate.dialect.H2Dialect
+         # ddl-auto: create-drop
+         naming:
+            physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      properties:
+         hibernate:
+            dialect: org.hibernate.dialect.H2Dialect
+            format_sql: false
+            generate_statistics: false
+   datasource:
+      driver-class-name: org.h2.Driver
+      url: jdbc:h2:mem:GREETING-DB;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=true
+      username: sa
+      password: sa
+      drop-first: true
+
+# *** Configuration SECURITY ***
+security:
+   basic:
+      enabled: false
+
+# *** Configuration ACTUATORS ***
+management:
+   server:
+      port: 8091
+   endpoint:
+      shutdown:
+         enabled: true
+      info:
+         enabled: true
+   endpoints:
+      web:
+         base-path: /manage
+         exposure:
+            include: health, info, beans, shutdown
+   security:
+      enabled: false
+
+# *** Configuration INFO ACTUATOR ***
+info:
+   app:
+      artifact: "@project.artifactId@"
+      name: "@project.name@"
+      description: "@project.description@"
+      version: "@project.version@"
+      java: "@java.version@"
+      encoding: "@project.build.sourceEncoding@"
+      environment: "DEFAULT/DEV"

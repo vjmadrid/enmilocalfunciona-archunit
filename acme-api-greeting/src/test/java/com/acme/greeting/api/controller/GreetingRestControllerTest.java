@@ -30,13 +30,13 @@ public class GreetingRestControllerTest {
 	
 	@Test
 	public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
-		mockMvc.perform(get(GreetingRestApiConstant.MAPPING)).andExpect(status().isOk())
+		mockMvc.perform(get(GreetingRestApiConstant.MAPPING+"/param")).andExpect(status().isOk())
 				.andExpect(jsonPath("$.content").value("Hello, "+GreetingRestApiConstant.DEFAUL_VALUE_PK+"!"));
 	}
 
 	@Test
 	public void paramGreetingShouldReturnTailoredMessage() throws Exception {
-		mockMvc.perform(get(GreetingRestApiConstant.MAPPING).param("name", "Acme"))
+		mockMvc.perform(get(GreetingRestApiConstant.MAPPING+"/param").param("name", "Acme"))
 				.andExpect(status().isOk()).andExpect(jsonPath("$.content").value("Hello, Acme!"));
 	}
 }

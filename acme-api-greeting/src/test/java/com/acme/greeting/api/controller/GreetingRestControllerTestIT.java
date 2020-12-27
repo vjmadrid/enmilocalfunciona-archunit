@@ -41,7 +41,8 @@ public class GreetingRestControllerTestIT {
     public void setUp() throws Exception {
     	templateMessageTest = String.format(GreetingRestApiConstant.TEMPLATE_MESSAGE, GreetingRestApiConstant.DEFAUL_VALUE_PK);
     	
-        base = new URL("http://localhost:" + port + GreetingRestApiConstant.MAPPING);
+        base = new URL("http://localhost:" + port + GreetingRestApiConstant.MAPPING
+        		+"/param");
     }
 
     @Test

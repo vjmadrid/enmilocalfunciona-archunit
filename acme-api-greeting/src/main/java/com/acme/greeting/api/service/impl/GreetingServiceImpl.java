@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.acme.greeting.api.constant.GreetingRestApiConstant;
 import com.acme.greeting.api.entity.Greeting;
 import com.acme.greeting.api.factory.GreetingDataFactory;
 import com.acme.greeting.api.repository.GreetingRepository;
@@ -38,7 +39,7 @@ public class GreetingServiceImpl implements GreetingService {
 	
 	@Override
 	public Greeting create(String content) {
-		Greeting greeting = GreetingDataFactory.create(content);
+		Greeting greeting = GreetingDataFactory.create(String.format(GreetingRestApiConstant.TEMPLATE_MESSAGE, content));
 		
 		return greetingRepository.save(greeting);
 	}

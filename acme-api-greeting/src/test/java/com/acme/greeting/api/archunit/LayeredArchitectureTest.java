@@ -27,10 +27,12 @@ public class LayeredArchitectureTest {
 		.layer("Config layer").definedBy("..config")
 		.layer("Factory layer").definedBy("..factory")
 		.layer("Dummy layer").definedBy("..dummy")
+		.layer("Util layer").definedBy("..util..")
 		//Conditions
-		.whereLayer("Entity layer").mayOnlyBeAccessedByLayers("Repository layer", "Service layer", "Controller layer", "Factory layer", "Dummy layer")
+		.whereLayer("Entity layer").mayOnlyBeAccessedByLayers("Repository layer", "Service layer", "Controller layer", "Factory layer", "Dummy layer", "Util layer")
 		.whereLayer("Repository layer").mayOnlyBeAccessedByLayers("Service layer")
 		.whereLayer("Service layer").mayOnlyBeAccessedByLayers("Controller layer")
+		.whereLayer("Util layer").mayOnlyBeAccessedByLayers("Controller layer", "Service layer")
 		.whereLayer("Controller layer").mayNotBeAccessedByAnyLayer()
 		//.whereLayer("Controller layer").mayNotBeAccessedByAnyLayer()
 		.whereLayer("Config layer").mayNotBeAccessedByAnyLayer();

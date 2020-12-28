@@ -33,8 +33,13 @@
 		<!-- *** Architecture libraries *** -->
 		<acme-architecture-testing.version>0.0.1-SNAPSHOT</acme-architecture-testing.version>
 
+		<!-- *** API model libraries *** -->
+		<acme-api-greeting-model.version>0.0.1-SNAPSHOT</acme-api-greeting-model.version>
+		
 		<!-- Dependency Versions -->
 		<swagger.version>2.9.2</swagger.version>
+		<lombok.version>1.18.12</lombok.version>
+		<mapstruct.version>1.3.1.Final</mapstruct.version>
 
 		<!-- Testing -->
 		<!-- * Default value -> use profile -->
@@ -79,8 +84,11 @@
 
 		<!-- *** Architecture Libraries *** -->
 		
-		
-		<!-- Include : spring-boot-starter-test -->
+		<!-- acme-architecture-testing : Custom Testing Library
+			Include : 
+				* spring-boot-starter-test
+				* archunit
+		-->
 		
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
@@ -88,7 +96,16 @@
 			<version>${acme-architecture-testing.version}</version>
 			<scope>test</scope>
 		</dependency>
-
+		
+		<!-- *** API model libraries *** -->
+		
+		<dependency>
+			<groupId>com.acme.greeting.api.model</groupId>
+			<artifactId>acme-api-greeting-model</artifactId>
+			<version>${acme-api-greeting-model.version}</version>
+		</dependency>
+		
+	
 		<!-- *** Third Party Libraries *** -->
 
 		<dependency>
@@ -133,11 +150,17 @@
 			<version>${swagger.version}</version>
 		</dependency>
 		
-		<!-- lombok : Java Tool for automatic generation of getters, setters, equals, 
-			hashCode , toString, more -->
+		<!-- lombok : Java Tool for automatic generation of getters, setters, equals, hashCode, toString, more -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+		</dependency>
+		
+		<!-- mapstruct : Java Tool for mapping classes -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${mapstruct.version}</version>
 		</dependency>
 		
 		<!-- h2 : H2 Database Engine -->
@@ -167,12 +190,14 @@
 		<plugins>
 
 			<!-- spring-boot-maven-plugin : Plugin used to work with Spring Boot application -->
+			
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
 			<!-- maven-compiler-plugin : Plugin used to compile the project source -->
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -180,10 +205,27 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>${lombok.version}</version>
+						</path>
+						<path>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>${mapstruct.version}</version>
+						</path>
+					</annotationProcessorPaths>
+					<compilerArgs>
+						<arg>-Amapstruct.suppressGeneratorTimestamp=true</arg>
+						<arg>-Amapstruct.defaultComponentModel=spring</arg>
+					</compilerArgs>
 				</configuration>
 			</plugin>
 
 			<!-- maven-resources-plugin : Plugin used to handle the project resources -->
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>

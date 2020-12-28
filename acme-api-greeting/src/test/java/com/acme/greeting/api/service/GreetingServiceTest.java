@@ -24,6 +24,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.acme.greeting.api.dummy.DummyGreeting;
 import com.acme.greeting.api.dummy.constant.GreetingDummyConstant;
 import com.acme.greeting.api.entity.Greeting;
+import com.acme.greeting.api.model.greeting.dummy.DummyGreetingRequest;
+import com.acme.greeting.api.model.greeting.request.GreetingRequest;
+import com.acme.greeting.api.model.greeting.response.GreetingResponse;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -38,17 +41,22 @@ public class GreetingServiceTest {
 	private GreetingService greetingService;
 
 	private Greeting greetingTest;
-
+	
+	private GreetingRequest greetingRequest;
+	
 	@BeforeEach
 	public void init() {
+		// Initialize test data set
 		greetingTest = DummyGreeting.createDefault();
 		greetingTest.setId(null);
+		
+		greetingRequest = DummyGreetingRequest.createDefault();
 	
 	}
 
 	@Test
 	public void whenCallFindAll_thenReturnElementList() {
-		List<Greeting> result = greetingService.findAll();
+		List<GreetingResponse> result = greetingService.findAll();
 		
 		assertThat(result.size(), is(equalTo(TEST_NUM_MESSAGES_LIQUIBASE)));
 		assertThat(result.get(0).getId(), is(equalTo(GreetingDummyConstant.TEST_GREETING_1_ID)));
@@ -56,27 +64,27 @@ public class GreetingServiceTest {
 
 	@Test
 	public void whenCallFindByPK_thenReturnElementWithId() {
-		final Optional<Greeting> result = greetingService.findByPK(GreetingDummyConstant.TEST_GREETING_1_ID);
+		final Optional<GreetingResponse> result = greetingService.findByPK(GreetingDummyConstant.TEST_GREETING_1_ID);
 
-		Greeting value = result.get();
+		GreetingResponse value = result.get();
 
 		assertNotNull(value);
 		assertEquals(GreetingDummyConstant.TEST_GREETING_1_ID, value.getId());
 	}
 
 	@Test
-	public void whenCallInsert_thenReturnElement() {
-		List<Greeting> originList = greetingService.findAll();
+	public void whenCallCreate_thenReturnElement() {
+		List<GreetingResponse> originList = greetingService.findAll();
 
 		int TEST_NUM_MESSAGES_LIQUIBASE_LOCAL = originList.size();
 			
 
-		Greeting result = greetingService.create(GreetingDummyConstant.TEST_GREETING_1_CONTENT);
+		GreetingResponse result = greetingService.create(greetingRequest);
 		
 		assertNotNull(result);
 		assertEquals(Long.valueOf(String.valueOf(TEST_NUM_MESSAGES_LIQUIBASE+1)), result.getId());
 		
-		List<Greeting> updatedList = greetingService.findAll();
+		List<GreetingResponse> updatedList = greetingService.findAll();
 
 		assertThat(updatedList.size(), is(equalTo(TEST_NUM_MESSAGES_LIQUIBASE_LOCAL+1)));
 

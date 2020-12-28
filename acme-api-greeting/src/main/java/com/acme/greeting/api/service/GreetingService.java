@@ -3,14 +3,15 @@ package com.acme.greeting.api.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.acme.greeting.api.entity.Greeting;
+import com.acme.greeting.api.model.greeting.request.GreetingRequest;
+import com.acme.greeting.api.model.greeting.response.GreetingResponse;
 
 public interface GreetingService {
 	
-	List<Greeting> findAll();
+	List<GreetingResponse> findAll();
 
-	Optional<Greeting> findByPK(Long id);
+	Optional<GreetingResponse> findByPK(Long id);
 	
-	Greeting create(String content);
+	GreetingResponse create(GreetingRequest greetingRequest);
 
 }

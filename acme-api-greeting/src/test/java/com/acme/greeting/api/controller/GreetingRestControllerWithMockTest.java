@@ -80,7 +80,7 @@ public class GreetingRestControllerWithMockTest {
 	
 	@Test
 	public final void whenCallFindAllWithServiceNull_thenReturnHttpNotFoundAndEmptyBody() {
-		when(greetingService.findAll()).thenReturn(null);
+		when(greetingService.findAll()).thenReturn(Collections.emptyList());
 		
 		final ResponseEntity<List<GreetingResponse>> responseEntity = greetingRestController.findAll();
 		

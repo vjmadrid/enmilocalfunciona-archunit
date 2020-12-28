@@ -112,10 +112,14 @@ public class GreetingRestController {
 
     @RequestMapping(value = "/param", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
-    public GreetingResponse createByParam(@RequestParam(value=GreetingRestApiConstant.MAPPING_NAME_PARAMETER, defaultValue=GreetingRestApiConstant.DEFAUL_VALUE_PK)  GreetingRequest greetingRequest) {
-    	LOG.info("Greeting ...");
-    	LOG.info("[*] Name {}",greetingRequest);
+    public ResponseEntity<GreetingResponse> createByParam(@RequestParam(value=GreetingRestApiConstant.MAPPING_NAME_PARAMETER, defaultValue=GreetingRestApiConstant.DEFAUL_VALUE_PK)  String content) {
+    	LOG.info("Creating Greeting with name {}", content);
+    	
+    	GreetingRequest request = new GreetingRequest();
+    	request.setContent(content);
+    	
+    	GreetingResponse greetingResponseCreated = greetingService.create(request);
 
-    	return greetingService.create(greetingRequest);
+    	return new ResponseEntity<GreetingResponse>(greetingResponseCreated, HttpStatus.CREATED);
     }
 }

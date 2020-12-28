@@ -16,8 +16,8 @@
 			<column name="GreetingContent" type="nvarchar(50)">
 				<constraints nullable="false" />
 			</column>
-			<column defaultValueConstraintName="DF_Greeting_GreetingTime"
-				name="GreetingTime" type="datetime">
+			<column defaultValueConstraintName="DF_Greeting_GreetingCreatedAt"
+				name="GreetingCreatedAt" type="datetime">
 				<constraints nullable="false" />
 			</column>
 		</createTable>

@@ -35,7 +35,7 @@ public class Greeting implements Serializable {
 	@Column(name = GreetingEntityConstant.FIELD_GREETING_CONTENT)
     private String content;
     
-	@Column(name = GreetingEntityConstant.FIELD_GREETING_TIME)
-    private Date responseTime;
+	@Column(name = GreetingEntityConstant.FIELD_GREETING_CREATED_AT)
+    private Date createdAt;
 
 }

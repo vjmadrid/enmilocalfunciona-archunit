@@ -10,6 +10,6 @@ public final class GreetingEntityConstant {
 	
 	public static final String FIELD_GREETING_ID = "GreetingId";
 	public static final String FIELD_GREETING_CONTENT = "GreetingContent";
-	public static final String FIELD_GREETING_TIME = "GreetingTime";
+	public static final String FIELD_GREETING_CREATED_AT = "GreetingCreatedAt";
 
 }

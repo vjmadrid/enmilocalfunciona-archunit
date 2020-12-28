@@ -14,7 +14,7 @@ public final class GreetingDataFactory {
 		Greeting response = new Greeting();
 		//response.setId(null);
 		response.setContent(content);
-		response.setResponseTime(new Date());
+		response.setCreatedAt(new Date());
 		return response;
 	}
 	

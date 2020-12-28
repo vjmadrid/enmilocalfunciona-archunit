@@ -4,10 +4,11 @@ import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 
 import com.acme.architecture.testing.archunit.constant.ArchUnitLayeredArchitectureConstant;
 import com.acme.architecture.testing.archunit.constant.ArchUnitPackageConstant;
+import com.acme.architecture.testing.archunit.constant.SpringArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
-public class CatalogLayeredArchitectureRule {
+public class CatalogSpringLayeredArchitectureRule {
 	
 	@ArchTest
 	public static final ArchRule layered_architecture_should_have_a_definition = 
@@ -25,12 +26,12 @@ public class CatalogLayeredArchitectureRule {
 	.layer(ArchUnitLayeredArchitectureConstant.RESPONSE_DTO_LAYER).definedBy(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_RESPONSE_DTO_CLASS)
 	
 	// Basic : Repository, Service and Controller
-	.layer(ArchUnitLayeredArchitectureConstant.REPOSITORY_LAYER).definedBy(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_REPOSITORY_CLASS)
-	.layer(ArchUnitLayeredArchitectureConstant.SERVICE_LAYER).definedBy(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS)
-	.layer(ArchUnitLayeredArchitectureConstant.CONTROLLER_LAYER).definedBy(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_CONTROLLER_CLASS)
+	.layer(ArchUnitLayeredArchitectureConstant.REPOSITORY_LAYER).definedBy(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
+	.layer(ArchUnitLayeredArchitectureConstant.SERVICE_LAYER).definedBy(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_SERVICE_CLASS)
+	.layer(ArchUnitLayeredArchitectureConstant.CONTROLLER_LAYER).definedBy(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS)
 	
 	// Configuration
-	.layer(ArchUnitLayeredArchitectureConstant.CONFIGURATION_LAYER).definedBy("..config")
+	.layer(ArchUnitLayeredArchitectureConstant.CONFIGURATION_LAYER).definedBy(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_CONFIG_CLASS)
 	
 	// Others
 	.layer(ArchUnitLayeredArchitectureConstant.UTIL_LAYER).definedBy(ArchUnitPackageConstant.RESIDE_PACKAGE_UTIL_CLASS)

@@ -1,13 +1,13 @@
 package com.acme.architecture.testing.archunit.rule.core;
 
-import com.acme.architecture.testing.archunit.constant.ArchUnitPackageConstant;
+import com.acme.architecture.testing.archunit.constant.TestingArchUnitPackageConstant;
 import com.acme.architecture.testing.archunit.rule.core.CatalogArchunitRuleArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
-@AnalyzeClasses(packages = ArchUnitPackageConstant.PACKAGE_EXAMPLE, 
+@AnalyzeClasses(packages = TestingArchUnitPackageConstant.PACKAGE_EXAMPLE, 
 importOptions = { 
 		ImportOption.DoNotIncludeArchives.class, 
 		ImportOption.DoNotIncludeJars.class 

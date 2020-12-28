@@ -24,10 +24,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.acme.greeting.api.constant.GreetingRestApiConstant;
-import com.acme.greeting.api.entity.Greeting;
+
 import com.acme.greeting.api.model.greeting.request.GreetingRequest;
 import com.acme.greeting.api.model.greeting.response.GreetingResponse;
-import com.acme.greeting.api.model.greeting.response.util.validator.GreetingResponseValidatorUtil;
+import com.acme.greeting.api.model.greeting.util.validator.GreetingResponseValidatorUtil;
 import com.acme.greeting.api.service.GreetingService;
 
 import io.swagger.annotations.Api;
@@ -72,7 +72,7 @@ public class GreetingRestController {
     
     @ApiOperation(value = "Find Greeting by ID", notes = "Returns a single Greeting", tags = { "greeting" })
     @ApiResponses(value = {
-        @ApiResponse(code = 200, message = "successful operation", response=Greeting.class),
+        @ApiResponse(code = 200, message = "successful operation", response=GreetingResponse.class),
         @ApiResponse(code = 404, message = "Greeting not found") })
 	@RequestMapping(value = GreetingRestApiConstant.MAPPING_PK, method = RequestMethod.GET)
 	public ResponseEntity<GreetingResponse> findById(

@@ -1,4 +1,4 @@
-package com.acme.greeting.api.model.greeting.response.util.validator;
+package com.acme.greeting.api.model.greeting.util.validator;
 
 import com.acme.greeting.api.model.greeting.response.GreetingResponse;
 

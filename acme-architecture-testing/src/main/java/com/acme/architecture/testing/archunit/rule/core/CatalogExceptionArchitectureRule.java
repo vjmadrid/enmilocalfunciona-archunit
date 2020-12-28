@@ -3,7 +3,8 @@ package com.acme.architecture.testing.archunit.rule.core;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
-import com.acme.architecture.testing.archunit.constant.ArchUnitConstant;
+import com.acme.architecture.testing.archunit.constant.ArchUnitNameConstant;
+import com.acme.architecture.testing.archunit.constant.ArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
@@ -12,25 +13,25 @@ public class CatalogExceptionArchitectureRule {
 	@ArchTest
 	public static final ArchRule exception_classes_should_be_in_exception_package = 
 		    classes()
-		    .that().haveSimpleNameEndingWith(ArchUnitConstant.SUFFIX_NAME_EXCEPTION_CLASS)
-		    .should().resideInAPackage(ArchUnitConstant.RESIDE_FINAL_PACKAGE_EXCEPTION_CLASS);
+		    .that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_EXCEPTION_CLASS)
+		    .should().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_EXCEPTION_CLASS);
 
 	@ArchTest
 	public static final ArchRule exception_classes_should_have_names_ending_with_the_word_exception = 
 		    classes()
-		    .that().resideInAPackage(ArchUnitConstant.RESIDE_FINAL_PACKAGE_EXCEPTION_CLASS)
-		    .should().haveSimpleNameEndingWith(ArchUnitConstant.SUFFIX_NAME_EXCEPTION_CLASS);
+		    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_EXCEPTION_CLASS)
+		    .should().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_EXCEPTION_CLASS);
 	
 	@ArchTest
 	public static final ArchRule exception_classes_should_be_public = 
 		    classes()
-		    .that().resideInAPackage(ArchUnitConstant.RESIDE_FINAL_PACKAGE_EXCEPTION_CLASS)
+		    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_EXCEPTION_CLASS)
 		    .should().bePublic();
 	
 	@ArchTest
 	public static final ArchRule no_exception_classes_should_be_reside_other_packages = 
 			noClasses()
-			.that().haveSimpleNameEndingWith(ArchUnitConstant.SUFFIX_NAME_EXCEPTION_CLASS)
-		    .should().resideOutsideOfPackage(ArchUnitConstant.RESIDE_FINAL_PACKAGE_EXCEPTION_CLASS);
+			.that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_EXCEPTION_CLASS)
+		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_EXCEPTION_CLASS);
 	
 }

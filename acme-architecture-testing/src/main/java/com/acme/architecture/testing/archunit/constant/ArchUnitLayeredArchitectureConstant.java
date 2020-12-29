@@ -13,6 +13,7 @@ public final class ArchUnitLayeredArchitectureConstant {
 	public static final String DTO_LAYER = "DTO layer";
 	public static final String REQUEST_DTO_LAYER = "Request DTO layer";
 	public static final String RESPONSE_DTO_LAYER = "Response DTO layer";
+	public static final String QUERY_REQUEST_DTO_LAYER = "Query Request DTO layer";
 	
 	// Basic : Repository, Service and Controller
 	public static final String REPOSITORY_LAYER = "Repository layer";

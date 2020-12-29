@@ -13,6 +13,7 @@ public final class ArchUnitPackageConstant {
 	public static final String RESIDE_FINAL_PACKAGE_DTO_CLASS = "..dto";
 	public static final String RESIDE_FINAL_PACKAGE_REQUEST_DTO_CLASS = "..request";
 	public static final String RESIDE_FINAL_PACKAGE_RESPONSE_DTO_CLASS = "..response";
+	public static final String RESIDE_FINAL_PACKAGE_QUERY_REQUEST_DTO_CLASS = "..query";
 	
 	public static final String RESIDE_FINAL_PACKAGE_REPOSITORY_CLASS = "..repository";
 	public static final String RESIDE_FINAL_PACKAGE_SERVICE_CLASS = "..service";
@@ -26,7 +27,6 @@ public final class ArchUnitPackageConstant {
 	public static final String RESIDE_FINAL_PACKAGE_DATA_FACTORY_CLASS = "..factory";
 	public static final String RESIDE_FINAL_PACKAGE_DUMMY_CLASS = "..dummy";
 	public static final String RESIDE_FINAL_PACKAGE_DUMMY_DATA_FACTORY_CLASS = "..factory.dummy";
-	
 	
 	public static final String RESIDE_FINAL_PACKAGE_CONSTANT_CLASS = "..constant";
 	public static final String RESIDE_FINAL_PACKAGE_EXCEPTION_CLASS = "..exception";
@@ -44,6 +44,7 @@ public final class ArchUnitPackageConstant {
 	public static final String RESIDE_PACKAGE_DTO_CLASS = RESIDE_FINAL_PACKAGE_DTO_CLASS + PACKAGE_INCLUDE;
 	public static final String RESIDE_PACKAGE_REQUEST_DTO_CLASS = RESIDE_FINAL_PACKAGE_REQUEST_DTO_CLASS + PACKAGE_INCLUDE;
 	public static final String RESIDE_PACKAGE_RESPONSE_DTO_CLASS = RESIDE_FINAL_PACKAGE_RESPONSE_DTO_CLASS + PACKAGE_INCLUDE;
+	public static final String RESIDE_PACKAGE_QUERY_REQUEST_DTO_CLASS = RESIDE_FINAL_PACKAGE_QUERY_REQUEST_DTO_CLASS + PACKAGE_INCLUDE;
 	
 	public static final String RESIDE_PACKAGE_REPOSITORY_CLASS = RESIDE_FINAL_PACKAGE_REPOSITORY_CLASS + PACKAGE_INCLUDE;
 	public static final String RESIDE_PACKAGE_SERVICE_CLASS = RESIDE_FINAL_PACKAGE_SERVICE_CLASS + PACKAGE_INCLUDE;

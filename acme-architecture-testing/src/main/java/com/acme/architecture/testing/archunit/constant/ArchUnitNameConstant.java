@@ -15,6 +15,7 @@ public final class ArchUnitNameConstant {
 	public static final String SUFFIX_NAME_DTO_CLASS = "DTO";
 	public static final String SUFFIX_NAME_REQUEST_DTO_CLASS = "Request";
 	public static final String SUFFIX_NAME_RESPONSE_DTO_CLASS = "Response";
+	public static final String SUFFIX_NAME_QUERY_REQUEST_DTO_CLASS = "QueryRequest";
 	
 	public static final String SUFFIX_NAME_REPOSITORY_CLASS = "Repository";
 	public static final String SUFFIX_NAME_SERVICE_CLASS = "Service";

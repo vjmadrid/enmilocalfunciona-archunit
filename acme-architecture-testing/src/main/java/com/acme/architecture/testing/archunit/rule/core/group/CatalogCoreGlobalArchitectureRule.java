@@ -8,6 +8,9 @@ import com.acme.architecture.testing.archunit.rule.core.CatalogDummyArchitecture
 import com.acme.architecture.testing.archunit.rule.core.CatalogDummyDataFactoryArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogEnumerationArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogExceptionArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogQueryRequestDtoArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogRequestDtoArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogResponseDtoArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogSupportArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogUtilArchitectureRule;
 import com.tngtech.archunit.junit.ArchRules;
@@ -44,5 +47,14 @@ public class CatalogCoreGlobalArchitectureRule {
 	
 	@ArchTest
 	public static final ArchRules base_dummy_data_factory_architecture = ArchRules.in(CatalogDummyDataFactoryArchitectureRule.class);
+	
+	@ArchTest
+	public static final ArchRules base_request_dto_architecture = ArchRules.in(CatalogRequestDtoArchitectureRule.class);
+	
+	@ArchTest
+	public static final ArchRules base_response_dto_architecture = ArchRules.in(CatalogResponseDtoArchitectureRule.class);
+	
+	@ArchTest
+	public static final ArchRules base_query_request_dto_architecture = ArchRules.in(CatalogQueryRequestDtoArchitectureRule.class);
 	
 }

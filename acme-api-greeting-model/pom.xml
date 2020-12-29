@@ -17,28 +17,43 @@
 		<!-- Compiler & Resources -->
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-		<!-- Modules -->
-		<dae-api-common-model.version>1.1.0</dae-api-common-model.version>
+		
+		<!-- Architecture libraries -->
+		<acme-architecture-testing.version>0.0.1-SNAPSHOT</acme-architecture-testing.version>
 
 		<!-- Dependency Versions -->
+		<spring-boot-starter-validation.version>2.3.4.RELEASE</spring-boot-starter-validation.version>
 		<lombok.version>1.18.12</lombok.version>
 		<jackson.version>2.11.2</jackson.version>
-
-		<spring-boot-starter-validation.version>2.3.4.RELEASE</spring-boot-starter-validation.version>
 
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+         
 	</properties>
 
 
 	<dependencies>
 
 		<!-- *** Architecture Libraries *** -->
+		
+		<!-- acme-architecture-testing : Custom Testing Library
+			Include : 
+				* spring-boot-starter-test
+				* archunit + custom rules
+		-->
+		
+		<dependency>
+			<groupId>com.acme.architecture.testing</groupId>
+			<artifactId>acme-architecture-testing</artifactId>
+			<version>${acme-architecture-testing.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 
-		<!-- Modules -->
+		<!-- *** Modules *** -->
 
 
 		<!-- *** Third Party Libraries *** -->
@@ -79,6 +94,7 @@
 		<plugins>
 
 			<!-- maven-compiler-plugin : Plugin used to compile the project source -->
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -91,6 +107,7 @@
 			</plugin>
 
 			<!-- maven-resources-plugin : Plugin used to handle the project resources -->
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -99,8 +116,50 @@
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
+			
+			<!-- maven-surefire-plugin : Plugin used to run unit tests - Generate reports in the directory target/surefire-reports -->
+			
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<configuration>
+					<skipTests>${skip.unit.tests}</skipTests>
+					<testFailureIgnore>false</testFailureIgnore>
+					<properties>
+						<configurationParameters>
+							junit.jupiter.execution.parallel.enabled=true
+							junit.jupiter.execution.parallel.config.dynamic.factor=2
+							junit.platform.output.capture.stdout=true
+							junit.platform.output.capture.stderr=true
+						</configurationParameters>
+					</properties>
+				</configuration>
+			</plugin>
+			
+			<!-- maven-failsafe-plugin : Plugin used to run integration tests -->
+			
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven-failsafe-plugin.version}</version>
+				<configuration>
+					<skipITs>${skip.integration.tests}</skipITs>
+					<includes>
+						<include>**/*TestIT</include>
+						<include>**/*TestITCase</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
 			<!-- maven-deploy-plugin : Plugin used during the deploy phase -->
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>

@@ -30,13 +30,14 @@
 		<!-- Spring Boot Properties -->
 		<start-class>com.acme.greeting.api.GreetingApplication</start-class>
 		
-		<!-- *** Architecture libraries *** -->
+		<!-- Architecture libraries -->
 		<acme-architecture-testing.version>0.0.1-SNAPSHOT</acme-architecture-testing.version>
 
-		<!-- *** API model libraries *** -->
+		<!-- API model libraries -->
 		<acme-api-greeting-model.version>0.0.1-SNAPSHOT</acme-api-greeting-model.version>
 		
 		<!-- Dependency Versions -->
+		<spring-boot-starter-validation.version>2.3.4.RELEASE</spring-boot-starter-validation.version>
 		<swagger.version>2.9.2</swagger.version>
 		<lombok.version>1.18.12</lombok.version>
 		<mapstruct.version>1.3.1.Final</mapstruct.version>
@@ -87,7 +88,7 @@
 		<!-- acme-architecture-testing : Custom Testing Library
 			Include : 
 				* spring-boot-starter-test
-				* archunit
+				* archunit + custom rules
 		-->
 		
 		<dependency>
@@ -128,7 +129,6 @@
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 		
-
 		<!-- To reload the code when changes made -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

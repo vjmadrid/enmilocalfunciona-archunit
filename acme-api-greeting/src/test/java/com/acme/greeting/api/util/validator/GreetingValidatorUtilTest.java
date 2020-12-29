@@ -19,38 +19,38 @@ public class GreetingValidatorUtilTest {
 	}
 
 	@Test
-	public void shouldIsNull() {
+	public void whenCallIsNullWithNull_thenReturnTrue() {
 		assertTrue(GreetingValidatorUtil.isNull(null));
 	}
 
 	@Test
-	public void shouldIsNullWithUserMessageNotNull() {
+	public void whenCallIsNullWithValid_thenReturnFalse() {
 		assertFalse(GreetingValidatorUtil.isNull(greetingTest));
 	}
 
 	@Test
-	public void shouldIsNotNull() {
+	public void whenCallIsNotNullWithValid_thenReturnTrue() {
 		assertTrue(GreetingValidatorUtil.isNotNull(greetingTest));
 	}
 
 	@Test
-	public void shouldIsNotNullWithUserMessageNull() {
+	public void whenCallIsNotNullWithNull_thenReturnFalse() {
 		assertFalse(GreetingValidatorUtil.isNotNull(null));
 	}
 
 	@Test
-	public void shouldIsValidWithUserMessageNull() {
+	public void whenCallIsValidWithNull_thenReturnFalse() {
 		assertFalse(GreetingValidatorUtil.isValid(null));
 	}
 
 	@Test
-	public void shouldIsValidWithIdUserMessageNull() {
+	public void whenCallIsValidWithNullId_thenReturnFalse() {
 		greetingTest.setId(null);
 		assertFalse(GreetingValidatorUtil.isValid(greetingTest));
 	}
 
 	@Test
-	public void shouldIsValid() {
+	public void whenCallIsValidWithVAlid_thenReturnTrue() {
 		assertTrue(GreetingValidatorUtil.isValid(greetingTest));
 	}
 

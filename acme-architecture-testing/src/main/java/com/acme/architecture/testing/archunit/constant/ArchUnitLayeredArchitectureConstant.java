@@ -6,6 +6,9 @@ public final class ArchUnitLayeredArchitectureConstant {
 		
 	}
 	
+	// Constant
+	public static final String CONSTANT_LAYER = "Constant layer";
+	
 	// Entity 
 	public static final String ENTITY_LAYER = "Entity layer";
 	

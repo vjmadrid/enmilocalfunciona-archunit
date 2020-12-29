@@ -13,7 +13,7 @@ importOptions = {
 		ImportOption.DoNotIncludeArchives.class 
 	}
 )
-public class SlicesArchitectureTest {
+public class ApiSlicesArchitectureTest {
 	
 	@ArchTest
 	public static final ArchRule slices_free_cycles = 

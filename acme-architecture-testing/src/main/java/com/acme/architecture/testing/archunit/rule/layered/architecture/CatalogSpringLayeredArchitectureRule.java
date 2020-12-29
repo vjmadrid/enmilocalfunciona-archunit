@@ -11,7 +11,7 @@ import com.tngtech.archunit.lang.ArchRule;
 public class CatalogSpringLayeredArchitectureRule {
 	
 	@ArchTest
-	public static final ArchRule layered_architecture_should_have_a_definition = 
+	public static final ArchRule api_layered_architecture_should_have_a_definition = 
 	layeredArchitecture()
 	
 	// **************

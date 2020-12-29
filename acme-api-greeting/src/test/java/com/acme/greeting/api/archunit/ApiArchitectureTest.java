@@ -14,7 +14,7 @@ import com.tngtech.archunit.junit.ArchTest;
 			ImportOption.DoNotIncludeArchives.class 
 	}
 )
-public class ArchitectureTest {
+public class ApiArchitectureTest {
 	
 	@ArchTest
 	public static final ArchRules global_core_architecture = ArchRules.in(CatalogCoreGlobalArchitectureRule.class);

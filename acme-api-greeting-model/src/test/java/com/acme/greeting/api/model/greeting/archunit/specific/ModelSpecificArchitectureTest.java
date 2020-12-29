@@ -1,4 +1,4 @@
-package com.acme.greeting.api.model.greeting.archunit;
+package com.acme.greeting.api.model.greeting.archunit.specific;
 
 import com.acme.architecture.testing.archunit.rule.core.CatalogConstantArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogDummyArchitectureRule;

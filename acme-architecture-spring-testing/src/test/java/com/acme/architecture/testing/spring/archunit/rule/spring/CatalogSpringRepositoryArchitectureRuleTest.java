@@ -27,12 +27,18 @@ public class CatalogSpringRepositoryArchitectureRuleTest {
 
 	@ArchTest
 	public static final ArchRule spring_repository_classes_should_be_interface = CatalogSpringRepositoryArchitectureRule.spring_repository_classes_should_be_interface;
+	
+	@ArchTest
+	public static final ArchRule spring_repository_interface_classes_should_not_be_placed_in_repository_impl_package = CatalogSpringRepositoryArchitectureRule.spring_repository_interface_classes_should_not_be_placed_in_repository_impl_package;
 
 	@ArchTest
 	public static final ArchRule spring_repository_classes_should_be_annotated_with_repository = CatalogSpringRepositoryArchitectureRule.spring_repository_classes_should_be_annotated_with_repository;
 
 	@ArchTest
 	public static final ArchRule no_spring_repository_classes_should_be_reside_other_packages = CatalogSpringRepositoryArchitectureRule.no_spring_repository_classes_should_be_reside_other_packages;
+
+	@ArchTest
+	public static final ArchRule entity_classes_should_extends_jparepository = CatalogSpringRepositoryArchitectureRule.entity_classes_should_extends_jparepository;
 
 }
 

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ExampleValidSpringEntity")
-public class ExampleValidSpringEntity implements Serializable {
+public class ExampleSpringEntity implements Serializable {
 
 	private static final long serialVersionUID = 1872753366307155250L;
 

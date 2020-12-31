@@ -19,6 +19,7 @@ import com.acme.architecture.testing.archunit.rule.core.CatalogRepositoryImplArc
 import com.acme.architecture.testing.archunit.rule.core.CatalogRequestDtoArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogResponseDtoArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogServiceArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogServiceImplArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogSupportArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogUtilArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
@@ -43,6 +44,7 @@ public class CoverageArchitectureRuleTest {
 		assertNotNull(new CatalogRequestDtoArchitectureRule());
 		assertNotNull(new CatalogResponseDtoArchitectureRule());
 		assertNotNull(new CatalogServiceArchitectureRule());
+		assertNotNull(new CatalogServiceImplArchitectureRule());
 		assertNotNull(new CatalogSupportArchitectureRule());
 		assertNotNull(new CatalogUtilArchitectureRule());
     }

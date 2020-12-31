@@ -49,6 +49,13 @@ public class CatalogRepositoryArchitectureRule {
 			.that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_REPOSITORY_CLASS)
 		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_REPOSITORY_CLASS);
 	
+	@ArchTest
+	static final ArchRule service_interface_classes_should_only_be_accessed_by_services = 
+			classes()
+			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS)
+			.should()
+			.onlyBeAccessed().byAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS);
+	
 }
 
 

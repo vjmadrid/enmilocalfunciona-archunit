@@ -49,6 +49,13 @@ public class CatalogServiceArchitectureRule {
 			.that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_SERVICE_CLASS)
 		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS);
 	
+	@ArchTest
+	static final ArchRule service_interface_classes_should_only_be_accessed_by_controllers_or_other_services = 
+			classes()
+			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS)
+			.should()
+			.onlyBeAccessed().byAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_CONTROLLER_CLASS, ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS);
+	
 }
 
 

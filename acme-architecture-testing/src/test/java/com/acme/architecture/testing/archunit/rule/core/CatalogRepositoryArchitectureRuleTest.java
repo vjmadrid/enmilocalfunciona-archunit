@@ -35,4 +35,7 @@ public class CatalogRepositoryArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule no_repository_interface_classes_should_be_reside_other_packages = CatalogRepositoryArchitectureRule.no_repository_interface_classes_should_be_reside_other_packages;
 
+	@ArchTest
+	public static final ArchRule service_interface_classes_should_only_be_accessed_by_services = CatalogRepositoryArchitectureRule.service_interface_classes_should_only_be_accessed_by_services;
+
 }

@@ -10,8 +10,6 @@ import com.tngtech.archunit.lang.ArchRule;
 
 public class CatalogRepositoryArchitectureRule {
 	
-	// *** Interface ***
-	
 	@ArchTest
 	public static final ArchRule repository_interface_classes_should_be_in_repository_package = 
 		    classes()

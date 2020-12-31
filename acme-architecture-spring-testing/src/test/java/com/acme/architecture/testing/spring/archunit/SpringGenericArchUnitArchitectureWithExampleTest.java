@@ -1,6 +1,6 @@
 package com.acme.architecture.testing.spring.archunit;
 
-import com.acme.architecture.testing.spring.archunit.constant.TestingArchUnitPackageConstant;
+import com.acme.architecture.testing.spring.archunit.constant.TestingSpringArchUnitPackageConstant;
 import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringConfigurationArchitectureRule;
 import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringRepositoryArchitectureRule;
 import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringRestControllerArchitectureRule;
@@ -11,7 +11,7 @@ import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchRules;
 import com.tngtech.archunit.junit.ArchTest;
 
-@AnalyzeClasses(packages = TestingArchUnitPackageConstant.PACKAGE_EXAMPLE, 
+@AnalyzeClasses(packages = TestingSpringArchUnitPackageConstant.PACKAGE_EXAMPLE, 
 //importOptions = { ImportOption.DoNotIncludeTests.class, ImportOption.DoNotIncludeJars.class, ImportOption.DoNotIncludeArchives.class })
 importOptions = { ImportOption.DoNotIncludeJars.class, ImportOption.DoNotIncludeArchives.class })
 public class SpringGenericArchUnitArchitectureWithExampleTest {

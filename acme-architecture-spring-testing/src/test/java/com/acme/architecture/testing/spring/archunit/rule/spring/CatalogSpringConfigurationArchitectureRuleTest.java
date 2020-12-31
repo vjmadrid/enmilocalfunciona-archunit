@@ -1,13 +1,13 @@
 package com.acme.architecture.testing.spring.archunit.rule.spring;
 
-import com.acme.architecture.testing.spring.archunit.constant.TestingArchUnitPackageConstant;
+import com.acme.architecture.testing.spring.archunit.constant.TestingSpringArchUnitPackageConstant;
 import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringConfigurationArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
-@AnalyzeClasses(packages = TestingArchUnitPackageConstant.PACKAGE_EXAMPLE, 
+@AnalyzeClasses(packages = TestingSpringArchUnitPackageConstant.PACKAGE_EXAMPLE, 
 importOptions = { 
 		ImportOption.DoNotIncludeArchives.class, 
 		ImportOption.DoNotIncludeJars.class 

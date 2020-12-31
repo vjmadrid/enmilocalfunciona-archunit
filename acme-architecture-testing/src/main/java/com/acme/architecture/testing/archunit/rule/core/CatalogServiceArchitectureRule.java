@@ -10,8 +10,6 @@ import com.tngtech.archunit.lang.ArchRule;
 
 public class CatalogServiceArchitectureRule {
 	
-	// *** Interface ***
-	
 	@ArchTest
 	public static final ArchRule service_interface_classes_should_be_in_service_package = 
 		    classes()
@@ -50,7 +48,7 @@ public class CatalogServiceArchitectureRule {
 		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS);
 	
 	@ArchTest
-	static final ArchRule service_interface_classes_should_only_be_accessed_by_controllers_or_other_services = 
+	public static final ArchRule service_interface_classes_should_only_be_accessed_by_controllers_or_other_services = 
 			classes()
 			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS)
 			.should()

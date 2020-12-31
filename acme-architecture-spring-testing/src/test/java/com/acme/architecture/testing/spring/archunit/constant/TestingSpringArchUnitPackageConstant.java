@@ -1,8 +1,8 @@
 package com.acme.architecture.testing.spring.archunit.constant;
 
-public final class TestingArchUnitPackageConstant {
+public final class TestingSpringArchUnitPackageConstant {
 	
-	private TestingArchUnitPackageConstant() {
+	private TestingSpringArchUnitPackageConstant() {
 	}
 	
 	public static final String PACKAGE_BASE = "com.acme.architecture.testing";

@@ -2,7 +2,6 @@ package com.acme.greeting.api.archunit;
 
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 
-import com.acme.architecture.testing.archunit.rule.layered.architecture.CatalogSpringLayeredArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;

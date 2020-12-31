@@ -4,8 +4,8 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 import java.io.Serializable;
 
-import com.acme.architecture.testing.archunit.constant.ArchUnitNameConstant;
-import com.acme.architecture.testing.archunit.constant.ArchUnitPackageConstant;
+import com.acme.architecture.testing.constant.ArchUnitNameConstant;
+import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 

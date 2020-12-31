@@ -13,42 +13,46 @@ import com.acme.architecture.testing.archunit.rule.core.CatalogDummyDataFactoryA
 import com.acme.architecture.testing.archunit.rule.core.CatalogEntityArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogEnumerationArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogExceptionArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogQueryRequestDtoArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogRepositoryArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogRequestDtoArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogResponseDtoArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogServiceArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogSupportArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogUtilArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringConfigurationArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringRepositoryArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringRestControllerArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringServiceArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.spring.CatalogSpringServiceImplArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.spring.group.CatalogSpringGlobalArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.layered.architecture.CatalogModelLayeredArchitectureRule;
 
 public class CoverageArchitectureRuleTest {
 	
 	@Test
-    public void shouldBeValidArchitectureRule() {
-		assertNotNull(new CatalogCoreGlobalArchitectureRule());
-		assertNotNull(new CatalogEntityArchitectureRule());
+    public void shouldBeValidCoreArchitectureRule() {
+		assertNotNull(new CatalogArchunitRuleArchitectureRule());
 		assertNotNull(new CatalogConstantArchitectureRule());
+		assertNotNull(new CatalogCustomAnnotationArchitectureRule());
+		assertNotNull(new CatalogDataFactoryArchitectureRule());
+		assertNotNull(new CatalogDummyArchitectureRule());
+		assertNotNull(new CatalogDummyDataFactoryArchitectureRule());
+		assertNotNull(new CatalogEntityArchitectureRule());
 		assertNotNull(new CatalogEnumerationArchitectureRule());
 		assertNotNull(new CatalogExceptionArchitectureRule());
-		assertNotNull(new CatalogUtilArchitectureRule());
+		assertNotNull(new CatalogQueryRequestDtoArchitectureRule());
+		assertNotNull(new CatalogRepositoryArchitectureRule());
+		assertNotNull(new CatalogRequestDtoArchitectureRule());
+		assertNotNull(new CatalogResponseDtoArchitectureRule());
+		assertNotNull(new CatalogServiceArchitectureRule());
 		assertNotNull(new CatalogSupportArchitectureRule());
-		assertNotNull(new CatalogArchunitRuleArchitectureRule());
-		assertNotNull(new CatalogCustomAnnotationArchitectureRule());
-		assertNotNull(new CatalogDummyArchitectureRule());
-		assertNotNull(new CatalogDataFactoryArchitectureRule());
-		assertNotNull(new CatalogDummyDataFactoryArchitectureRule());
+		assertNotNull(new CatalogUtilArchitectureRule());
     }
 	
 	@Test
-	public void shouldBeValidSpringArchitectureRule() {
-		assertNotNull(new CatalogSpringGlobalArchitectureRule());
-		assertNotNull(new CatalogSpringConfigurationArchitectureRule());
-		assertNotNull(new CatalogSpringServiceArchitectureRule());
-		assertNotNull(new CatalogSpringServiceImplArchitectureRule());
-		assertNotNull(new CatalogSpringRepositoryArchitectureRule());
-		assertNotNull(new CatalogSpringRestControllerArchitectureRule());
-	}
+    public void shouldBeValidCoreGroupArchitectureRule() {
+		assertNotNull(new CatalogCoreGlobalArchitectureRule());
+    }
+	
+	@Test
+    public void shouldBeValidLayeredArchitectureArchitectureRule() {
+		assertNotNull(new CatalogModelLayeredArchitectureRule());
+    }
 
 }

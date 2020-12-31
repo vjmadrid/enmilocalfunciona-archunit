@@ -20,9 +20,7 @@
 		
 		<!-- Dependency Versions -->
 		<spring-boot-starter-parent.version>2.3.4.RELEASE</spring-boot-starter-parent.version>
-		
 		<archunit.version>0.14.1</archunit.version>
-		
 		<lombok.version>1.18.12</lombok.version>
 		
 		<!-- Plugins -->
@@ -58,21 +56,6 @@
 				</exclusion>
 			</exclusions>
 		
-		</dependency>
-		
-		
-		<!-- spring-boot-starter-web : Web Spring Famework -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<version>${spring-boot-starter-parent.version}</version>
-		</dependency>
-		
-		<!-- spring-boot-starter-web : Data JPA Spring Famework -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>${spring-boot-starter-parent.version}</version>
 		</dependency>
 
 		<!-- *** Third Party Libraries *** -->

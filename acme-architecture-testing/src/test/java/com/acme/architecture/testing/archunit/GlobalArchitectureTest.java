@@ -2,7 +2,6 @@ package com.acme.architecture.testing.archunit;
 
 import com.acme.architecture.testing.archunit.constant.TestingArchUnitPackageConstant;
 import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.spring.group.CatalogSpringGlobalArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchRules;
@@ -14,8 +13,5 @@ public class GlobalArchitectureTest {
 	
 	@ArchTest
 	public static final ArchRules base_global_architecture = ArchRules.in(CatalogCoreGlobalArchitectureRule.class);
-	
-	@ArchTest
-	public static final ArchRules base_spring_global_architecture = ArchRules.in(CatalogSpringGlobalArchitectureRule.class);
 	
 }

@@ -1,7 +1,7 @@
 package com.acme.greeting.api.archunit;
 
 import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.spring.group.CatalogSpringGlobalArchitectureRule;
+import com.acme.architecture.testing.spring.archunit.rule.group.CatalogSpringGlobalArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchRules;

@@ -2,7 +2,7 @@ package com.acme.architecture.testing.example.archunit.rule.other;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
-import com.acme.architecture.testing.archunit.constant.ArchUnitPackageConstant;
+import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 

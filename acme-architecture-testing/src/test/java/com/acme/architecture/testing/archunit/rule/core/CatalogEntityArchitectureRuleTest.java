@@ -1,6 +1,7 @@
 package com.acme.architecture.testing.archunit.rule.core;
 
 import com.acme.architecture.testing.archunit.constant.TestingArchUnitPackageConstant;
+import com.acme.architecture.testing.archunit.rule.core.CatalogEntityArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;

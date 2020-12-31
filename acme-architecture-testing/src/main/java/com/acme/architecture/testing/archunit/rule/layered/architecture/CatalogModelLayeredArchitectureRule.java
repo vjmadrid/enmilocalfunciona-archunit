@@ -2,8 +2,8 @@ package com.acme.architecture.testing.archunit.rule.layered.architecture;
 
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 
-import com.acme.architecture.testing.archunit.constant.ArchUnitLayeredArchitectureConstant;
-import com.acme.architecture.testing.archunit.constant.ArchUnitPackageConstant;
+import com.acme.architecture.testing.constant.ArchUnitLayeredArchitectureConstant;
+import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 

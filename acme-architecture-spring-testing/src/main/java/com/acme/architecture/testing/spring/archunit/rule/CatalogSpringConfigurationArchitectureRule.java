@@ -25,17 +25,16 @@ public class CatalogSpringConfigurationArchitectureRule {
 		    .should().haveSimpleNameEndingWith(SpringArchUnitNameConstant.SUFFIX_NAME_SPRING_CONFIG_CLASS);
 	
 	@ArchTest
-	public static final ArchRule spring_configuration_classes_should_be_annotated_with_configuration = 
-		    classes()
-		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_PACKAGE_SPRING_CONFIG_CLASS)
-		    .and().haveSimpleNameEndingWith(SpringArchUnitNameConstant.SUFFIX_NAME_SPRING_CONFIG_CLASS)
-		    .should().beAnnotatedWith(Configuration.class);
-	
-	@ArchTest
 	public static final ArchRule spring_configuration_classes_should_be_public = 
 		    classes()
 		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_PACKAGE_SPRING_CONFIG_CLASS)
 		    .should().bePublic();
+	
+	@ArchTest
+	public static final ArchRule spring_configuration_classes_should_be_annotated_with_configuration = 
+		    classes()
+		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_PACKAGE_SPRING_CONFIG_CLASS)
+		    .should().beAnnotatedWith(Configuration.class);
 	
 	@ArchTest
 	public static final ArchRule no_spring_configuration_classes_should_be_reside_other_packages = 

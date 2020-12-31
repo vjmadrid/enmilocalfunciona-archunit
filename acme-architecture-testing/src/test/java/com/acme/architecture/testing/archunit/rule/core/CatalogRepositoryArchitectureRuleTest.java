@@ -35,18 +35,4 @@ public class CatalogRepositoryArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule no_repository_interface_classes_should_be_reside_other_packages = CatalogRepositoryArchitectureRule.no_repository_interface_classes_should_be_reside_other_packages;
 
-	// Implements
-	
-	@ArchTest
-	public static final ArchRule repository_classes_should_be_in_repository_impl_package = CatalogRepositoryArchitectureRule.repository_classes_should_be_in_repository_impl_package;
-
-	@ArchTest
-	public static final ArchRule repository_classes_should_have_names_ending_with_the_word_repository_impl = CatalogRepositoryArchitectureRule.repository_classes_should_have_names_ending_with_the_word_repository_impl;
-
-	@ArchTest
-	public static final ArchRule repository_classes_classes_should_be_public = CatalogRepositoryArchitectureRule.repository_classes_classes_should_be_public;
-
-	@ArchTest
-	public static final ArchRule no_repository_classes_should_be_reside_other_packages = CatalogRepositoryArchitectureRule.no_repository_classes_should_be_reside_other_packages;
-	
 }

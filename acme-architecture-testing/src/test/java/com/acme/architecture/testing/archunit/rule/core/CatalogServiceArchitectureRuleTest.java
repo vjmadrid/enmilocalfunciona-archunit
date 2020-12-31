@@ -35,18 +35,4 @@ public class CatalogServiceArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule no_service_interface_classes_should_be_reside_other_packages = CatalogServiceArchitectureRule.no_service_interface_classes_should_be_reside_other_packages;
 
-	// Implements
-	
-	@ArchTest
-	public static final ArchRule service_classes_should_be_in_service_impl_package = CatalogServiceArchitectureRule.service_classes_should_be_in_service_impl_package;
-
-	@ArchTest
-	public static final ArchRule service_classes_should_have_names_ending_with_the_word_service_impl = CatalogServiceArchitectureRule.service_classes_should_have_names_ending_with_the_word_service_impl;
-
-	@ArchTest
-	public static final ArchRule service_classes_classes_should_be_public = CatalogServiceArchitectureRule.service_classes_classes_should_be_public;
-
-	@ArchTest
-	public static final ArchRule no_service_classes_should_be_reside_other_packages = CatalogServiceArchitectureRule.no_service_classes_should_be_reside_other_packages;
-	
 }

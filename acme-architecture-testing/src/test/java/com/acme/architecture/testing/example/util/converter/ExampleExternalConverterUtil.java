@@ -2,7 +2,7 @@ package com.acme.architecture.testing.example.util.converter;
 
 public final class ExampleExternalConverterUtil {
 
-	protected ExampleExternalConverterUtil() {
+	private ExampleExternalConverterUtil() {
 		throw new IllegalStateException("ExampleValidConverterUtil");
 	}
 	

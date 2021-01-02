@@ -25,8 +25,5 @@ public class CatalogDummyArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule dummy_classes_should_be_public = CatalogDummyArchitectureRule.dummy_classes_should_be_public;
 
-	@ArchTest
-	public static final ArchRule no_dummy_classes_should_be_reside_other_packages = CatalogDummyArchitectureRule.no_dummy_classes_should_be_reside_other_packages;
-
 }
 

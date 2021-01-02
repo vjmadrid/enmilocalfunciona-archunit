@@ -25,7 +25,4 @@ public class CatalogSupportArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule support_classes_should_be_public = CatalogSupportArchitectureRule.support_classes_should_be_public;
 
-	@ArchTest
-	public static final ArchRule no_support_classes_should_be_reside_other_packages = CatalogSupportArchitectureRule.no_support_classes_should_be_reside_other_packages;
-
 }

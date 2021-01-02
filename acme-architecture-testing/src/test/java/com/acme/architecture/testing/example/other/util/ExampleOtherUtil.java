@@ -2,7 +2,7 @@ package com.acme.architecture.testing.example.other.util;
 
 public final class ExampleOtherUtil {
 
-	protected ExampleOtherUtil() {
+	private ExampleOtherUtil() {
 		throw new IllegalStateException("ExampleValidOtherUtil");
 	}
 	

@@ -25,7 +25,4 @@ public class CatalogExceptionArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule exception_classes_should_be_public = CatalogExceptionArchitectureRule.exception_classes_should_be_public;
 
-	@ArchTest
-	public static final ArchRule no_exception_classes_should_be_reside_other_packages = CatalogExceptionArchitectureRule.no_exception_classes_should_be_reside_other_packages;
-
 }

@@ -1,8 +1,9 @@
 package com.acme.architecture.testing.archunit.rule.core;
 
+import static com.tngtech.archunit.core.domain.JavaModifier.FINAL;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.constructors;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 import com.acme.architecture.testing.constant.ArchUnitNameConstant;
 import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
@@ -30,16 +31,22 @@ public class CatalogUtilArchitectureRule {
 		    .should().bePublic();
 	
 	@ArchTest
+	public static final ArchRule util_classes_should_be_final = 
+		    classes()
+		    .that().resideInAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_UTIL_CLASS, ArchUnitPackageConstant.RESIDE_PACKAGE_UTIL_CLASS)
+		    .should().haveModifier(FINAL);
+	
+	@ArchTest
+	public static final ArchRule util_classes_constructors_should_have_one_private_constructor = 
+			constructors()
+			.that().areDeclaredInClassesThat().resideInAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_UTIL_CLASS, ArchUnitPackageConstant.RESIDE_PACKAGE_UTIL_CLASS)
+			.should().bePrivate();
+	
+	@ArchTest
 	public static final ArchRule util_classes_methods_should_be_static = 
 			methods()
 			.that().arePublic()
 			.and().areDeclaredInClassesThat().resideInAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_UTIL_CLASS, ArchUnitPackageConstant.RESIDE_PACKAGE_UTIL_CLASS)
 			.should().beStatic();
 	
-	@ArchTest
-	public static final ArchRule no_util_classes_should_be_reside_other_packages = 
-			noClasses()
-			.that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_UTIL_CLASS)
-		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_UTIL_CLASS)
-		    .andShould().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_PACKAGE_UTIL_CLASS);
 }

@@ -24,11 +24,14 @@ public class CatalogDataFactoryArchitectureRuleTest {
 	
 	@ArchTest
 	public static final ArchRule data_factory_classes_should_be_public = CatalogDataFactoryArchitectureRule.data_factory_classes_should_be_public;
-
+	
 	@ArchTest
-	public static final ArchRule data_factory_classes_methods_should_be_static = CatalogDataFactoryArchitectureRule.data_factory_classes_methods_should_be_static;
-
+	public static final ArchRule data_factory_classes_should_be_final = CatalogDataFactoryArchitectureRule.data_factory_classes_should_be_final;
+	
 	@ArchTest
-	public static final ArchRule no_data_factory_classes_should_be_reside_other_packages = CatalogDataFactoryArchitectureRule.no_data_factory_classes_should_be_reside_other_packages;
+	public static final ArchRule data_factory_classes_constructors_should_have_one_private_constructor = CatalogDataFactoryArchitectureRule.data_factory_classes_constructors_should_have_one_private_constructor;
+	
+	@ArchTest
+	public static final ArchRule data_factory_classes_methods_should_be_public_static = CatalogDataFactoryArchitectureRule.data_factory_classes_methods_should_be_public_static;
 
 }

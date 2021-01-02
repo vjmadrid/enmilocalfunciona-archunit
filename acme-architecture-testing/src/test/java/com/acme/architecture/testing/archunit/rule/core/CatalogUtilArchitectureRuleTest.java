@@ -21,14 +21,18 @@ public class CatalogUtilArchitectureRuleTest {
 
 	@ArchTest
 	public static final ArchRule util_classes_should_have_names_ending_with_the_word_util = CatalogUtilArchitectureRule.util_classes_should_have_names_ending_with_the_word_util;
-
+	
 	@ArchTest
 	public static final ArchRule util_classes_should_be_public = CatalogUtilArchitectureRule.util_classes_should_be_public;
-
+	
+	@ArchTest
+	public static final ArchRule util_classes_should_be_final = CatalogUtilArchitectureRule.util_classes_should_be_final;
+	
+	@ArchTest
+	public static final ArchRule util_classes_constructors_should_have_one_private_constructor = CatalogUtilArchitectureRule.util_classes_constructors_should_have_one_private_constructor;
+	
 	@ArchTest
 	public static final ArchRule util_classes_methods_should_be_static = CatalogUtilArchitectureRule.util_classes_methods_should_be_static;
 
-	@ArchTest
-	public static final ArchRule no_util_classes_should_be_reside_other_packages = CatalogUtilArchitectureRule.no_util_classes_should_be_reside_other_packages;
 
 }

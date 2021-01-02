@@ -2,7 +2,7 @@ package com.acme.architecture.testing.example.util;
 
 public final class ExampleUtil {
 
-	protected ExampleUtil() {
+	private ExampleUtil() {
 		throw new IllegalStateException("ExampleUtil");
 	}
 	

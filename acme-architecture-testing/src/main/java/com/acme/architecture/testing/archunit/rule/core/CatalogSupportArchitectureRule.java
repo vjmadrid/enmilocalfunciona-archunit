@@ -1,7 +1,6 @@
 package com.acme.architecture.testing.archunit.rule.core;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 import com.acme.architecture.testing.constant.ArchUnitNameConstant;
 import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
@@ -28,11 +27,5 @@ public class CatalogSupportArchitectureRule {
 		    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SUPPORT_CLASS)
 		    .and().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_SUPPORT_CLASS)
 		    .should().bePublic();
-	
-	@ArchTest
-	public static final ArchRule no_support_classes_should_be_reside_other_packages = 
-			noClasses()
-			.that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_SUPPORT_CLASS)
-		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SUPPORT_CLASS);
 	
 }

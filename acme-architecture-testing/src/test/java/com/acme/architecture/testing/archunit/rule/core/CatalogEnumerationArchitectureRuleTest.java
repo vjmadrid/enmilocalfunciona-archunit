@@ -25,7 +25,4 @@ public class CatalogEnumerationArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule enumeration_classes_should_be_public_enum = CatalogEnumerationArchitectureRule.enumeration_classes_should_be_public_enum;
 
-	@ArchTest
-	public static final ArchRule no_enumeration_classes_should_be_reside_other_packages = CatalogEnumerationArchitectureRule.no_enumeration_classes_should_be_reside_other_packages;
-
 }

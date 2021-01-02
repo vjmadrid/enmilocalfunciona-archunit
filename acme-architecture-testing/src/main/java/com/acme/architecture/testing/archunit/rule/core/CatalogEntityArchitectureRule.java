@@ -26,8 +26,8 @@ public class CatalogEntityArchitectureRule {
 	@ArchTest
 	public static final ArchRule entity_classes_should_implements_serializable = 
 			classes()
-			    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_PACKAGE_ENTITY_CLASS)
-			    .should().implement(Serializable.class);
+			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_PACKAGE_ENTITY_CLASS)
+			.should().implement(Serializable.class);
 }
 
 

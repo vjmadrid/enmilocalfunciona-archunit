@@ -44,17 +44,19 @@ public class CatalogMapstructArchitectureRule {
 		    .should().resideOutsideOfPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS);
 	
 	@ArchTest
-	public static final ArchRule map_struct_classes_should_only_be_accessed_by_services = 
-			classes()
-			.that().resideInAPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS)
-			.should()
-			.onlyBeAccessed().byAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS);
-	
-	@ArchTest
 	public static final ArchRule map_struct_classes_should_be_annotated_with_mapper = 
 		    classes()
 		    .that().resideInAPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS)
 		    .should().beAnnotatedWith(Mapper.class);
+		
+	@ArchTest
+	public static final ArchRule map_struct_classes_should_only_be_accessed_by_mapper_impl = 
+			classes()
+			.that().resideInAPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS)
+			.should()
+			.onlyBeAccessed().byAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_IMPL_CLASS);
+			
+
 	
 }
 

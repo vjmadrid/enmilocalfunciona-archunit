@@ -27,6 +27,7 @@ public final class ArchUnitNameConstant {
 	public static final String SUFFIX_NAME_SUPPORT_CLASS = "Support";
 	
 	public static final String SUFFIX_NAME_MAPPER_CLASS = "Mapper";
+	public static final String SUFFIX_NAME_MAPPER_IMPL_CLASS = "MapperImpl";
 	
 	public static final String SUFFIX_NAME_DATA_FACTORY_CLASS = "DataFactory";
 	public static final String SUFFIX_NAME_DUMMY_DATA_FACTORY_CLASS = SUFFIX_NAME_DATA_FACTORY_CLASS;

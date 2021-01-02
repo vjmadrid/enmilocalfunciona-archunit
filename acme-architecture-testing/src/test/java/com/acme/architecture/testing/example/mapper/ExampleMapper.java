@@ -11,9 +11,9 @@ public interface ExampleMapper {
 	
 	Domain toDomain(ExampleRequest domainRequest);
 
-	List<ExampleResponse> toGreetingResponseList(List<Domain> greetingList);
+	List<ExampleResponse> toExampleResponseList(List<Domain> exampleList);
 
-	ExampleResponse toExampleResponse(Domain domnain);
+	ExampleResponse toExampleResponse(Domain domain);
 
 	Domain toDomain(ExampleQueryRequest exampleQueryRequest);
 

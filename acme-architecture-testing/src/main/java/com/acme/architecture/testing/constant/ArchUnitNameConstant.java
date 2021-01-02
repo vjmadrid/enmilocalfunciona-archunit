@@ -35,9 +35,6 @@ public final class ArchUnitNameConstant {
 	public static final String SUFFIX_NAME_EXCEPTION_CLASS = "Exception";
 	public static final String SUFFIX_NAME_ENUMERATION_CLASS = "Enumeration";
 	
-	public static final String SUFFIX_NAME_ARCHUNIT_RULE_CLASS = "ArchitectureRule";
-	
-
 	//*** PREFIX NAMES ***
 	
 	public static final String PREFIX_NAME_DUMMY_CLASS = "Dummy";

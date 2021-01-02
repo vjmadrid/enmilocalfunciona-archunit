@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-import com.acme.architecture.testing.archunit.rule.core.CatalogArchunitRuleArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogConstantArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogCustomAnnotationArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogDataFactoryArchitectureRule;
@@ -13,6 +12,7 @@ import com.acme.architecture.testing.archunit.rule.core.CatalogDummyDataFactoryA
 import com.acme.architecture.testing.archunit.rule.core.CatalogEntityArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogEnumerationArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogExceptionArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.CatalogMapperArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogQueryRequestDtoArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogRepositoryArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogRepositoryImplArchitectureRule;
@@ -24,13 +24,13 @@ import com.acme.architecture.testing.archunit.rule.core.CatalogSupportArchitectu
 import com.acme.architecture.testing.archunit.rule.core.CatalogUtilArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.layered.architecture.CatalogModelLayeredArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.CatalogArchunitRuleArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.technology.CatalogMapstructArchitectureRule;
 
 public class CoverageArchitectureRuleTest {
 	
 	@Test
     public void shouldBeValidCoreArchitectureRule() {
-		assertNotNull(new CatalogArchunitRuleArchitectureRule());
 		assertNotNull(new CatalogConstantArchitectureRule());
 		assertNotNull(new CatalogCustomAnnotationArchitectureRule());
 		assertNotNull(new CatalogDataFactoryArchitectureRule());
@@ -39,6 +39,7 @@ public class CoverageArchitectureRuleTest {
 		assertNotNull(new CatalogEntityArchitectureRule());
 		assertNotNull(new CatalogEnumerationArchitectureRule());
 		assertNotNull(new CatalogExceptionArchitectureRule());
+		assertNotNull(new CatalogMapperArchitectureRule());
 		assertNotNull(new CatalogQueryRequestDtoArchitectureRule());
 		assertNotNull(new CatalogRepositoryArchitectureRule());
 		assertNotNull(new CatalogRepositoryImplArchitectureRule());
@@ -63,6 +64,7 @@ public class CoverageArchitectureRuleTest {
 	@Test
     public void shouldBeValidTechnologyArchitectureRule() {
 		assertNotNull(new CatalogMapstructArchitectureRule());
+		assertNotNull(new CatalogArchunitRuleArchitectureRule());
     }
 
 }

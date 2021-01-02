@@ -1,6 +1,5 @@
 package com.acme.architecture.testing.archunit.rule.core.group;
 
-import com.acme.architecture.testing.archunit.rule.core.CatalogArchunitRuleArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogConstantArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogCustomAnnotationArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogDataFactoryArchitectureRule;
@@ -13,6 +12,7 @@ import com.acme.architecture.testing.archunit.rule.core.CatalogRequestDtoArchite
 import com.acme.architecture.testing.archunit.rule.core.CatalogResponseDtoArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogSupportArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.CatalogUtilArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.CatalogArchunitRuleArchitectureRule;
 import com.tngtech.archunit.junit.ArchRules;
 import com.tngtech.archunit.junit.ArchTest;
 

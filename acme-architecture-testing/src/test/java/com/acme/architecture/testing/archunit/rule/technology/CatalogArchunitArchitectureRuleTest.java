@@ -1,7 +1,7 @@
-package com.acme.architecture.testing.archunit.rule.core;
+package com.acme.architecture.testing.archunit.rule.technology;
 
 import com.acme.architecture.testing.archunit.constant.TestingArchUnitPackageConstant;
-import com.acme.architecture.testing.archunit.rule.core.CatalogArchunitRuleArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.CatalogArchunitRuleArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;

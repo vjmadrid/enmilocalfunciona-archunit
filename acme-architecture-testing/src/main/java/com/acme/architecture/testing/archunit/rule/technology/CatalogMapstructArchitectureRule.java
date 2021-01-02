@@ -3,8 +3,11 @@ package com.acme.architecture.testing.archunit.rule.technology;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
-import com.acme.architecture.testing.constant.ArchUnitNameConstant;
+import org.mapstruct.Mapper;
+
 import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
+import com.acme.architecture.testing.constant.TechnologyArchUnitNameConstant;
+import com.acme.architecture.testing.constant.TechnologyArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
@@ -13,45 +16,45 @@ public class CatalogMapstructArchitectureRule {
 	@ArchTest
 	public static final ArchRule map_struct_classes_should_be_in_mapper_package = 
 		    classes()
-		    .that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_MAPPER_CLASS)
-		    .should().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS);
+		    .that().haveSimpleNameEndingWith(TechnologyArchUnitNameConstant.SUFFIX_NAME_MAPPER_STRUCT_CLASS)
+		    .should().resideInAPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS);
 	
 	@ArchTest
 	public static final ArchRule map_struct_classes_should_have_names_ending_with_the_word_mapper = 
 		    classes()
-		    .that().resideInAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS)
-		    .should().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_MAPPER_CLASS);
+		    .that().resideInAnyPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS)
+		    .should().haveSimpleNameEndingWith(TechnologyArchUnitNameConstant.SUFFIX_NAME_MAPPER_STRUCT_CLASS);
 
 	@ArchTest
 	public static final ArchRule map_struct_classes_should_be_public = 
 		    classes()
-		    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS)
+		    .that().resideInAPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS)
 		    .should().bePublic();
 	
 	@ArchTest
 	public static final ArchRule map_struct_classes_should_be_interface = 
 			classes()
-			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS)
-			.should().beInterfaces();
-
-	@ArchTest
-	public static final ArchRule map_struct_classes_should_not_be_placed_in_map_struct_impl_package = 
-			noClasses()
-			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_IMPL_CLASS)
+			.that().resideInAPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS)
 			.should().beInterfaces();
 	
 	@ArchTest
 	public static final ArchRule no_map_struct_classes_should_be_reside_other_packages = 
 			noClasses()
-			.that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_MAPPER_CLASS)
-		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS);
+			.that().resideInAPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS)
+		    .should().resideOutsideOfPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS);
 	
 	@ArchTest
 	public static final ArchRule map_struct_classes_should_only_be_accessed_by_services = 
 			classes()
-			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS)
+			.that().resideInAPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS)
 			.should()
 			.onlyBeAccessed().byAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS);
+	
+	@ArchTest
+	public static final ArchRule map_struct_classes_should_be_annotated_with_mapper = 
+		    classes()
+		    .that().resideInAPackage(TechnologyArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_STRUCT_CLASS)
+		    .should().beAnnotatedWith(Mapper.class);
 	
 }
 

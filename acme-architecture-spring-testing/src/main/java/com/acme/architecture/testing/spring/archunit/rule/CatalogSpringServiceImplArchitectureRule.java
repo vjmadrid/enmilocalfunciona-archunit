@@ -12,6 +12,10 @@ import com.tngtech.archunit.lang.ArchRule;
 
 public class CatalogSpringServiceImplArchitectureRule {
 	
+	// *** Implements ***
+	
+	// Common
+	
 	@ArchTest
 	public static final ArchRule spring_service_impl_classes_should_be_in_spring_service_impl_package = CatalogServiceImplArchitectureRule.service_impl_classes_should_be_in_service_impl_package;
 
@@ -21,6 +25,8 @@ public class CatalogSpringServiceImplArchitectureRule {
 	@ArchTest
 	public static final ArchRule spring_service_impl_classes_classes_should_be_public = CatalogServiceImplArchitectureRule.service_impl_classes_classes_should_be_public;
 
+	// Specific
+	
 	@ArchTest
 	public static final ArchRule spring_service_impl_classes_should_be_annotated_with_service = 
 		    classes()

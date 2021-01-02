@@ -24,6 +24,7 @@ import com.acme.architecture.testing.archunit.rule.core.CatalogSupportArchitectu
 import com.acme.architecture.testing.archunit.rule.core.CatalogUtilArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.layered.architecture.CatalogModelLayeredArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.CatalogMapstructArchitectureRule;
 
 public class CoverageArchitectureRuleTest {
 	
@@ -57,6 +58,11 @@ public class CoverageArchitectureRuleTest {
 	@Test
     public void shouldBeValidLayeredArchitectureArchitectureRule() {
 		assertNotNull(new CatalogModelLayeredArchitectureRule());
+    }
+	
+	@Test
+    public void shouldBeValidTechnologyArchitectureRule() {
+		assertNotNull(new CatalogMapstructArchitectureRule());
     }
 
 }

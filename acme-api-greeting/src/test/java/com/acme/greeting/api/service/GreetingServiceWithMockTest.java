@@ -22,7 +22,7 @@ import com.acme.greeting.api.dummy.DummyGreeting;
 import com.acme.greeting.api.dummy.constant.GreetingDummyConstant;
 import com.acme.greeting.api.entity.Greeting;
 import com.acme.greeting.api.mapper.GreetingMapper;
-import com.acme.greeting.api.mapper.GreetingMapperImpl;
+import com.acme.greeting.api.mapper.impl.GreetingMapperImpl;
 import com.acme.greeting.api.model.greeting.dummy.DummyGreetingRequest;
 import com.acme.greeting.api.model.greeting.dummy.DummyGreetingResponse;
 import com.acme.greeting.api.model.greeting.request.GreetingRequest;

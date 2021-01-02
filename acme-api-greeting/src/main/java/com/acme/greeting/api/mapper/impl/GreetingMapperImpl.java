@@ -1,4 +1,4 @@
-package com.acme.greeting.api.mapper;
+package com.acme.greeting.api.mapper.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.acme.greeting.api.entity.Greeting;
+import com.acme.greeting.api.mapper.GreetingMapper;
 import com.acme.greeting.api.mapper.struct.GreetingMapperStruct;
 import com.acme.greeting.api.model.greeting.query.GreetingQueryRequest;
 import com.acme.greeting.api.model.greeting.request.GreetingRequest;

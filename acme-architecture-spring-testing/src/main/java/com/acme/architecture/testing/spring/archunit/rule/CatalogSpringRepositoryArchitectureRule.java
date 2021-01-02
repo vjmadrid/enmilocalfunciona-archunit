@@ -13,6 +13,8 @@ import com.tngtech.archunit.lang.ArchRule;
 
 public class CatalogSpringRepositoryArchitectureRule {
 
+	// Common
+	
 	@ArchTest
 	public static final ArchRule spring_repository_classes_should_be_in_spring_repository_package = CatalogRepositoryArchitectureRule.repository_interface_classes_should_be_in_repository_package;
 
@@ -28,6 +30,8 @@ public class CatalogSpringRepositoryArchitectureRule {
 	@ArchTest
 	public static final ArchRule spring_repository_interface_classes_should_not_be_placed_in_repository_impl_package = CatalogRepositoryArchitectureRule.repository_interface_classes_should_not_be_placed_in_repository_impl_package;
 
+	// Specific
+	
 	@ArchTest
 	public static final ArchRule spring_repository_classes_should_be_annotated_with_repository = 
 		    classes()

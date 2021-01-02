@@ -24,19 +24,18 @@ public class ModelSpecificArchitectureTest {
 	public static final ArchRules base_constant_architecture = ArchRules.in(CatalogConstantArchitectureRule.class);
 	
 	@ArchTest
+	public static final ArchRules base_dummy_architecture = ArchRules.in(CatalogDummyArchitectureRule.class);
+	
+	@ArchTest
 	public static final ArchRules base_util_architecture = ArchRules.in(CatalogUtilArchitectureRule.class);
 	
 	@ArchTest
-	public static final ArchRules base_dummy_architecture = ArchRules.in(CatalogDummyArchitectureRule.class);
+	public static final ArchRules base_query_request_dto_architecture = ArchRules.in(CatalogQueryRequestDtoArchitectureRule.class);
 	
 	@ArchTest
 	public static final ArchRules base_request_dto_architecture = ArchRules.in(CatalogRequestDtoArchitectureRule.class);
 	
 	@ArchTest
 	public static final ArchRules base_response_dto_architecture = ArchRules.in(CatalogResponseDtoArchitectureRule.class);
-	
-	@ArchTest
-	public static final ArchRules base_query_request_dto_architecture = ArchRules.in(CatalogQueryRequestDtoArchitectureRule.class);
-	
 	
 }

@@ -1,6 +1,7 @@
 package com.acme.architecture.testing.spring.archunit.rule;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 import org.springframework.context.annotation.Configuration;
@@ -37,9 +38,17 @@ public class CatalogSpringConfigurationArchitectureRule {
 		    .should().beAnnotatedWith(Configuration.class);
 	
 	@ArchTest
+	public static final ArchRule spring_configuration_classes_methods_should_be_public = 
+			methods()
+			.that().areDeclaredInClassesThat().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_PACKAGE_SPRING_CONFIG_CLASS)
+			.should().bePublic();
+	
+	
+	@ArchTest
 	public static final ArchRule no_spring_configuration_classes_should_be_reside_other_packages = 
 			noClasses()
 			.that().areAnnotatedWith(Configuration.class)
 		    .should().resideOutsideOfPackage(SpringArchUnitPackageConstant.RESIDE_PACKAGE_SPRING_CONFIG_CLASS);
 	  
+	
 }

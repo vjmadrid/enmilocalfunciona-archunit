@@ -17,7 +17,7 @@ public class CatalogServiceArchitectureRule {
 		    .should().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS);
 	
 	@ArchTest
-	public static final ArchRule service_interface_should_have_names_ending_with_the_word_service = 
+	public static final ArchRule service_interface_classes_should_have_names_ending_with_the_word_service = 
 		    classes()
 		    .that().resideInAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS)
 		    .should().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_SERVICE_CLASS);

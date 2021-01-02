@@ -25,6 +25,7 @@ public final class ArchUnitPackageConstant {
 	public static final String RESIDE_FINAL_PACKAGE_SUPPORT_CLASS = "..support";
 	
 	public static final String RESIDE_FINAL_PACKAGE_MAPPER_CLASS = "..mapper";
+	public static final String RESIDE_FINAL_PACKAGE_MAPPER_IMPL_CLASS = RESIDE_FINAL_PACKAGE_MAPPER_CLASS + ".impl";
 	
 	public static final String RESIDE_FINAL_PACKAGE_DATA_FACTORY_CLASS = "..factory";
 	public static final String RESIDE_FINAL_PACKAGE_DUMMY_CLASS = "..dummy";
@@ -58,6 +59,7 @@ public final class ArchUnitPackageConstant {
 	public static final String RESIDE_PACKAGE_SUPPORT_CLASS = RESIDE_FINAL_PACKAGE_SUPPORT_CLASS + PACKAGE_INCLUDE;
 	
 	public static final String RESIDE_PACKAGE_MAPPER_CLASS = RESIDE_FINAL_PACKAGE_MAPPER_CLASS + PACKAGE_INCLUDE;
+	public static final String RESIDE_PACKAGE_MAPPER_IMPL_CLASS = RESIDE_FINAL_PACKAGE_MAPPER_IMPL_CLASS + PACKAGE_INCLUDE;
 	
 	public static final String RESIDE_PACKAGE_DATA_FACTORY_CLASS = RESIDE_FINAL_PACKAGE_DATA_FACTORY_CLASS+PACKAGE_INCLUDE;
 	public static final String RESIDE_PACKAGE_DUMMY_CLASS = RESIDE_FINAL_PACKAGE_DUMMY_CLASS+PACKAGE_INCLUDE;

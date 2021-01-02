@@ -16,6 +16,10 @@ importOptions = {
 //Includes test classes
 public class CatalogSpringServiceImplArchitectureRuleTest {
 	
+	// *** Implements ***
+	
+	// Common
+	
 	@ArchTest
 	public static final ArchRule spring_service_impl_classes_should_be_in_spring_service_impl_package = CatalogSpringServiceImplArchitectureRule.spring_service_impl_classes_should_be_in_spring_service_impl_package;
 
@@ -25,6 +29,8 @@ public class CatalogSpringServiceImplArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule spring_service_impl_classes_classes_should_be_public = CatalogSpringServiceImplArchitectureRule.spring_service_impl_classes_classes_should_be_public;
 
+	// Specific
+	
 	@ArchTest
 	public static final ArchRule spring_service_impl_classes_should_be_annotated_with_service = CatalogSpringServiceImplArchitectureRule.spring_service_impl_classes_should_be_annotated_with_service;
 	

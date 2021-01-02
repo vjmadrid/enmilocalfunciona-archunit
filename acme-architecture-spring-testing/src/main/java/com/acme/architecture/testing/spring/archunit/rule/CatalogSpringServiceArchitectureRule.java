@@ -10,12 +10,16 @@ import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
 
 public class CatalogSpringServiceArchitectureRule {
+	
+	// *** Interface ***
+	
+	// Common
 
 	@ArchTest
 	public static final ArchRule spring_service_interface_classes_should_be_in_spring_service_package = CatalogServiceArchitectureRule.service_interface_classes_should_be_in_service_package;
 	
 	@ArchTest
-	public static final ArchRule spring_service_interface_classes_should_have_names_ending_with_the_word_service = CatalogServiceArchitectureRule.service_interface_should_have_names_ending_with_the_word_service;
+	public static final ArchRule spring_service_interface_classes_should_have_names_ending_with_the_word_service = CatalogServiceArchitectureRule.service_interface_classes_should_have_names_ending_with_the_word_service;
 
 	@ArchTest
 	public static final ArchRule spring_service_interface_classes_should_be_public = CatalogServiceArchitectureRule.service_interface_classes_should_be_public;
@@ -32,6 +36,8 @@ public class CatalogSpringServiceArchitectureRule {
 	@ArchTest
 	public static final ArchRule spring_service_interface_classes_should_only_be_accessed_by_controllers_or_other_services = CatalogServiceArchitectureRule.service_interface_classes_should_only_be_accessed_by_controllers_or_other_services;
 
+	// Specific
+	
 	@ArchTest
 	public static final ArchRule spring_service_interface_classes_should_not_be_annotated_with_service = 
 			classes()

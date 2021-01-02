@@ -16,7 +16,9 @@ importOptions = {
 //Includes test classes
 public class CatalogSpringServiceArchitectureRuleTest {
 	
-	// Interface
+	// *** Interface ***
+	
+	// Common
 	
 	@ArchTest
 	public static final ArchRule spring_service_interface_classes_should_be_in_spring_service_package = CatalogSpringServiceArchitectureRule.spring_service_interface_classes_should_be_in_spring_service_package;
@@ -39,6 +41,8 @@ public class CatalogSpringServiceArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule spring_service_interface_classes_should_only_be_accessed_by_controllers_or_other_services = CatalogSpringServiceArchitectureRule.spring_service_interface_classes_should_only_be_accessed_by_controllers_or_other_services;
 
+	// Specific
+	
 	@ArchTest
 	public static final ArchRule spring_service_interface_classes_should_not_be_annotated_with_service = CatalogSpringServiceArchitectureRule.spring_service_interface_classes_should_not_be_annotated_with_service;
 

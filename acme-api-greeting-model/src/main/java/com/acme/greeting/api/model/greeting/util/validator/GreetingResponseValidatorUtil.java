@@ -4,7 +4,7 @@ import com.acme.greeting.api.model.greeting.response.GreetingResponse;
 
 public final class GreetingResponseValidatorUtil {
 	
-	protected GreetingResponseValidatorUtil() {
+	private GreetingResponseValidatorUtil() {
 		throw new IllegalStateException("GreetingValidatorUtil");
 	}
 	

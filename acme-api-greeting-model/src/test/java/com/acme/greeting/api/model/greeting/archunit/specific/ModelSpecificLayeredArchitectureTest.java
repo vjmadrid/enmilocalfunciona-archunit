@@ -17,9 +17,8 @@ importOptions = {
 public class ModelSpecificLayeredArchitectureTest {
 	
 	@ArchTest
-	public static final ArchRule model_layered_architecture_should_have_a_default_definition = 
+	public static final ArchRule model_layered_architecture_should_have_a_custom_definition = 
 	    layeredArchitecture()
-	    
 	    
 	    // **************
 	    // *** Layers ***
@@ -56,5 +55,8 @@ public class ModelSpecificLayeredArchitectureTest {
 		// 		Option 2 : 	should not be accessed by anyone in this context project (beware of scanning JARs)
 		//					.whereLayer("Dummy layer").mayNotBeAccessedByAnyLayer()
 		.whereLayer("Util layer").mayOnlyBeAccessedByLayers("Util layer");
+	
+	
+	
 
 }

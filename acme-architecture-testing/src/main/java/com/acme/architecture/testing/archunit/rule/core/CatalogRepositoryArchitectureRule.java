@@ -42,17 +42,11 @@ public class CatalogRepositoryArchitectureRule {
 			.should().beInterfaces();
 	
 	@ArchTest
-	public static final ArchRule no_repository_interface_classes_should_be_reside_other_packages = 
-			noClasses()
-			.that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_REPOSITORY_CLASS)
-		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_REPOSITORY_CLASS);
-	
-	@ArchTest
-	static final ArchRule service_interface_classes_should_only_be_accessed_by_services = 
+	static final ArchRule repository_interface_classes_should_only_be_accessed_by_services_impl = 
 			classes()
-			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS)
+			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_REPOSITORY_CLASS)
 			.should()
-			.onlyBeAccessed().byAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS);
+			.onlyBeAccessed().byAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_IMPL_CLASS);
 	
 }
 

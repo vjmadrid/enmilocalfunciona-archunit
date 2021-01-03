@@ -1,8 +1,8 @@
 package com.acme.architecture.testing.archunit.rule.core;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
+import com.acme.architecture.testing.archunit.condition.ImplementInterfaceWithSameNameArchunitCondition;
 import com.acme.architecture.testing.constant.ArchUnitNameConstant;
 import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
@@ -29,10 +29,10 @@ public class CatalogServiceImplArchitectureRule {
 		    .should().bePublic();
 	
 	@ArchTest
-	public static final ArchRule no_service_impl_classes_should_be_reside_other_packages = 
-			noClasses()
-			.that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_SERVICE_IMPL_CLASS)
-		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_IMPL_CLASS);
+	public static final ArchRule service_impl_should_implement_service = 
+		    classes()
+		    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_IMPL_CLASS)
+		    .should(new ImplementInterfaceWithSameNameArchunitCondition());
 	
 }
 

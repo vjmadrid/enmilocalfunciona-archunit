@@ -25,6 +25,6 @@ public class CatalogServiceImplArchitectureRuleTest {
 	public static final ArchRule service_impl_classes_classes_should_be_public = CatalogServiceImplArchitectureRule.service_impl_classes_classes_should_be_public;
 
 	@ArchTest
-	public static final ArchRule no_service_impl_classes_should_be_reside_other_packages = CatalogServiceImplArchitectureRule.no_service_impl_classes_should_be_reside_other_packages;
+	public static final ArchRule service_impl_should_implement_service = CatalogServiceImplArchitectureRule.service_impl_should_implement_service;
 	
 }

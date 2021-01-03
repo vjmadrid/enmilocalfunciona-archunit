@@ -16,10 +16,10 @@ public class CoverageArchitectureRuleTest {
 	@Test
 	public void shouldBeValidSpringArchitectureRule() {
 		assertNotNull(new CatalogSpringConfigurationArchitectureRule());
-		assertNotNull(new CatalogSpringServiceArchitectureRule());
-		assertNotNull(new CatalogSpringServiceImplArchitectureRule());
 		assertNotNull(new CatalogSpringRepositoryArchitectureRule());
 		assertNotNull(new CatalogSpringRestControllerArchitectureRule());
+		assertNotNull(new CatalogSpringServiceArchitectureRule());
+		assertNotNull(new CatalogSpringServiceImplArchitectureRule());
 	}
 	
 	@Test

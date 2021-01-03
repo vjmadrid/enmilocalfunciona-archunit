@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogRepositoryArchitectureRule;
+import com.acme.architecture.testing.constant.ArchUnitNameConstant;
+import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
 import com.acme.architecture.testing.spring.constant.SpringArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
@@ -33,21 +35,20 @@ public class CatalogSpringRepositoryArchitectureRule {
 	// Specific
 	
 	@ArchTest
+	public static final ArchRule no_spring_repository_classes_should_be_reside_in_repository_impl_package = 
+			noClasses()
+			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_REPOSITORY_IMPL_CLASS)
+			.and().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_REPOSITORY_CLASS)
+		    .should().resideOutsideOfPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS);
+	
+	@ArchTest
 	public static final ArchRule spring_repository_classes_should_be_annotated_with_repository = 
 		    classes()
 		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
 		    .should().beAnnotatedWith(Repository.class);
-	
+
 	@ArchTest
-	public static final ArchRule no_spring_repository_classes_should_be_reside_other_packages = 
-			noClasses()
-			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
-			.and().areAnnotatedWith(Repository.class)
-		    .should().resideOutsideOfPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS);
-	
-	
-	@ArchTest
-	public static final ArchRule entity_classes_should_extends_jparepository = 
+	public static final ArchRule spring_repository_classes_should_extends_jparepository = 
 			classes()
 			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
 			.and().areAnnotatedWith(Repository.class)

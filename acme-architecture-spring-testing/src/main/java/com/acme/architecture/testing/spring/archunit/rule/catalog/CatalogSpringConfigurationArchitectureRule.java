@@ -2,7 +2,6 @@ package com.acme.architecture.testing.spring.archunit.rule.catalog;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 import org.springframework.context.annotation.Configuration;
 
@@ -42,13 +41,5 @@ public class CatalogSpringConfigurationArchitectureRule {
 			methods()
 			.that().areDeclaredInClassesThat().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_PACKAGE_SPRING_CONFIG_CLASS)
 			.should().bePublic();
-	
-	
-	@ArchTest
-	public static final ArchRule no_spring_configuration_classes_should_be_reside_other_packages = 
-			noClasses()
-			.that().areAnnotatedWith(Configuration.class)
-		    .should().resideOutsideOfPackage(SpringArchUnitPackageConstant.RESIDE_PACKAGE_SPRING_CONFIG_CLASS);
-	  
 	
 }

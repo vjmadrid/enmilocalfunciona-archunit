@@ -31,8 +31,5 @@ public class CatalogSpringConfigurationArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule spring_configuration_classes_methods_should_be_public = CatalogSpringConfigurationArchitectureRule.spring_configuration_classes_methods_should_be_public;
 	
-	@ArchTest
-	public static final ArchRule no_spring_configuration_classes_should_be_reside_other_packages = CatalogSpringConfigurationArchitectureRule.no_spring_configuration_classes_should_be_reside_other_packages;
-
 }
 

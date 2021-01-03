@@ -1,7 +1,7 @@
-package com.acme.architecture.testing.spring.archunit.rule.spring;
+package com.acme.architecture.testing.spring.archunit.rule.catalog;
 
 import com.acme.architecture.testing.spring.archunit.constant.TestingSpringArchUnitPackageConstant;
-import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringServiceArchitectureRule;
+import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringServiceArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
@@ -36,10 +36,7 @@ public class CatalogSpringServiceArchitectureRuleTest {
 	public static final ArchRule spring_service_interface_classes_should_not_be_placed_in_service_impl_package = CatalogSpringServiceArchitectureRule.spring_service_interface_classes_should_not_be_placed_in_service_impl_package;
 
 	@ArchTest
-	public static final ArchRule no_spring_service_interface_classes_should_be_reside_other_packages = CatalogSpringServiceArchitectureRule.no_spring_service_interface_classes_should_be_reside_other_packages;
-
-	@ArchTest
-	public static final ArchRule spring_service_interface_classes_should_only_be_accessed_by_controllers_or_other_services = CatalogSpringServiceArchitectureRule.spring_service_interface_classes_should_only_be_accessed_by_controllers_or_other_services;
+	public static final ArchRule spring_service_interface_classes_should_only_be_accessed_by_controllers_or_other_services_impl = CatalogSpringServiceArchitectureRule.spring_service_interface_classes_should_only_be_accessed_by_controllers_or_other_services_impl;
 
 	// Specific
 	

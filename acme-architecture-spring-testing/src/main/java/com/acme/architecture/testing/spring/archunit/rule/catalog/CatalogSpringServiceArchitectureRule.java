@@ -1,4 +1,4 @@
-package com.acme.architecture.testing.spring.archunit.rule;
+package com.acme.architecture.testing.spring.archunit.rule.catalog;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
@@ -31,10 +31,7 @@ public class CatalogSpringServiceArchitectureRule {
 	public static final ArchRule spring_service_interface_classes_should_not_be_placed_in_service_impl_package = CatalogServiceArchitectureRule.service_interface_classes_should_not_be_placed_in_service_impl_package;
 
 	@ArchTest
-	public static final ArchRule no_spring_service_interface_classes_should_be_reside_other_packages = CatalogServiceArchitectureRule.no_service_interface_classes_should_be_reside_other_packages;
-
-	@ArchTest
-	public static final ArchRule spring_service_interface_classes_should_only_be_accessed_by_controllers_or_other_services = CatalogServiceArchitectureRule.service_interface_classes_should_only_be_accessed_by_controllers_or_other_services;
+	public static final ArchRule spring_service_interface_classes_should_only_be_accessed_by_controllers_or_other_services_impl = CatalogServiceArchitectureRule.service_interface_classes_should_only_be_accessed_by_controllers_or_other_services_impl;
 
 	// Specific
 	

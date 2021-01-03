@@ -1,7 +1,7 @@
-package com.acme.architecture.testing.spring.archunit.rule.spring;
+package com.acme.architecture.testing.spring.archunit.rule.catalog;
 
 import com.acme.architecture.testing.spring.archunit.constant.TestingSpringArchUnitPackageConstant;
-import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringConfigurationArchitectureRule;
+import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringConfigurationArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;

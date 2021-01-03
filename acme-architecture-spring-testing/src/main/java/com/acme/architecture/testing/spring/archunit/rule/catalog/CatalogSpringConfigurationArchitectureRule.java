@@ -1,4 +1,4 @@
-package com.acme.architecture.testing.spring.archunit.rule;
+package com.acme.architecture.testing.spring.archunit.rule.catalog;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;

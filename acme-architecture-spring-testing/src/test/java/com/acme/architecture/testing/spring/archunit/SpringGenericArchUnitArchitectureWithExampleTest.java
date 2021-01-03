@@ -1,11 +1,11 @@
 package com.acme.architecture.testing.spring.archunit;
 
 import com.acme.architecture.testing.spring.archunit.constant.TestingSpringArchUnitPackageConstant;
-import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringConfigurationArchitectureRule;
-import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringRepositoryArchitectureRule;
-import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringRestControllerArchitectureRule;
-import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringServiceArchitectureRule;
-import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringServiceImplArchitectureRule;
+import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringConfigurationArchitectureRule;
+import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringRepositoryArchitectureRule;
+import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringRestControllerArchitectureRule;
+import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringServiceArchitectureRule;
+import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringServiceImplArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchRules;

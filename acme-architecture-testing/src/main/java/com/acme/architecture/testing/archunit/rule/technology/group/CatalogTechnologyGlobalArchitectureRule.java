@@ -1,8 +1,8 @@
 package com.acme.architecture.testing.archunit.rule.technology.group;
 
-import com.acme.architecture.testing.archunit.rule.technology.CatalogArchunitConditionArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.technology.CatalogArchunitRuleArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.technology.CatalogMapstructArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogArchunitConditionArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogArchunitRuleArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogMapstructArchitectureRule;
 import com.tngtech.archunit.junit.ArchRules;
 import com.tngtech.archunit.junit.ArchTest;
 

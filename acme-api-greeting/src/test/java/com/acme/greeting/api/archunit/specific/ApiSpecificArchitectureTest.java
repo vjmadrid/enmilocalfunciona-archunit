@@ -1,9 +1,9 @@
 package com.acme.greeting.api.archunit.specific;
 
-import com.acme.architecture.testing.archunit.rule.core.CatalogConstantArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.core.CatalogDummyArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.core.CatalogEntityArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.core.CatalogUtilArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogConstantArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogDummyArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogEntityArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogUtilArchitectureRule;
 import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringConfigurationArchitectureRule;
 import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringRepositoryArchitectureRule;
 import com.acme.architecture.testing.spring.archunit.rule.CatalogSpringServiceArchitectureRule;

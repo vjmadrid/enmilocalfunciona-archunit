@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-import com.acme.architecture.testing.archunit.rule.technology.CatalogArchunitConditionArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.technology.CatalogArchunitPredicateArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.technology.CatalogArchunitRuleArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.technology.CatalogMapstructArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogArchunitConditionArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogArchunitPredicateArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogArchunitRuleArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogMapstructArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.technology.group.CatalogTechnologyGlobalArchitectureRule;
 
 public class CoverageTechnologyArchitectureRuleTest {

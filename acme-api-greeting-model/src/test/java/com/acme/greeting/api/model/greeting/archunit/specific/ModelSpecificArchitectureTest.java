@@ -1,11 +1,11 @@
 package com.acme.greeting.api.model.greeting.archunit.specific;
 
-import com.acme.architecture.testing.archunit.rule.core.CatalogConstantArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.core.CatalogDummyArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.core.CatalogQueryRequestDtoArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.core.CatalogRequestDtoArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.core.CatalogResponseDtoArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.core.CatalogUtilArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogConstantArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogDummyArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogQueryRequestDtoArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogRequestDtoArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogResponseDtoArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogUtilArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchRules;

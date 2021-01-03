@@ -1,0 +1,37 @@
+package com.acme.architecture.testing.archunit.rule.core.catalog;
+
+import com.acme.architecture.testing.archunit.constant.TestingArchUnitPackageConstant;
+import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogDummyDataFactoryArchitectureRule;
+import com.tngtech.archunit.core.importer.ImportOption;
+import com.tngtech.archunit.junit.AnalyzeClasses;
+import com.tngtech.archunit.junit.ArchTest;
+import com.tngtech.archunit.lang.ArchRule;
+
+@AnalyzeClasses(packages = TestingArchUnitPackageConstant.PACKAGE_EXAMPLE, 
+importOptions = { 
+		ImportOption.DoNotIncludeArchives.class, 
+		ImportOption.DoNotIncludeJars.class 
+}
+)
+//Includes test classes
+public class CatalogDummyDataFactoryArchitectureRuleTest {
+	
+	@ArchTest
+	public static final ArchRule dummy_data_factory_classes_should_be_in_dummy_data_factory_package = CatalogDummyDataFactoryArchitectureRule.dummy_data_factory_classes_should_be_in_dummy_data_factory_package;
+
+	@ArchTest
+	public static final ArchRule dummy_data_factory_classes_should_have_names_starting_with_the_word_dummy_and_ending_with_the_word_data_factory = CatalogDummyDataFactoryArchitectureRule.dummy_data_factory_classes_should_have_names_starting_with_the_word_dummy_and_ending_with_the_word_data_factory;
+	
+	@ArchTest
+	public static final ArchRule dummy_data_factory_classes_should_be_public = CatalogDummyDataFactoryArchitectureRule.dummy_data_factory_classes_should_be_public;
+	
+	@ArchTest
+	public static final ArchRule dummy_data_factory_classes_should_be_final = CatalogDummyDataFactoryArchitectureRule.dummy_data_factory_classes_should_be_final;
+	
+	@ArchTest
+	public static final ArchRule dummy_data_factory_classes_constructors_should_have_one_private_constructor = CatalogDummyDataFactoryArchitectureRule.dummy_data_factory_classes_constructors_should_have_one_private_constructor;
+	
+	@ArchTest
+	public static final ArchRule dummy_data_factory_classes_methods_should_be_static = CatalogDummyDataFactoryArchitectureRule.dummy_data_factory_classes_methods_should_be_static;
+
+}

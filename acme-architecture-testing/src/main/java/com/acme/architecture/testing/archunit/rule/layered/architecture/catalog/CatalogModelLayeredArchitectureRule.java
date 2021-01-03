@@ -1,4 +1,4 @@
-package com.acme.architecture.testing.archunit.rule.layered.architecture;
+package com.acme.architecture.testing.archunit.rule.layered.architecture.catalog;
 
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 

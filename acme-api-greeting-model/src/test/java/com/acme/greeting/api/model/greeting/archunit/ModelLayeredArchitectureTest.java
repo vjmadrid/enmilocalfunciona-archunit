@@ -1,6 +1,6 @@
 package com.acme.greeting.api.model.greeting.archunit;
 
-import com.acme.architecture.testing.archunit.rule.layered.architecture.CatalogModelLayeredArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.layered.architecture.catalog.CatalogModelLayeredArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;

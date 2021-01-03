@@ -24,7 +24,7 @@ import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogServiceIm
 import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogSupportArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogUtilArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.layered.architecture.CatalogModelLayeredArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.layered.architecture.catalog.CatalogModelLayeredArchitectureRule;
 
 public class CoverageCoreArchitectureRuleTest {
 	

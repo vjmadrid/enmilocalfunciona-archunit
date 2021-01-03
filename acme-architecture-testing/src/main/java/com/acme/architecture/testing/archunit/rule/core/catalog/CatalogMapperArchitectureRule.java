@@ -47,11 +47,11 @@ public class CatalogMapperArchitectureRule {
 		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS);
 	
 	@ArchTest
-	public static final ArchRule mapper_classes_should_only_be_accessed_by_services = 
+	public static final ArchRule mapper_classes_should_only_be_accessed_by_services_impl = 
 			classes()
 			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS)
 			.should()
-			.onlyBeAccessed().byAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_CLASS);
+			.onlyBeAccessed().byAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_IMPL_CLASS);
 	
 }
 

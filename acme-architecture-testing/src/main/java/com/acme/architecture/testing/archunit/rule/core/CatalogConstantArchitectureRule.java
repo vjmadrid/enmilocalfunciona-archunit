@@ -6,7 +6,7 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.constructors;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.fields;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noFields;
 
-import com.acme.architecture.testing.archunit.condition.NoMethodsArchunitCondition;
+import com.acme.architecture.testing.archunit.condition.NoMethodsArchitectureCondition;
 import com.acme.architecture.testing.constant.ArchUnitNameConstant;
 import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
@@ -63,6 +63,6 @@ public class CatalogConstantArchitectureRule {
 	public static final ArchRule constant_classes_should_no_have_methods = 
 		    classes()
 		    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_PACKAGE_CONSTANT_CLASS)
-		    .should(new NoMethodsArchunitCondition());
+		    .should(new NoMethodsArchitectureCondition());
 
 }

@@ -6,12 +6,12 @@ import com.tngtech.archunit.lang.ArchCondition;
 import com.tngtech.archunit.lang.ConditionEvents;
 import com.tngtech.archunit.lang.SimpleConditionEvent;
 
-public class PrivateConstructorsArchunitCondition extends ArchCondition<JavaConstructor> {
+public class PrivateConstructorsArchitectureCondition extends ArchCondition<JavaConstructor> {
 	
 	public final String MESSAGE_TEMPLATE = "%s is not private constructor";
 
-	public PrivateConstructorsArchunitCondition() {
-		super("Private constructors Condition");
+	public PrivateConstructorsArchitectureCondition() {
+		super("Private Constructors Architecture Condition");
 	}
 
 	@Override

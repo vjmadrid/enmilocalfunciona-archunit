@@ -14,7 +14,7 @@ importOptions = {
 }
 )
 //Includes test classes
-public class CatalogArchunitArchitectureRuleTest {
+public class CatalogArchunitRuleArchitectureRuleTest {
 	
 	@ArchTest
 	public static final ArchRule archunit_rule_classes_should_be_in_archunit_rule_package = CatalogArchunitRuleArchitectureRule.archunit_rule_classes_should_be_in_archunit_rule_package;

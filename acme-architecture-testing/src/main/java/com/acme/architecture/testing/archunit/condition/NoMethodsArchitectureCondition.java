@@ -5,12 +5,12 @@ import com.tngtech.archunit.lang.ArchCondition;
 import com.tngtech.archunit.lang.ConditionEvents;
 import com.tngtech.archunit.lang.SimpleConditionEvent;
 
-public class NoMethodsArchunitCondition extends ArchCondition<JavaClass> {
+public class NoMethodsArchitectureCondition extends ArchCondition<JavaClass> {
 
 	public final String MESSAGE_TEMPLATE = "%s has methods";
 
-	public NoMethodsArchunitCondition() {
-		super("No Methods Condition");
+	public NoMethodsArchitectureCondition() {
+		super("No Methods Architecture Condition");
 	}
 
 	@Override

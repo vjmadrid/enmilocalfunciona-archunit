@@ -10,13 +10,13 @@ import com.tngtech.archunit.lang.ArchCondition;
 import com.tngtech.archunit.lang.ConditionEvents;
 import com.tngtech.archunit.lang.SimpleConditionEvent;
 
-public class ImplementInterfaceWithSameNameArchunitCondition extends ArchCondition<JavaClass> {
+public class ImplementInterfaceWithSameNameArchitectureCondition extends ArchCondition<JavaClass> {
 
 	public final String MESSAGE_TEMPLATE_EMPTY_INTERFACES = "%s no implement '%s'";
 	public final String MESSAGE_TEMPLATE_OTHER_REPOSITORY = "%s no implement '%s' -> Use other '*Repository'";
 
-	public ImplementInterfaceWithSameNameArchunitCondition() {
-		super("No Methods Condition");
+	public ImplementInterfaceWithSameNameArchitectureCondition() {
+		super("Implement Interface With Same Name Architecture Condition");
 	}
 	
 	@Override

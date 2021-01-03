@@ -2,7 +2,7 @@ package com.acme.architecture.testing.archunit.rule.core;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
-import com.acme.architecture.testing.archunit.condition.ImplementInterfaceWithSameNameArchunitCondition;
+import com.acme.architecture.testing.archunit.condition.ImplementInterfaceWithSameNameArchitectureCondition;
 import com.acme.architecture.testing.constant.ArchUnitNameConstant;
 import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
@@ -32,7 +32,7 @@ public class CatalogServiceImplArchitectureRule {
 	public static final ArchRule service_impl_should_implement_service = 
 		    classes()
 		    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SERVICE_IMPL_CLASS)
-		    .should(new ImplementInterfaceWithSameNameArchunitCondition());
+		    .should(new ImplementInterfaceWithSameNameArchitectureCondition());
 	
 }
 

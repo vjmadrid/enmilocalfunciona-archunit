@@ -1,7 +1,6 @@
 package com.acme.architecture.testing.spring.archunit.rule.catalog;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 import org.springframework.stereotype.Service;
 
@@ -25,6 +24,9 @@ public class CatalogSpringServiceImplArchitectureRule {
 	@ArchTest
 	public static final ArchRule spring_service_impl_classes_classes_should_be_public = CatalogServiceImplArchitectureRule.service_impl_classes_classes_should_be_public;
 
+	@ArchTest
+	public static final ArchRule spring_service_impl_should_implement_spring_service = CatalogServiceImplArchitectureRule.service_impl_should_implement_service;
+
 	// Specific
 	
 	@ArchTest
@@ -33,10 +35,4 @@ public class CatalogSpringServiceImplArchitectureRule {
 		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_IMPL_SERVICE_CLASS)
 		    .should().beAnnotatedWith(Service.class);
 	
-	@ArchTest
-	public static final ArchRule no_spring_service_impl_classes_should_be_reside_other_packages = 
-			noClasses()
-			.that().areAnnotatedWith(Service.class)
-		    .should().resideOutsideOfPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_IMPL_SERVICE_CLASS);
-
 }

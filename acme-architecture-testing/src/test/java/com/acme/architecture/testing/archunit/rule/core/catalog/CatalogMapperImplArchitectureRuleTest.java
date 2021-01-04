@@ -25,7 +25,4 @@ public class CatalogMapperImplArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule mapper_impl_classes_classes_should_be_public = CatalogMapperImplArchitectureRule.mapper_impl_classes_classes_should_be_public;
 
-	@ArchTest
-	public static final ArchRule no_mapper_impl_classes_should_be_reside_other_packages = CatalogMapperImplArchitectureRule.no_mapper_impl_classes_should_be_reside_other_packages;
-	
 }

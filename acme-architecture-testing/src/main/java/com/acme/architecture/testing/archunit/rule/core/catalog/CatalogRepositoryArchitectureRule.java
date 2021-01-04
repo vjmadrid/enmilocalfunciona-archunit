@@ -42,7 +42,7 @@ public class CatalogRepositoryArchitectureRule {
 			.should().beInterfaces();
 	
 	@ArchTest
-	static final ArchRule repository_interface_classes_should_only_be_accessed_by_services_impl = 
+	public static final ArchRule repository_interface_classes_should_only_be_accessed_by_services_impl = 
 			classes()
 			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_REPOSITORY_CLASS)
 			.should()

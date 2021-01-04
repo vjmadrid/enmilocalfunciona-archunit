@@ -35,4 +35,11 @@ public class CatalogSpringServiceImplArchitectureRule {
 		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_IMPL_SERVICE_CLASS)
 		    .should().beAnnotatedWith(Service.class);
 	
+	@ArchTest
+	public static final ArchRule spring_service_impl_classes_should_depend_on_spring_repository = 
+		    classes()
+		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS)
+		    .should().dependOnClassesThat()
+            .resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS);
+	
 }

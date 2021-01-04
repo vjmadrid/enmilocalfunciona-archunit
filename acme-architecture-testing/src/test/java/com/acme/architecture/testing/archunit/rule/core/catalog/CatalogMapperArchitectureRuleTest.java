@@ -34,9 +34,6 @@ public class CatalogMapperArchitectureRuleTest {
 	public static final ArchRule mapper_classes_should_not_be_placed_in_mapper_impl_package = CatalogMapperArchitectureRule.mapper_classes_should_not_be_placed_in_mapper_impl_package;
 
 	@ArchTest
-	public static final ArchRule no_mapper_classes_should_be_reside_other_packages = CatalogMapperArchitectureRule.no_mapper_classes_should_be_reside_other_packages;
-
-	@ArchTest
 	public static final ArchRule mapper_classes_should_only_be_accessed_by_services_impl = CatalogMapperArchitectureRule.mapper_classes_should_only_be_accessed_by_services_impl;
 
 }

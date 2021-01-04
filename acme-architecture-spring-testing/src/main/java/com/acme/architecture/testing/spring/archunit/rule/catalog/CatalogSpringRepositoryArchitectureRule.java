@@ -32,6 +32,9 @@ public class CatalogSpringRepositoryArchitectureRule {
 	@ArchTest
 	public static final ArchRule spring_repository_interface_classes_should_not_be_placed_in_repository_impl_package = CatalogRepositoryArchitectureRule.repository_interface_classes_should_not_be_placed_in_repository_impl_package;
 
+	@ArchTest
+	public static final ArchRule spring_repository_interface_classes_should_only_be_accessed_by_spring_services_impl = CatalogRepositoryArchitectureRule.repository_interface_classes_should_only_be_accessed_by_services_impl;
+
 	// Specific
 	
 	@ArchTest

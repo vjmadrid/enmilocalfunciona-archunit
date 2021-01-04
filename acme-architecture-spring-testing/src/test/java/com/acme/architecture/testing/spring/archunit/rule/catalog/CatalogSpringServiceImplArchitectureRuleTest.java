@@ -34,4 +34,7 @@ public class CatalogSpringServiceImplArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule spring_service_impl_classes_should_be_annotated_with_service = CatalogSpringServiceImplArchitectureRule.spring_service_impl_classes_should_be_annotated_with_service;
 	
+	@ArchTest
+	public static final ArchRule spring_service_impl_classes_should_depend_on_spring_repository = CatalogSpringServiceImplArchitectureRule.spring_service_impl_classes_should_depend_on_spring_repository;
+	
 }

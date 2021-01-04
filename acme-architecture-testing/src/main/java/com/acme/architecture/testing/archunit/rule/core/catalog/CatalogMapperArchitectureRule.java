@@ -41,12 +41,6 @@ public class CatalogMapperArchitectureRule {
 			.should().beInterfaces();
 	
 	@ArchTest
-	public static final ArchRule no_mapper_classes_should_be_reside_other_packages = 
-			noClasses()
-			.that().haveSimpleNameEndingWith(ArchUnitNameConstant.SUFFIX_NAME_MAPPER_CLASS)
-		    .should().resideOutsideOfPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS);
-	
-	@ArchTest
 	public static final ArchRule mapper_classes_should_only_be_accessed_by_services_impl = 
 			classes()
 			.that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS)

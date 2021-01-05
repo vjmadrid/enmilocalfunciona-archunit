@@ -54,7 +54,7 @@ public class ExamplesCheckConventionsArchRuleTest {
 	 * 
 	 * Fuerza a que todas las clases contenidas en un directorio tengan el sufijo
 	 * 
-	 * IMPORTANTE : ESTE TEST FALLA AL EXISTIR CLASES DE ENTIDAD QUE NO TIENEN SUFIJO
+	 * IMPORTANTE : ESTE TEST FALLA AL EXISTIR CLASES DE ENTIDAD QUE NO TIENEN SUFIJO "Entity"
 	 */
 	
 	@ArchTest
@@ -79,7 +79,7 @@ public class ExamplesCheckConventionsArchRuleTest {
 	/*
 	 * Regla que verifica que todas las clases deberían de ser accedidas por clases que implementan Serializable
 	 * 
-	 * IMPORTANT : ESTE TEST FALLA AL NO CUMPLIRSE
+	 * IMPORTANT : ESTE TEST FALLA AL NO CUMPLIRSE AL APLICARSE SOBRE TODOS LAS CLASES POR EJEMPLO LOS CONTROLLERS NO SON SERIALIZABLES
 	 */
 	@ArchTest
 	public static final ArchRule entity_classes_should_accessed_by_other_classes_that_impl_serializable = 
@@ -90,7 +90,8 @@ public class ExamplesCheckConventionsArchRuleTest {
 	/*
 	 * Regla que verifica que todas las clases anotadas con UserDescription deberían de ser accedidas por clases que implementan Serializable
 	 * 
-	 * IMPORTANT : ESTE TEST FALLA AL NO CUMPLIRSE
+	 * IMPORTANT : ESTE TEST FALLA AL NO CUMPLIRSE AL APLICARSE SOBRE TODOS LAS CLASES ANOTADAS POR @UserDescription POR EJEMPLO LOS CONTROLLERS NO SON SERIALIZABLES
+	 * NI TIENEN ESA ANOTACIÓN
 	 */
 	@ArchTest
 	public static final ArchRule classes_with_annotation_UserDescription_should_accessed_by_other_classes_that_impl_serializable = 
@@ -129,6 +130,7 @@ public class ExamplesCheckConventionsArchRuleTest {
 	
 	/*
 	 * Regla que verifica que las clases de una entidad extiende AbstracEntity.class
+	 * IMPORTANT : ESTE TEST FALLA AL NO CUMPLIRSE AL APLICARSE SOBRE TODOS LAS CLASES ENTIDAD DE UN PAQUETE Y NO CUMPLIR QUE EXTIENDAN DE "AbstractEntity"
 	 */
 	@ArchTest
 	public static final ArchRule entity_classes_should_implements_abstract_entity_class = 

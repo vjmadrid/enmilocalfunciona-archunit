@@ -9,7 +9,7 @@ import com.acme.example.archunit.user.annotation.UtilDescription;
 @UtilDescription(value = "Test Description ListUtil")
 public final class ListUtil {
 
-	protected ListUtil() {
+	private ListUtil() {
 		throw new IllegalStateException("ListUtil");
 	}
 

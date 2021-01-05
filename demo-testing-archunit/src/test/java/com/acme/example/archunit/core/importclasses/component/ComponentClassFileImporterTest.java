@@ -16,8 +16,8 @@ public class ComponentClassFileImporterTest {
 	
 	private static final String GENERIC_PACKAGE_TEST_VALUE = "com.acme.example";
 	
-	private static final int NUM_IMPORTED_CLASSES_DEFAULT = 73;
-	private static final int NUM_IMPORTED_CLASSES_CLASSPATH = 177;
+	private static final int NUM_IMPORTED_CLASSES_DEFAULT = 74;
+	private static final int NUM_IMPORTED_CLASSES_CLASSPATH = 178;
 
 	@Test
     public void whenCallImportPackagesDefault_thenReturnJavaClassComponents() {

@@ -32,7 +32,7 @@ public class CheckInvalidArchRuleWithMethodTest {
     
 	@Test
     public void whenCallCheckInvalidArchRuleForSerializableEntities_thenReturnAssertionErrorNoControl() {
-		//CASE 1 : No control exception
+		//CASE 1 : No control exception (Generate Test Error )
         entity_classes_should_be_serializable.check(IMPORTED_CLASSES);   
     }
 	

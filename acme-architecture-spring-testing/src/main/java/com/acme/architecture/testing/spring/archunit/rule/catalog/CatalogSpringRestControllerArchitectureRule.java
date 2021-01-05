@@ -1,6 +1,7 @@
 package com.acme.architecture.testing.spring.archunit.rule.catalog;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -42,5 +43,20 @@ public class CatalogSpringRestControllerArchitectureRule {
 		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS)
 		    .should().dependOnClassesThat()
             .resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_SERVICE_CLASS);
+	
+	@ArchTest
+	public static final ArchRule spring_rest_controller_classes_should_no_depend_on_spring_rest_controller = 
+			noClasses()
+			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS)
+			.should().dependOnClassesThat()
+            .resideInAnyPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS);
+
 	  
+	@ArchTest
+	public static final ArchRule spring_rest_controller_classes_should_no_depend_on_spring_repository = 
+			noClasses()
+			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS)
+			.should().dependOnClassesThat()
+            .resideInAnyPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS, SpringArchUnitPackageConstant.RESIDE_PACKAGE_SPRING_REPOSITORY_CLASS);
+
 }

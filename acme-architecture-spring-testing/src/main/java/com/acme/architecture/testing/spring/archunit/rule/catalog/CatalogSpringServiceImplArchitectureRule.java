@@ -1,10 +1,12 @@
 package com.acme.architecture.testing.spring.archunit.rule.catalog;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 import org.springframework.stereotype.Service;
 
 import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogServiceImplArchitectureRule;
+import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
 import com.acme.architecture.testing.spring.constant.SpringArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;
@@ -36,10 +38,16 @@ public class CatalogSpringServiceImplArchitectureRule {
 		    .should().beAnnotatedWith(Service.class);
 	
 	@ArchTest
-	public static final ArchRule spring_service_impl_classes_should_depend_on_spring_repository = 
+	public static final ArchRule spring_service_impl_classes_should_depend_on_spring_repository_and_mapper = 
 		    classes()
-		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS)
-		    .should().dependOnClassesThat()
-            .resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS);
+		    .that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_IMPL_SERVICE_CLASS)
+		    .should().dependOnClassesThat().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
+			.andShould().dependOnClassesThat().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS);
 	
+	@ArchTest
+	public static final ArchRule spring_service_impl_classes_should_no_depend_on_spring_rest_controller = 
+			noClasses()
+			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_IMPL_SERVICE_CLASS)
+			.should().dependOnClassesThat()
+            .resideInAnyPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS);
 }

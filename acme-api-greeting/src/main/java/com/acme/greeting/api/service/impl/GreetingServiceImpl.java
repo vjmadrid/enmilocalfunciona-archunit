@@ -21,8 +21,8 @@ import com.acme.greeting.api.service.GreetingService;
 
 import lombok.Setter;
 
-@Setter
 @Service
+@Setter
 public class GreetingServiceImpl implements GreetingService {
 	
 	public static final Logger LOG = LoggerFactory.getLogger(GreetingServiceImpl.class);

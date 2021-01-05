@@ -51,8 +51,6 @@ public class GreetingRestController {
     @Autowired
 	private GreetingService greetingService;
     
-    
-    
     @ApiOperation(value = "Find All Greetings", notes = "Returns a list", tags = { "greeting" })
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Successful operation", response=List.class )  }

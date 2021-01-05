@@ -19,6 +19,8 @@
 			
 			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
 
+			Usa una clase de utilidad para validar el test
+
 
 		2.	ComponentClassFileImporterWithOptionsTest : Test para enseñar a utilizar la clase ClassFileImporter() junto con sus diferentes
 			formas de configuración "ImportOptions"
@@ -27,11 +29,17 @@
 			
 			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
 
+			Usa una clase de utilidad para validar el test
+
 
 		3.	ComponentClassFileImporterGetJavaClassTest : Test para enseñar a trabajar con una clase recuperada a partir de 
 			ClassFileImporter() y algunos de sus métodos para atributos y métodos
+
+			Se ha elegido la clase : User.class
 			
 			Trabaja con sus componentes : JavaClasses, JavaClass, JavaMethod y JavaField
+
+			Usa una clase de utilidad para validar el test
 
 
 
@@ -41,21 +49,30 @@
 		1.	ClassFileImporterWithSpecificMethodTest : Test para enseñar a utilizar la clase ClassFileImporter() dentro de un método específico
 		
 			Este enfoque permitiría tener dentro de una clase (de test) métodos de tests donde se escanearían de clases diferentes 
+			
+			Facilita que cada método pueda estar enfocado en un tipo de clases a escanear y con sus propios ImportOption
 
 			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
+
+			Usa una clase de utilidad para validar el test
 
 
 		2. 	ClassFileImporterWithGeneralMethodTest : Test para enseñar a utilizar la clase ClassFileImporter() como un atributo común para todos test
 			que será utilizado en cada método
 		
 			Este enfoque permitiría tener dentro de un clase (de test) un escaneo de clases común para todos los métodos de test
-			* La opción de hacerlo dentro de cada método seguiría siendo posible
+			
+			La opción de hacerlo dentro de cada método seguiría siendo posible pero habría que especificarlo
 
 			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
+
+			Usa una clase de utilidad para validar el test
 
 			
 		3.	ClassFileImporterWithAnnotationTest : Test para enseñar a utilizar la clase ClassFileImporter() como una anotación
 			
+			No se pueden utilizar tan facilmente las clases de utilidad
+
 
 
 	package com.acme.example.archunit.core.importclasses.abstracttest;
@@ -65,7 +82,10 @@
 			pero accedido por herencia desde otra clase y que será utilizado en cada método
 			
 			Este enfoque permitiría tener dentro de un clase (de test) un escaneo de clases común para todos los métodos de test
-			* La opción de hacerlo dentro de cada método seguiría siendo posible
+			
+			Requirere ser utilizado por cada clase como extensión
+
+			La opción de hacerlo dentro de cada método seguiría siendo posible pero habría que especificarlo
 
 			Usa una clase de utilidad que ayuda a mostrar el contenido de las clases importadas
 
@@ -84,11 +104,21 @@
 
 
 		1.	CheckAdhocArchRuleWithMethodTest : Test para enseñar a utilizar diferentes formas definir una ArchRule y su check de aplicación dentro 
-			del enfoque de utilizar métodos
+			del enfoque de utilizar :
+
+			* Definiendo una ArchRule dentro de un método
+			* Utilizando un metodo estático específico que define un ArchRule
+			* Utilizando la clase ArchRuleDefinition que define un ArchRule
+			* Definiciendo varias ArchRules en un mismo métoodo de test
 
 
 		2.	CheckAdhocArchRuleWithAnnotationTest: Test para enseñar a utilizar diferentes formas definir una ArchRule y su check de aplicación dentro 
 			del enfoque de utilizar anotaciones
+
+			* Definiendo una ArchRule si su anotacion por lo que se puede utilizar en un test específico de ArchTest
+			* Utilizando un ArchRule definido dentro de la misma clase
+			* Utilizando un metodo estático específico que define un ArchRule
+			* Utilizando la clase ArchRuleDefinition que define un ArchRule
 
 
 
@@ -96,23 +126,38 @@
 	
 
 		1.	CheckClassesArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.classes dentro de un ArchRule en un enfoque de anotaciones
-			* Para el uso en métodos sería similar
+			
+			Utilizando un metodo estático específico que define un ArchRule : classes()
+
+			Para el uso en métodos sería similar
 
 	
 		2.	CheckFieldsArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.fields dentro de un ArchRule en un enfoque de anotaciones
-			* Para el uso en métodos sería similar
+			
+			Utilizando un metodo estático específico que define un ArchRule : fields()
+
+			Para el uso en métodos sería similar
 
 	
 		3.	CheckMethodsArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.methods dentro de un ArchRule en un enfoque de anotaciones
-			* Para el uso en métodos sería similar
+			
+			Utilizando un metodo estático específico que define un ArchRule : methods()
+
+			Para el uso en métodos sería similar
 
 
 		4.	CheckTheClassArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.theClass dentro de un ArchRule en un enfoque de anotaciones
-			* Para el uso en métodos sería similar
+			
+			Utilizando un metodo estático específico que define un ArchRule : theClass(User.class)
+
+			Para el uso en métodos sería similar
 
 	
 		5.	CheckNoClassesArchRuleAreaTest : Test para enseñar a utilizar ArchRuleDefinition.noClasses dentro de un ArchRule en un enfoque de anotaciones
-			* Para el uso en métodos sería similar
+			
+			Utilizando un metodo estático específico que define un ArchRule : noClasses()
+
+			Para el uso en métodos sería similar
 
 
 
@@ -122,8 +167,11 @@
 		1.	CheckInvalidArchRuleWithMethodTest : Test para enseñar a utilizar diferentes formas de controler un error en una validación de una ArchRule dentro 
 			del enfoque de utilizar métodos
 			
-			
-			Uno de los casos mostrados NO esta controlado tiene por objetivo mostrar el error 
+			Uno de los casos mostrados NO esta controlado tiene por objetivo mostrar el error AssertionError
+
+			Los otros casos son la captura dentro del propio método
+
+			En una Arquitectura habría que pensar en un tratamiento global ha este tipo de Exception
 
 
 		2.	CheckInvalidArchRuleWithAnnotationTest : Test para enseñar a utilizar diferentes formas de controler un error en una validación de una ArchRule dentro 
@@ -149,7 +197,7 @@
 			
 		
 		4.	ExcamplesCheckSpecificClassValidationsArchRuleTest : Test para enseñar a utilizar diferentes ejemplos de ArchRule para tener un enfoque de verificar
-			XXXXXXXXXXXXXX
+			validaciones de clases enfocadas como layers
 
 
 
@@ -233,19 +281,19 @@
 
 
 
-	package com.acme.example.archunit.lang.archrule.external	
+	package com.acme.example.archunit.lang.archcondition.external	
 		
 
 		1.	CheckFullExternalDefinitionArchConditionWithMethodTest : Test para enseñar a utilizar diferentes formas definir un ArchCondition Externo y su check de aplicación dentro 
 			del enfoque de utilizar métodos
 			
-			Se ha definido la clase ExternalArchCondition que contiene un ArchRule para su uso externo
+			Se ha definido la clase ExternalArchCondition que contiene varios ArchCondition para su uso externo
 		
 
 		2.	CheckFullExternalDefinitionArchConditionWithAnnotationTest : Test para enseñar a utilizar diferentes formas definir un ArchCondition Externo y su check de aplicación dentro 
 			del enfoque de utilizar anotaciones
 			
-			Se ha definido la clase ExternalArchCondition que contiene un ArchRule para su uso externo
+			Se ha definido la clase ExternalArchCondition que contiene varios ArchCondition para su uso externo
 
 
 
@@ -255,31 +303,13 @@
 		1.	CheckAdhocDefinitionArchConditionWithMethodTest : Test que enseña a utilizar como condición una clase que extiende de ArchCondition dentro 
 			del enfoque de utilizar métodos
 		
-			Se ha definido la clase ClassesNoPublicSetterArchCondition
+			Se ha definido la clase ClassesNoPublicSetterArchCondition es decir una clase que extiende de ArchCondition
 			
 
 		2.	CheckAdhocDefinitionArchConditionWithAnnotationTest : Test que enseña a utilizar como condición una clase que extiende de ArchCondition dentro 
 			del enfoque de utilizar anotaciones
 		
-			Se ha definido la clase ClassesNoPublicSetterArchCondition
-
-
-
-	package com.acme.example.archunit.lang.archcondition.external;
-	
-	
-		1.	CheckFullExternalDefinitionArchConditionWithMethodTest : Test que enseña a utilizar como condición una clase que extiende de ArchCondition dentro 
-			del enfoque de utilizar métodos
-		
-			Se ha definido la clase ExternalArchCondition
-			
-
-		2.	CheckFullExternalDefinitionArchConditionWithAnnotationTest : Test que enseña a utilizar como condición una clase que extiende de ArchCondition dentro 
-			del enfoque de utilizar anotaciones
-		
-			Se ha definido la clase ExternalArchCondition
-
-
+			Se ha definido la clase ClassesNoPublicSetterArchCondition una clase que extiende de ArchCondition
 
 	package com.acme.example.archunit.lang.archcondition.classestransformer
 	

@@ -29,7 +29,7 @@ public class ClassFileImporterWithSpecificMethodTest {
         		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_JARS)
         		.importPackages(GENERIC_PACKAGE_TEST_VALUE);
         
-        //Show : Project Classes + Project Test Classes
+        //Show : Project Classes (NO test, NO Archives and NO JARs)
         System.out.println("* Show : Project Classes (NO tests, NO Archives and NO JARs)");
         ArchUnitComponentUtil.showInfo(importedClasses);
         

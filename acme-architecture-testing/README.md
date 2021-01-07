@@ -54,6 +54,7 @@ Esta librería destaca por proporcionar :
 * Un **Report de Unit Test**
 * Conjunto de **Reglas de Arquitectura** con diferentes ámbitos de actuación y/o convenciones (nombre, implementaciones, etc.)
 * Otras **Frameworks de ayuda/soporte** proporcionados por Spring (JSONassert, JsonPath, etc.)
+* Incluye ciertas tecnologías para poder proporcionar soporte a nivel de reglas arquitectónicas
 
 
 Condiciones de construcción / despliegue :
@@ -122,7 +123,6 @@ El resultado será la generación de un artefacto en el repositorio Maven Local
 ## Testing
 
 Este proyecto dispone de tests -> Unit test
-
 
 Las reglas arquitectónicas diseñadas han sido probadas con elementos del paquete : com.acme.architecture.testing.example
 

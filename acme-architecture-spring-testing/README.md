@@ -2,7 +2,7 @@
 
 Este proyecto representa una **Librería de Arquitectura (dependencia)** a nivel **GLOBAL** relacionada con el **testing** para desarrollar las diferentes partes de un proyecto (standalone, módulos, librerías, etc.) de una forma homogénea.
 
-Tiene por objetivo cubrir una **Arquitectura basada en Spring de proposito general** a nivel de **testing**  y de **reglas arquitectónicas** con aquellos componentes y/o objetos de las capas utilizados en Spring :
+Tiene por objetivo cubrir una **Arquitectura basada en Spring de proposito general** (con persistencia de BD con JPA) a nivel de **testing**  y de **reglas arquitectónicas** con aquellos componentes y/o objetos de las capas utilizados en Spring :
 
 * *Entidades (cuando se quiere trabajar con persistencia por ejemplo de JPA)*
 * *Repositorios*

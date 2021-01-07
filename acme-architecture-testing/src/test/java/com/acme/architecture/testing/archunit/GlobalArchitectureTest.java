@@ -8,7 +8,12 @@ import com.tngtech.archunit.junit.ArchRules;
 import com.tngtech.archunit.junit.ArchTest;
 
 @AnalyzeClasses(packages = TestingArchUnitPackageConstant.PACKAGE_BASE, 
-importOptions = { ImportOption.DoNotIncludeTests.class, ImportOption.DoNotIncludeJars.class, ImportOption.DoNotIncludeArchives.class })
+importOptions = { 
+		ImportOption.DoNotIncludeTests.class, 
+		ImportOption.DoNotIncludeJars.class, 
+		ImportOption.DoNotIncludeArchives.class 
+	}
+)
 public class GlobalArchitectureTest {
 	
 	@ArchTest

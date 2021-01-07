@@ -24,11 +24,14 @@ La librería tendrá el foco puesto en el **uso** de **ArchUnit** y no en otros 
 Se ha pensado su diseño siguiendo una propuesta de enfoque "típica" de lo que podría plantear un área de arquitectura de una empresa si se planteara aplicarlo sobre sus proyectos.
 
 
->IMPORTANTE 
+>**IMPORTANTE**
 >
->Normalmente una librería como esta, tendría definidas todas las dependencias individualmente con el objetivo de cubrir el ámbito de testing que se quiere cubrir.
+>Normalmente una librería como esta, tendría definidas todas las dependencias individualmente con el objetivo de cubrir el ámbito de testing que se quiera cubrir o que venga determinado por las funcionalidades, es decir, se darían de alta las dependencias necesarias y de forma específica.
 >
->En este caso particular, se ha decidido que esta librería se utilice para aplicar testing y reglas arquitectónicas sobre una arquitectura basada en Spring. Para facilitar el grado de compatibilidad de tecnologías y versiones utilizadas se ha preferido utilizar la "propuesta" que realiza el propio starter de Spring para testing (spring-boot-starter-test). Por esto, se ha incluido **spring-boot-starter-test** como **dependencias del proyecto** teniendo en cuenta las cosas buenas y malas de incluir este tipo de librerías:
+>En este caso particular, se ha decidido que esta librería se utilice para aplicar testing y reglas arquitectónicas sobre una arquitectura y aplicaciones basadas en Spring. 
+>
+>Para facilitar el grado de compatibilidad de las tecnologías y versiones utilizadas con Spring se ha preferido utilizar la "propuesta" que realiza el propio starter de Spring para testing (spring-boot-starter-test). Por esto, se ha incluido **spring-boot-starter-test** como **dependencias del proyecto** teniendo en cuenta las cosas buenas y malas de incluir este tipo de librerías:
+>
 > - Muchas dependencias transitivas extras
 > - Incremento del peso de los proyectos
 > - Acoplamiento a determinadas tecnologías / versiones
@@ -36,18 +39,18 @@ Se ha pensado su diseño siguiendo una propuesta de enfoque "típica" de lo que 
 > - Compatibilidad entre módulos de Spring
 > - ...
 >
->En concreto y como pasa siempre con Spring hay que apostar por una determinada versión a utilizar. Como el desarrollo que planteare utilizará **Spring Boot** he elegido la versión **2.3.4.RELEASE** y este "impone" el uso de los **módulos de Spring** en version **5.2.9.RELEASE** (aunque algunas versiones podrían variar) 
-
-
+>El propio starter "spring-boot-starter-test" se compone NO solo del soporte de testing para Spring sino que incluye una serie de dependencias de tecnologías para testing (Junit, Mockito, Hamcrest, AssertJ, JSONassert, JsonPath, etc) por lo que NO solo ser podrá probar algo que dependa de Spring
+>
+>En concreto y como pasa siempre con Spring, hay que apostar por una determinada versión a utilizar. Como el desarrollo que planteare utilizará **Spring Boot** he elegido la versión **2.3.4.RELEASE** y esta "impone" el uso de los **módulos de Spring** en versión **5.2.9.RELEASE** (aunque algunas versiones podrían variar) 
 
 
 
 Esta librería destaca por proporcionar :
 
-* Un **Frameworks de Testing (Unitarios / Integración)** y su versionado
-* Un **Frameworks de Mocking** y su versionado
-* Un **Frameworks de Verificaciones** y su versionado
-* Un **Frameworks de Testing de Arquitectura** y su versionado
+* Un **Framework de Testing (Unitarios / Integración)** y su versionado
+* Un **Framework de Mocking** y su versionado
+* Un **Framework de Verificaciones** y su versionado
+* Un **Framework de Testing de Arquitectura** y su versionado
 * Un **Report de Unit Test**
 * Conjunto de **Reglas de Arquitectura** con diferentes ámbitos de actuación y/o convenciones (nombre, implementaciones, etc.)
 * Otras **Frameworks de ayuda/soporte** proporcionados por Spring (JSONassert, JsonPath, etc.)
@@ -78,6 +81,7 @@ Dependencias de terceros
   * ...
 * **archunit-junit5-engine** [0.14.1] : Framework Test de Arquitectura con integración con JUnit5
 * **lombok** [1.18.12] : Herramienta para la generación automática de getters, setters, equals, hashCode , toString y más
+* **mapstruct** [1.3.1.Final] : Herramienta utilizada para mapear clases Java
 
 
 
@@ -118,6 +122,9 @@ El resultado será la generación de un artefacto en el repositorio Maven Local
 ## Testing
 
 Este proyecto dispone de tests -> Unit test
+
+
+Las reglas arquitectónicas diseñadas han sido probadas con elementos del paquete : com.acme.architecture.testing.example
 
 Nota : utilizar todos los comandos de maven
 

@@ -60,8 +60,8 @@ Dependencias de arquitectura
 
 Dependencias de terceros 
 
-* **spring-boot-starter-web** [2.3.4.RELEASE] : Starter del Framework de Spring para dar soporte a la construcción de aplicaciones Web / RESTful mediante el uso de Spring MVC
-* **spring-boot-starter-data-jpa** [2.3.4.RELEASE] : Starter del Framework de Spring para dar soporte a la persistencia con JPA
+* **spring-boot-starter-web** [Boot 2.3.4.RELEASE] : Starter del Framework de Spring para dar soporte a la construcción de aplicaciones Web / RESTful mediante el uso de Spring MVC
+* **spring-boot-starter-data-jpa** [Boot 2.3.4.RELEASE] : Starter del Framework de Spring para dar soporte a la persistencia con JPA
 
 
 		

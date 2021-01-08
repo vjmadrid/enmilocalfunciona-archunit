@@ -2,7 +2,7 @@
 
 Este proyecto representa un API REST básico con el uso de  *Hello World (Greeting)**
 
-Se utilizará para probar la librería de arquitectura **acme-architecture-testing** y en concreto con el foco puesto en el uso de la librería **arch-unit* sobre un ejemplo "real"
+Se utilizará para probar la librería de arquitectura **acme-architecture-testing** y en concreto con el foco puesto en el uso de la librería **Archunit* sobre un ejemplo "real"
 
 
 Cuando se invoca al endpoint "/greeting" 
@@ -50,21 +50,30 @@ Este proyecto destaca por proporcionar :
 * [Spring Boot](https://spring.io/projects/spring-boot)
 * [Spring](https://spring.io)
 
+
 Dependencias con proyectos de arquitectura
 
-N/A
+* **acme-architecture-spring-testing** [0.0.1-SNAPSHOT] : Librería personalizada para soporte de testing y reglas arquitectónicas de propósito general para Spring
+* **acme-api-greeting-model** [0.0.1-SNAPSHOT] : Librería de modelo del API para  dar soporte al modelo de comunicaciones con el API
 
 Dependencias de terceros 
 
 * **spring-boot-starter-parent** [2.3.4.RELEASE] : Spring Boot + Spring Framework
-* **spring-boot-starter** [X] : Spring Boot Basic core
-* **spring-boot-starter-test** [X] : Spring Boot testing library
-* **spring-boot-starter-web** [X] : Spring Boot web library
-* **spring-boot-devtools** [X] : Spring Boot Dev tools Library
-* **spring-boot-starter-actuator** [X] : Spring Boot Actuators Library
+* **spring-boot-starter-web** [Boot 2.3.4.RELEASE] : Starter del Framework de Spring para dar soporte a la construcción de aplicaciones Web / RESTful mediante el uso de Spring MVC
+* **spring-boot-starter-data-jpa** [Boot 2.3.4.RELEASE] : Starter del Framework de Spring para dar soporte a la persistencia con JPA
+* **spring-boot-starter-validation** [Boot 2.3.4.RELEASE] :  Starter del Framework de Spring para dar soporte a las validaciones de componentes Spring
+* **spring-boot-starter-actuator** [Boot 2.3.4.RELEASE] : Starter del Framework de Spring para dar soporte a los actuadores
+* **spring-boot-devtools** [Boot 2.3.4.RELEASE] : Librería que facilita el desarrollo sobre Spring Boot
+
 
 * **springfox-swagger2** [2.9.2] : Swagger
 * **springfox-swagger-ui** [2.9.2] : Swagger UI
+* **lombok** [1.18.12] : Herramienta para la generación automática de getters, setters, equals, hashCode , toString y más
+* **mapstruct** [1.3.1.Final] : Herramienta utilizada para mapear clases Java
+* **h2** [2.9.2] : Base de datos in-memory
+* **liquibase-core** [2.9.2] :Control de cambios en base de datos
+
+
 
 
 
@@ -104,9 +113,8 @@ Genera : Fichero JAR
 
 ## Testing
 
-Este proyecto dispone de tests -> Unit test
+Este proyecto dispone de tests unitarios y test de arquitectura
 
-Execute with IDE or Maven
 
 
 
@@ -128,7 +136,6 @@ Spring Boot
 1. Ejecutar el fichero Application.java
 
 * Defecto -> Disparar como clase Java 
-* Configurar en el IDE "Run Configurations" -> Use "Environment" with -Dspring.profiles.active=<id_profile>
 
 
 ### Método de Despliegue 2 : Ejecutar Spring Boot
@@ -144,34 +151,18 @@ Opcional : usar profile
 
 ### Método de Despliegue 3 : Ejecutar JAR
 
-Usar perfiles de Spring con perfiles deh Maven Profiles -> Integración "Especial"
-
-* spring.profiles.active=@spring.profiles.active@
-* habilitar "resource filtering"
-
-Se empaqueta la aplicación en un único/fat JAR file (JAR ejecutable + todas las dependencias + Contenedor de Servlet embebido en su "servidor" web)
-
-Para ejecutar el JAR usa el siguiente comando 
-
-En este caso se definio : "dev", "uat" y "prod"
 
 1. Ejecutar el siguiente comando
 
 ```bash
 mvn package
-
-o
-
-mvn package -P<id_profile>
 ```
 
 Ejecutar
 
 ```bash
-java -jar target/acme-greeting-api-restful-0.0.1-SNAPSHOT.jar
+java -jar target/acme-api-greeting-0.0.1-SNAPSHOT.jar
 ```
-
-Por defecto usa un environment pero se puede cambiar (dev o <id_profile>) 
 
 
 
@@ -179,7 +170,7 @@ Por defecto usa un environment pero se puede cambiar (dev o <id_profile>)
 
 ## Uso
 
-Importante : REcordar que el puerto de ejecución se configura en el fichero  application-{id_profile}.yml
+Importante : Recordar que el puerto de ejecución se configura en el fichero  application-{id_profile}.yml
 
 
 ### Usar Navegador
@@ -238,7 +229,7 @@ http://localhost:8091/v2/api-docs
 Y devolverá un JSON con la meta información del API
 
 
-Para ejecutar la consola UI de Swagger  invocar al endpoint "swagger-ui.html"
+Para ejecutar la consola UI de Swagger invocar al endpoint "swagger-ui.html"
 
 
 ```bash

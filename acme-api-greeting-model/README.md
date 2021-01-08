@@ -2,6 +2,24 @@
 
 Este proyecto representa una **Librería de servicio REST (dependencia)** relacionada con los **modelos de negocio del servicio** para ser reutilizados de una forma homogenea en diferentes servicios REST
 
+Tiene por objetivo cubrir la comunicación con aquellos componentes y/o objetos de las capas utilizadas :
+
+* *DTOs (Incluyendo variantes : Request, Response, QueryRequest y FullQueryRequest)*
+* *...*
+
+Esta librería destaca por proporcionar :
+
+* **DTOS para cubrir Peticiones**
+* **DTOS para cubrir Respuestas**
+* **DTOS para cubrir Consultas**
+* **Utilidades** para trabar con las DTOS
+
+
+Condiciones de construcción / despliegue :
+
+* Uso como librería en otros proyectos
+* Despliegue como librería
+
 
 
 
@@ -11,9 +29,15 @@ Este proyecto representa una **Librería de servicio REST (dependencia)** relaci
 * [Maven 3](https://maven.apache.org/) - Gestión de Dependencias
 
 
-Dependencias de terceros
+Dependencias de arquitectura
 
-N/A
+* **acme-architecture-testing** [0.0.1-SNAPSHOT] : Librería personalizada para soporte de testing y reglas arquitectónicas de propósito general
+
+
+Dependencias de terceros 
+
+* **lombok** [1.18.12] : Herramienta para la generación automática de getters, setters, equals, hashCode , toString y más
+* **jackson** [2.11.2] : Procesaron abstracciones (aka Streaming API) para implementaciones para JSON
 
 
 
@@ -53,7 +77,9 @@ El resultado será la generación de un artefacto en el repositorio Maven Local
 
 ## Testing
 
-Este proyecto no representa lógica de negocio, tan solo modelos de negocio. Por lo tanto no se realizarán test unitarios.
+Este proyecto No incluye test unitarios sobre el uso de los DTOs
+
+Pero si incluye test de validación de arquitectura basados en ArchUnit
 
 
 

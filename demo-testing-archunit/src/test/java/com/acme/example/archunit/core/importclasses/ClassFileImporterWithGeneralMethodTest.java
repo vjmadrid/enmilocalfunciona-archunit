@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.acme.example.archunit.core.importclasses.component.util.ArchUnitComponentUtil;
@@ -24,7 +25,17 @@ public class ClassFileImporterWithGeneralMethodTest {
     		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_JARS)
     		.importPackages(GENERIC_PACKAGE_TEST_VALUE);
 	
+	private JavaClasses IMPORTED_CLASSES_2;
 	
+	@BeforeEach
+    public void init() {
+        this.IMPORTED_CLASSES_2 = new ClassFileImporter()
+        		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+        		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_ARCHIVES)
+        		.withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_JARS)
+        		.importPackages(GENERIC_PACKAGE_TEST_VALUE);
+    }
+
 	@Test
     public void whenCallImportPackagesFieldWithOptions_thenReturnJavaClassComponents() {
 		System.out.println("\n*** ClassFileImporter Default Generic with Options ***");
@@ -32,6 +43,21 @@ public class ClassFileImporterWithGeneralMethodTest {
         //Show : Project Classes (NO test, NO Archives and NO JARs)
         System.out.println("* Show : Project Classes (NO test, NO Archives and NO JARs)");
         ArchUnitComponentUtil.showInfo(IMPORTED_CLASSES);
+   
+        //Generate JavaClass List
+        List<?> importedClassesList = ArchUnitComponentUtil.generarJavaClassList(IMPORTED_CLASSES);
+   
+        assertNotNull(importedClassesList);
+        assertEquals(NUM_IMPORTED_CLASSES_DEFAULT_GENERIC_WITH_OPTIONS,importedClassesList.size());
+    }
+	
+	@Test
+    public void whenCallImportPackagesFieldWithOptions2_thenReturnJavaClassComponents() {
+		System.out.println("\n*** ClassFileImporter Default Generic with Options 2 ***");
+		
+        //Show : Project Classes (NO test, NO Archives and NO JARs)
+        System.out.println("* Show : Project Classes (NO test, NO Archives and NO JARs)");
+        ArchUnitComponentUtil.showInfo(this.IMPORTED_CLASSES_2);
    
         //Generate JavaClass List
         List<?> importedClassesList = ArchUnitComponentUtil.generarJavaClassList(IMPORTED_CLASSES);

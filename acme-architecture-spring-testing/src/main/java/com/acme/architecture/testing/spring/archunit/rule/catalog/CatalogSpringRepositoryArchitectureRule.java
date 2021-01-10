@@ -56,4 +56,13 @@ public class CatalogSpringRepositoryArchitectureRule {
 			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
 			.and().areAnnotatedWith(Repository.class)
 			.should().beAssignableTo(JpaRepository.class);
+	
+	@ArchTest
+	public static final ArchRule spring_repository_classes_should_no_depend_on_spring_repository_and_mapper = 
+			noClasses()
+			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
+			.should().dependOnClassesThat()
+            .resideInAnyPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
+            .andShould().dependOnClassesThat().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS);
+	
 }

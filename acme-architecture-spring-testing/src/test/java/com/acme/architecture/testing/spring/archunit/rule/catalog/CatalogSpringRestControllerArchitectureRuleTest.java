@@ -36,4 +36,8 @@ public class CatalogSpringRestControllerArchitectureRuleTest {
 
 	@ArchTest
 	public static final ArchRule spring_rest_controller_classes_should_no_depend_on_spring_repository = CatalogSpringRestControllerArchitectureRule.spring_rest_controller_classes_should_no_depend_on_spring_repository;
+
+	@ArchTest
+	public static final ArchRule spring_rest_controller_classes_should_no_depend_on_spring_service_impl = CatalogSpringRestControllerArchitectureRule.spring_rest_controller_classes_should_no_depend_on_spring_service_impl;
+
 }

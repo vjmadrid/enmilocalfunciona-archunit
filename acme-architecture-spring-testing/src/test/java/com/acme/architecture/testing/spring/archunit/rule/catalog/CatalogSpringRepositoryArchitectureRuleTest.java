@@ -44,9 +44,11 @@ public class CatalogSpringRepositoryArchitectureRuleTest {
 	@ArchTest
 	public static final ArchRule spring_repository_classes_should_be_annotated_with_repository = CatalogSpringRepositoryArchitectureRule.spring_repository_classes_should_be_annotated_with_repository;
 
-	
 	@ArchTest
 	public static final ArchRule spring_repository_classes_should_extends_jparepository = CatalogSpringRepositoryArchitectureRule.spring_repository_classes_should_extends_jparepository;
+
+	@ArchTest
+	public static final ArchRule spring_repository_classes_should_no_depend_on_spring_repository_and_mapper = CatalogSpringRepositoryArchitectureRule.spring_repository_classes_should_no_depend_on_spring_repository_and_mapper;
 
 }
 

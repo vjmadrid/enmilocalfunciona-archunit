@@ -77,9 +77,9 @@ El resultado será la generación de un artefacto en el repositorio Maven Local
 
 ## Testing
 
-Este proyecto No incluye test unitarios sobre el uso de los DTOs
+Este poyecto incluye sobre todo tests de validación de arquitectura basados en ArchUnit
 
-Pero si incluye test de validación de arquitectura basados en ArchUnit
+* No incluye test unitarios sobre el uso de los DTOs
 
 
 

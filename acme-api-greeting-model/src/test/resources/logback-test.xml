@@ -6,19 +6,10 @@
 			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
 		</encoder>
 	</appender>
-
-	<!-- 
-	<logger name="com.acme.greeting.api" level="INFO"/>
-    <logger name="org.springframework" level="INFO" />
-    <logger name="org.hibernate.stat" level="INFO" />
-    <logger name="org.hibernate.type" level="INFO" /> 
-	<logger name="org.springframework.security" level="INFO" />
-	<logger name="liquibase" level="INFO" />
-	 -->
-	 
+	
 	<logger name="com.tngtech.archunit.core.importer.JavaClassProcessor" level="ERROR"/>
 	<logger name="com.tngtech.archunit.core.importer.UrlSource" level="ERROR"/>
-
+	
 	<root level="ERROR">
 		<appender-ref ref="STDOUT" />
 	</root>

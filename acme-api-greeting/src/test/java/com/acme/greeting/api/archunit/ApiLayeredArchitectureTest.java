@@ -13,8 +13,8 @@ import com.tngtech.archunit.lang.ArchRule;
 @AnalyzeClasses(packages = "com.acme.greeting.api", 
 importOptions = { 
 		ImportOption.DoNotIncludeTests.class,
-		ImportOption.DoNotIncludeJars.class, 
-		ImportOption.DoNotIncludeArchives.class 
+		//ImportOption.DoNotIncludeJars.class, 
+		//ImportOption.DoNotIncludeArchives.class 
 	}
 )
 public class ApiLayeredArchitectureTest {

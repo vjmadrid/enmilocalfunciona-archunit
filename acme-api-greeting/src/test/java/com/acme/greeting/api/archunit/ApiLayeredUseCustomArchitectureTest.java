@@ -12,48 +12,87 @@ import com.tngtech.archunit.lang.ArchRule;
 
 @AnalyzeClasses(packages = "com.acme.greeting.api", 
 importOptions = { 
-		ImportOption.DoNotIncludeTests.class,
-		//ImportOption.DoNotIncludeJars.class, 
-		//ImportOption.DoNotIncludeArchives.class 
+		ImportOption.DoNotIncludeTests.class
 	}
 )
-public class ApiLayeredArchitectureTest {
+public class ApiLayeredUseCustomArchitectureTest {
 		
 	@ArchTest
 	public static final ArchRule api_layered_architecture_should_have_a_custom_definition = 
 	    layeredArchitecture()
-	    //Layers
+	    
+	    // **************
+	    // *** Layers ***
+		// **************
+	    
+	    // Constants
+	    .layer("Constant layer").definedBy("..constant")
+	    
+	    // Entity
 		.layer("Entity layer").definedBy("..entity")
-		//.layer("Request layer").definedBy("..request")
-		//.layer("Response layer").definedBy("..response")
+		
+		// DTO
+		.layer("Request DTO layer").definedBy("..request")
+		.layer("Response DTO layer").definedBy("..response")
+		
+		// Repository
 		.layer("Repository layer").definedBy("..repository")
+		
+		// Service
 		.layer("Service layer").definedBy("..service..")
+		
+		// Controller
 		.layer("Controller layer").definedBy("..controller")
+		
+		// Configuration
 		.layer("Config layer").definedBy("..config")
+		
+		// Others
 		.layer("Factory layer").definedBy("..factory")
 		.layer("Dummy layer").definedBy("..dummy")
 		.layer("Util layer").definedBy("..util..")
 		.layer("Mapper layer").definedBy("..mapper..")
-		//Conditions
-		.whereLayer("Entity layer").mayOnlyBeAccessedByLayers("Service layer", "Repository layer", "Factory layer", "Dummy layer", "Util layer", "Mapper layer")
-		//.whereLayer("Request layer").mayOnlyBeAccessedByLayers("Controller layer", "Service layer", "Mapper layer", "Util layer", "Dummy layer")
-		//.whereLayer("Response layer").mayOnlyBeAccessedByLayers("Controller layer", "Service layer", "Mapper layer", "Util layer", "Dummy layer")
+		
+		// ******************
+		// *** Conditions ***
+		// ******************
+		
+		// Constants
+		// 	"Constant layer" should be accessible to all (no condition is established)
+		
+		// Entity
+		.whereLayer("Entity layer").mayOnlyBeAccessedByLayers("Entity layer", "Service layer", "Repository layer", "Factory layer", "Dummy layer", "Util layer", "Mapper layer")
+		
+		// DTO (Use direct project or model)
+		.whereLayer("Request DTO layer").mayOnlyBeAccessedByLayers("Controller layer", "Service layer", "Mapper layer", "Util layer", "Dummy layer")
+		.whereLayer("Response DTO layer").mayOnlyBeAccessedByLayers("Controller layer", "Service layer", "Mapper layer", "Util layer", "Dummy layer")
+		
+		// Repository
 		.whereLayer("Repository layer").mayOnlyBeAccessedByLayers("Service layer")
+		
+		// Service
 		.whereLayer("Service layer").mayOnlyBeAccessedByLayers("Controller layer", "Service layer")
-		.whereLayer("Mapper layer").mayOnlyBeAccessedByLayers("Service layer")
-		.whereLayer("Util layer").mayOnlyBeAccessedByLayers("Util layer", "Controller layer", "Service layer")
+		
+		// Controller
 		.whereLayer("Controller layer").mayNotBeAccessedByAnyLayer()
-		.whereLayer("Config layer").mayNotBeAccessedByAnyLayer();
-	
-	
-	//@ArchTest
-	//public static final ArchRule api_layered_architecture_should_have_a_definition = CatalogSpringLayeredArchitectureRule.api_layered_architecture_should_have_a_definition;
+		
+		// Configuration
+		.whereLayer("Config layer").mayNotBeAccessedByAnyLayer()
+		
+		// Others
+		// 	"Dummy layer"
+		// 		Option 1 : 	should be accessible to all (no condition is established)
+		// 		Option 2 : 	should not be accessed by anyone in this context project (beware of scanning JARs)
+		//					.whereLayer("Dummy layer").mayNotBeAccessedByAnyLayer()
+		
+		.whereLayer("Factory layer").mayOnlyBeAccessedByLayers("Service layer", "Dummy layer")
+		.whereLayer("Util layer").mayOnlyBeAccessedByLayers("Util layer", "Controller layer", "Service layer")
+		.whereLayer("Mapper layer").mayOnlyBeAccessedByLayers("Service layer");
 
 	@ArchTest
-	public static final ArchRule api_layered_architecture_should_have_a_default_definition = 
+	public static final ArchRule api_layered_architecture_should_have_a_custom_definition_with_constants = 
 	layeredArchitecture()
 	
-
     // **************
     // *** Layers ***
 	// **************
@@ -97,7 +136,8 @@ public class ApiLayeredArchitectureTest {
 	.whereLayer(ArchUnitLayeredArchitectureConstant.ENTITY_LAYER).mayOnlyBeAccessedByLayers(
 			ArchUnitLayeredArchitectureConstant.FACTORY_LAYER, ArchUnitLayeredArchitectureConstant.DUMMY_LAYER, 
 			ArchUnitLayeredArchitectureConstant.UTIL_LAYER, ArchUnitLayeredArchitectureConstant.MAPPER_LAYER,
-			ArchUnitLayeredArchitectureConstant.REPOSITORY_LAYER, ArchUnitLayeredArchitectureConstant.SERVICE_LAYER
+			ArchUnitLayeredArchitectureConstant.REPOSITORY_LAYER, ArchUnitLayeredArchitectureConstant.SERVICE_LAYER,
+			ArchUnitLayeredArchitectureConstant.ENTITY_LAYER
 	)
 	
 	// DTO (Use direct project or model)

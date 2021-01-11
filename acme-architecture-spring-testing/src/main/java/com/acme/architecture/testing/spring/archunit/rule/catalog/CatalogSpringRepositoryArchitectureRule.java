@@ -56,13 +56,24 @@ public class CatalogSpringRepositoryArchitectureRule {
 			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
 			.and().areAnnotatedWith(Repository.class)
 			.should().beAssignableTo(JpaRepository.class);
-	
+			
 	@ArchTest
-	public static final ArchRule spring_repository_classes_should_no_depend_on_spring_repository_and_mapper = 
+	public static final ArchRule spring_repository_classes_should_no_depend_on_mapper = 
 			noClasses()
 			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
-			.should().dependOnClassesThat()
-            .resideInAnyPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
-            .andShould().dependOnClassesThat().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS);
+			.should().dependOnClassesThat().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_MAPPER_CLASS);
+	
+	@ArchTest
+	public static final ArchRule spring_repository_classes_should_no_depend_on_spring_service_interface_and_spring_service_impl = 
+			noClasses()
+			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
+			.should().dependOnClassesThat().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_SERVICE_CLASS)
+			.andShould().dependOnClassesThat().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_SERVICE_IMPL_CLASS);
+	
+	@ArchTest
+	public static final ArchRule spring_repository_classes_should_no_depend_on_spring_rest_controller = 
+			noClasses()
+			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REPOSITORY_CLASS)
+			.should().dependOnClassesThat().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS);
 	
 }

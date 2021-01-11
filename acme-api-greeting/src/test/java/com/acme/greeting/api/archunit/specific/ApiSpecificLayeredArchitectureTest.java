@@ -1,4 +1,4 @@
-package com.acme.greeting.api.archunit;
+package com.acme.greeting.api.archunit.specific;
 
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 
@@ -15,7 +15,7 @@ importOptions = {
 		ImportOption.DoNotIncludeTests.class
 	}
 )
-public class ApiLayeredUseCustomArchitectureTest {
+public class ApiSpecificLayeredArchitectureTest {
 		
 	@ArchTest
 	public static final ArchRule api_layered_architecture_should_have_a_custom_definition = 

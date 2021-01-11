@@ -11,7 +11,7 @@ importOptions = {
 		ImportOption.DoNotIncludeTests.class
 	}
 )
-public class ApiLayeredUseDefaultArchitectureTest {
+public class ApiLayeredArchitectureTest {
 		
 	@ArchTest
 	public static final ArchRule spring_api_layered_architecture_should_have_a_default_definition =  CatalogSpringLayeredArchitectureRule.spring_api_layered_architecture_should_have_a_default_definition;

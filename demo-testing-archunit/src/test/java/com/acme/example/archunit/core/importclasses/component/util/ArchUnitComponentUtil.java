@@ -24,8 +24,9 @@ public class ArchUnitComponentUtil {
 
 	public static void showInfo(final JavaClasses classes) {
 
-		if (classes == null)
+		if (classes == null) {
 			System.out.println("Invalid JavaClasses Value");
+		}
 		else {
 			
 			List<Object> classesList =  generarJavaClassList(classes);

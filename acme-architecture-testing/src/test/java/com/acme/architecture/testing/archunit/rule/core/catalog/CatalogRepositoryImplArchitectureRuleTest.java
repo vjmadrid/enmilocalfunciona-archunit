@@ -27,5 +27,8 @@ public class CatalogRepositoryImplArchitectureRuleTest {
 
 	@ArchTest
 	public static final ArchRule repository_impl_should_implement_respository = CatalogRepositoryImplArchitectureRule.repository_impl_should_implement_respository;
+	
+	@ArchTest
+	public static final ArchRule repository_impl_classes_should_no_be_interface = CatalogRepositoryImplArchitectureRule.repository_impl_classes_should_no_be_interface;
 
 }

@@ -33,6 +33,12 @@ public class CatalogRepositoryImplArchitectureRule {
 		    classes()
 		    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_REPOSITORY_IMPL_CLASS)
 		    .should(new ImplementInterfaceWithSameNameArchitectureCondition());
+	
+	@ArchTest
+	public static final ArchRule repository_impl_classes_should_no_be_interface = 
+		    classes()
+		    .that().resideInAPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_REPOSITORY_IMPL_CLASS)
+		    .should().notBeInterfaces();
 
 }
 

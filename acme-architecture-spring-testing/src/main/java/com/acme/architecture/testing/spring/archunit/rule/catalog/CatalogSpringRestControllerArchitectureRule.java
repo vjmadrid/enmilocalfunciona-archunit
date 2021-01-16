@@ -1,8 +1,10 @@
 package com.acme.architecture.testing.spring.archunit.rule.catalog;
 
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.methods;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.acme.architecture.testing.spring.constant.SpringArchUnitNameConstant;
@@ -64,5 +66,5 @@ public class CatalogSpringRestControllerArchitectureRule {
 			.that().resideInAPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_REST_CONTROLLER_CLASS)
 			.should().dependOnClassesThat()
             .resideInAnyPackage(SpringArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_SPRING_SERVICE_IMPL_CLASS, SpringArchUnitPackageConstant.RESIDE_PACKAGE_SPRING_SERVICE_IMPL_CLASS);
-
+	
 }

@@ -13,7 +13,7 @@ import com.tngtech.archunit.lang.SimpleConditionEvent;
 public class ImplementInterfaceWithSameNameArchitectureCondition extends ArchCondition<JavaClass> {
 
 	public final String MESSAGE_TEMPLATE_EMPTY_INTERFACES = "%s no implement '%s'";
-	public final String MESSAGE_TEMPLATE_OTHER_REPOSITORY = "%s no implement '%s' -> Use other '*Repository'";
+	public final String MESSAGE_TEMPLATE_OTHER = "%s no implement '%s' -> Use other '*Repository' or '*Service'";
 
 	public ImplementInterfaceWithSameNameArchitectureCondition() {
 		super("Implement Interface With Same Name Architecture Condition");
@@ -21,19 +21,19 @@ public class ImplementInterfaceWithSameNameArchitectureCondition extends ArchCon
 	
 	@Override
 	public void check(JavaClass item, ConditionEvents events) {
-		String nameRepository = ArchUnitNameUtil.generateNameFromNameImplementation(item.getSimpleName());
+		String namePreparedClass = ArchUnitNameUtil.generateNameFromNameImplementation(item.getSimpleName());
 
 		Set<JavaClass> interfacesSet = item.getInterfaces();
 
 		if (interfacesSet.isEmpty()) {
-			String message = String.format(MESSAGE_TEMPLATE_EMPTY_INTERFACES, item.getFullName(), nameRepository);
+			String message = String.format(MESSAGE_TEMPLATE_EMPTY_INTERFACES, item.getFullName(), namePreparedClass);
 			events.add(new SimpleConditionEvent(item, !interfacesSet.isEmpty(), message));
 		} else {
 			List<String> nameSetList = ArchUnitConverterUtil.convertSetToList(interfacesSet);
-			boolean containsNameRepository = nameSetList.contains(nameRepository);
+			boolean containsNamePrepared= nameSetList.contains(namePreparedClass);
 			
-			String message = String.format(MESSAGE_TEMPLATE_OTHER_REPOSITORY, item.getFullName(), nameRepository);
-			events.add(new SimpleConditionEvent(item, containsNameRepository, message));
+			String message = String.format(MESSAGE_TEMPLATE_OTHER, item.getFullName(), namePreparedClass);
+			events.add(new SimpleConditionEvent(item, containsNamePrepared, message));
 		}
 
 	}

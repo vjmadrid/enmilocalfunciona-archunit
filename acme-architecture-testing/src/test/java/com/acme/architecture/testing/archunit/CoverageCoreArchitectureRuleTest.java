@@ -55,10 +55,5 @@ public class CoverageCoreArchitectureRuleTest {
     public void shouldBeValidCoreGroupArchitectureRule() {
 		assertNotNull(new CatalogCoreGroupArchitectureRule());
     }
-	
-	@Test
-    public void shouldBeValidLayeredArchitectureArchitectureRule() {
-		assertNotNull(new CatalogModelLayeredArchitectureRule());
-    }
 
 }

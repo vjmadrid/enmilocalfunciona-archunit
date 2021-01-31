@@ -8,7 +8,7 @@ import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringS
 import com.tngtech.archunit.junit.ArchRules;
 import com.tngtech.archunit.junit.ArchTest;
 
-public class CatalogSpringGlobalArchitectureRule {
+public class CatalogSpringGroupArchitectureRule {
 	
 	@ArchTest
 	public static final ArchRules base_spring_configuration_architecture = ArchRules.in(CatalogSpringConfigurationArchitectureRule.class);

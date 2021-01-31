@@ -23,7 +23,7 @@ import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogServiceAr
 import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogServiceImplArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogSupportArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogUtilArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGroupArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.layered.architecture.catalog.CatalogModelLayeredArchitectureRule;
 
 public class CoverageCoreArchitectureRuleTest {
@@ -53,7 +53,7 @@ public class CoverageCoreArchitectureRuleTest {
 	
 	@Test
     public void shouldBeValidCoreGroupArchitectureRule() {
-		assertNotNull(new CatalogCoreGlobalArchitectureRule());
+		assertNotNull(new CatalogCoreGroupArchitectureRule());
     }
 	
 	@Test

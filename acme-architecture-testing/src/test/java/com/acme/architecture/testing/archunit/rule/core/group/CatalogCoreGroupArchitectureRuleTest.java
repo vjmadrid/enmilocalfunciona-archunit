@@ -1,4 +1,4 @@
-package com.acme.architecture.testing.archunit;
+package com.acme.architecture.testing.archunit.rule.core.group;
 
 import com.acme.architecture.testing.archunit.constant.TestingArchUnitPackageConstant;
 import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGroupArchitectureRule;
@@ -7,16 +7,16 @@ import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchRules;
 import com.tngtech.archunit.junit.ArchTest;
 
-@AnalyzeClasses(packages = TestingArchUnitPackageConstant.PACKAGE_BASE, 
+@AnalyzeClasses(packages = TestingArchUnitPackageConstant.PACKAGE_EXAMPLE, 
 importOptions = { 
-		ImportOption.DoNotIncludeTests.class, 
-		ImportOption.DoNotIncludeJars.class, 
-		ImportOption.DoNotIncludeArchives.class 
-	}
+		ImportOption.DoNotIncludeArchives.class, 
+		ImportOption.DoNotIncludeJars.class 
+}
 )
-public class GlobalArchitectureTest {
+//Includes test classes
+public class CatalogCoreGroupArchitectureRuleTest {
 	
 	@ArchTest
-	public static final ArchRules base_global_architecture = ArchRules.in(CatalogCoreGroupArchitectureRule.class);
+	public static final ArchRules group_core_architecture = ArchRules.in(CatalogCoreGroupArchitectureRule.class);
 	
 }

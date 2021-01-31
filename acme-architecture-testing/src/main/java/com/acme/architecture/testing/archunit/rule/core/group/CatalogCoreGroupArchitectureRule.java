@@ -22,7 +22,7 @@ import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogUtilArchi
 import com.tngtech.archunit.junit.ArchRules;
 import com.tngtech.archunit.junit.ArchTest;
 
-public class CatalogCoreGlobalArchitectureRule {
+public class CatalogCoreGroupArchitectureRule {
 
 	@ArchTest
 	public static final ArchRules base_constant_architecture = ArchRules.in(CatalogConstantArchitectureRule.class);

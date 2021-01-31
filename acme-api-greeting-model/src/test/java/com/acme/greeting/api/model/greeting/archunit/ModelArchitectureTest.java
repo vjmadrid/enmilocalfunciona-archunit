@@ -1,6 +1,6 @@
 package com.acme.greeting.api.model.greeting.archunit;
 
-import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGlobalArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.core.group.CatalogCoreGroupArchitectureRule;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchRules;
@@ -16,6 +16,6 @@ import com.tngtech.archunit.junit.ArchTest;
 public class ModelArchitectureTest {
 	
 	@ArchTest
-	public static final ArchRules global_core_architecture = ArchRules.in(CatalogCoreGlobalArchitectureRule.class);
+	public static final ArchRules global_core_architecture = ArchRules.in(CatalogCoreGroupArchitectureRule.class);
 	
 }

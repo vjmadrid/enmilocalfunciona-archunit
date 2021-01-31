@@ -6,7 +6,7 @@ import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogMap
 import com.tngtech.archunit.junit.ArchRules;
 import com.tngtech.archunit.junit.ArchTest;
 
-public class CatalogTechnologyGlobalArchitectureRule {
+public class CatalogTechnologyGroupArchitectureRule {
 	
 	@ArchTest
 	public static final ArchRules base_map_struct_architecture = ArchRules.in(CatalogMapstructArchitectureRule.class);

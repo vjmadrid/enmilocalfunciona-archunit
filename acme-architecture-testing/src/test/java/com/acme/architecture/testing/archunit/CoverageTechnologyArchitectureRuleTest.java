@@ -8,7 +8,7 @@ import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogArc
 import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogArchunitPredicateArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogArchunitRuleArchitectureRule;
 import com.acme.architecture.testing.archunit.rule.technology.catalog.CatalogMapstructArchitectureRule;
-import com.acme.architecture.testing.archunit.rule.technology.group.CatalogTechnologyGlobalArchitectureRule;
+import com.acme.architecture.testing.archunit.rule.technology.group.CatalogTechnologyGroupArchitectureRule;
 
 public class CoverageTechnologyArchitectureRuleTest {
 	
@@ -22,7 +22,7 @@ public class CoverageTechnologyArchitectureRuleTest {
 	
 	@Test
     public void shouldBeValidTechnologyGroupArchitectureRule() {
-		assertNotNull(new CatalogTechnologyGlobalArchitectureRule());
+		assertNotNull(new CatalogTechnologyGroupArchitectureRule());
     }
 
 }

@@ -16,7 +16,7 @@ public final class ArchUnitConverterUtil {
 	public static List<String> convertSetToList(Set<JavaClass> paramSet){
 		List<String> result = new ArrayList<String>();
 		
-		if (!paramSet.isEmpty()) {
+		if ( (paramSet !=null) && (!paramSet.isEmpty())) {
 			Iterator<JavaClass> it = (Iterator<JavaClass>) paramSet.iterator();
 			while (it.hasNext()) {
 				result.add(it.next().getSimpleName());

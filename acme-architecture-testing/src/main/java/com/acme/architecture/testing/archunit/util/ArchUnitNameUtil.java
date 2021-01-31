@@ -9,7 +9,7 @@ public final class ArchUnitNameUtil {
 	}
 	
 	public static String generateNameFromNameImplementation(String param) {
-		if (!param.isEmpty()) {
+		if ( (param!=null) && (!param.isEmpty())) {
 			int indexImplString = param.indexOf(ArchUnitNameConstant.SUFFIX_IMPL);
 			
 			if (indexImplString > -1) {

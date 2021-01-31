@@ -11,7 +11,7 @@ import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringS
 import com.acme.architecture.testing.spring.archunit.rule.catalog.CatalogSpringServiceImplArchitectureRule;
 import com.acme.architecture.testing.spring.archunit.rule.group.CatalogSpringGroupArchitectureRule;
 
-public class CoverageArchitectureRuleTest {
+public class CoverageSpringArchitectureRuleTest {
 	
 	@Test
 	public void shouldBeValidSpringArchitectureRule() {

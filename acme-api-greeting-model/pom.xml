@@ -17,6 +17,7 @@
 		<!-- Compiler & Resources -->
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
 		<!-- Architecture libraries -->
 		<acme-architecture-testing.version>0.0.1-SNAPSHOT</acme-architecture-testing.version>
@@ -137,7 +138,7 @@
 				</configuration>
 			</plugin>
 			
-			<!-- maven-failsafe-plugin : Plugin used to run integration tests -->
+			<!-- maven-failsafe-plugin : Plugin used to run integration tests - Generate reports in the directory target/failsafe-reports -->
 			
 			<plugin>
 				<artifactId>maven-failsafe-plugin</artifactId>
@@ -151,10 +152,45 @@
 				</configuration>
 				<executions>
 					<execution>
+						<id>default-integration-test</id>
 						<goals>
 							<goal>integration-test</goal>
 							<goal>verify</goal>
 						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<!-- jacoco-maven-plugin : Plugin used to generate code coverage -->
+			 
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco-maven-plugin.version}</version>
+				<configuration>
+					<excludes>
+						<exclude>**/*com/**/mapper/**</exclude>
+						<exclude>**/*com/**/mapper/impl/**</exclude>
+						<exclude>**/*com/**/mapper/struct/**</exclude>
+						<exclude>**/*com/**/mapper/**/struct/**</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>coverage-initialize</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>coverage-report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/jacoco-reports</outputDirectory>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

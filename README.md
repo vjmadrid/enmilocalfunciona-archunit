@@ -2,9 +2,10 @@
 
 Este repositorio se encarga de servir como una estructura de recursos utilizados para los artículos publicados en la plataforma **enmilocalfunciona.io** relacionados con el uso de **ArchUnit** y basado en la serie de artículos “Validanto una Arquitectura con ArchUnit” 
 
-* Validando una Arquitectura con ArchUnit (Parte 1) :  Artículo de introducción a Arquitecturas y a los problemas típicos que trataremos de solucionar
-* Validando una Arquitectura con ArchUnit (Parte 2) :  Artículo donde se enseña a utilizar el framework / herramienta ArchUnit
-* Validando una Arquitectura con ArchUnit (Parte 3) :  Artículo de aplicación de lo anterior sobre un ejemplo “real” y avanzado basado en Spring / Spring Boot
+* [Validando una Arquitectura con ArchUnit (Parte 1)](https://enmilocalfunciona.io/validando-arquitectura-archunit/) :  Artículo de introducción a Arquitecturas y a los problemas típicos que trataremos de solucionar
+* [Validando una Arquitectura con ArchUnit (Parte 2)](https://enmilocalfunciona.io/validando-una-arquitectura-con-archunit-parte-2/)  :  Artículo donde se enseña a utilizar el framework / herramienta ArchUnit
+* [Validando una Arquitectura con ArchUnit (Parte 3)](https://enmilocalfunciona.io/validando-una-arquitectura-con-archunit-parte-3/) :  Artículo de aplicación de lo anterior sobre un ejemplo “real” y avanzado basado en Spring / Spring Boot
+
 
 
 
